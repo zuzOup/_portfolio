@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --beige: #fff8ea;
+  --brown: #ad9462;
+  --darkGreen: #005249;
+
+  --yellow: #ffc501;
+  --yellowPink1: #ffbe51;
+  --yellowPink2: #ffbc84;
+  --yellowPink3: #ffc2b1;
+  --pink: #fd8a7d;
+  --font: "Urbanist", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  min-height: 100vh;
+
+  margin: 0;
+
+  background-color: var(--beige);
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 4px var(--brown);
+  background-color: var(--beige);
+}
+
+body::-webkit-scrollbar-thumb {
+  /*https://codepen.io/GhostRider/pen/oNvoNv*/
+  border-radius: 10px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.2, var(--yellowPink1)),
+    color-stop(0.5, var(--yellowPink2)),
+    color-stop(0.6, var(--yellowPink3))
+  );
+}
+
+.smallDot {
+  height: 0.3vw;
+  width: 0.3vw;
+  border-radius: 100%;
+
+  /* background-color: var(--yellow); */
+}
+.bigDot {
+  height: 0.55vw;
+  width: 0.55vw;
+  border-radius: 100%;
+
+  /* background-color: var(--yellow); */
+}

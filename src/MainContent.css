@@ -1,0 +1,58 @@
+main {
+  flex: auto;
+  overflow: hidden;
+
+  display: flex;
+
+  width: 100%;
+}
+
+/*Article Section*/
+
+article {
+  flex: auto;
+  width: auto;
+  height: 100%;
+}
+
+article > section {
+  width: 70vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+article * h2 {
+  all: unset;
+  font-family: var(--font);
+  text-align: center;
+  font-size: 2.8vw;
+  font-weight: 500;
+
+  color: var(--darkGreen);
+  padding: 0 2vw;
+}
+
+.article_h2_span {
+  display: flex;
+  justify-content: center;
+}
+
+.article_dots {
+  display: flex;
+  align-items: center;
+}
+
+.article_dots > .bigDot {
+  width: 0.68vw !important;
+  height: 0.68vw !important;
+  transform: translateY(0.2vw);
+}
+
+.article_dots > .smallDot {
+  width: 0.45vw !important;
+  height: 0.45vw !important;
+  margin: 0 0.35vw;
+  transform: translateY(0.22vw);
+}

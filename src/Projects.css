@@ -1,0 +1,4 @@
+.article_dots_projects > *,
+.article_dots_projects > * {
+  background-color: var(--yellowPink2) !important;
+}
