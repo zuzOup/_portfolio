@@ -1,5 +1,3 @@
-import "./dotsAndLines.css";
-
 function AsideDots() {
   return (
     <div className="aside_dot">

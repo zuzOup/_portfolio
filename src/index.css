@@ -55,13 +55,9 @@ body::-webkit-scrollbar-thumb {
   height: 0.3vw;
   width: 0.3vw;
   border-radius: 100%;
-
-  /* background-color: var(--yellow); */
 }
 .bigDot {
   height: 0.55vw;
   width: 0.55vw;
   border-radius: 100%;
-
-  /* background-color: var(--yellow); */
 }

@@ -1,6 +1,6 @@
 import "./Title.css";
 
-import Carousel from "./Carousel";
+import Carousel from "./Carousel/Carousel";
 
 function Title() {
   function button(e) {
@@ -27,7 +27,7 @@ function Title() {
       </p>
 
       <p className="article_title_spec">
-        I specialise in{" "}
+        I specialise in
         <span id="carousel">
           <Carousel />
         </span>

@@ -1,5 +1,7 @@
 import { PropTypes } from "prop-types";
 
+import "./SectionHeader.css";
+
 function SectionHeader({ title, class_title }) {
   return (
     <span className="article_h2_span">

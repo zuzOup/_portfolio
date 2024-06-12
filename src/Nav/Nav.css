@@ -1,0 +1,148 @@
+header {
+  width: 100%;
+  height: 14vh;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  height: 14vh;
+
+  background-color: var(--beige);
+
+  transition: all 0.2s linear;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &.active {
+    height: 11vh;
+    box-shadow: 0px 4px 27px 0px var(--brown);
+  }
+
+  &.hidden {
+    top: -13vh;
+    box-shadow: none;
+    opacity: 0;
+  }
+
+  &.hidden:hover {
+    opacity: 1;
+    height: 11vh;
+    top: 0;
+    box-shadow: 0px 4px 27px 0px var(--brown);
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style-type: none;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 0.8vw;
+
+    a {
+      all: unset;
+      margin: 0 0.4vw;
+      color: var(--darkGreen);
+      font-family: var(--font);
+      font-weight: 500;
+      font-size: 1vw;
+      transition: text-shadow 0.05s linear;
+    }
+
+    a:hover {
+      cursor: pointer;
+      text-shadow: 0 0 0.02px var(--darkGreen);
+    }
+  }
+}
+
+.nav_dots0,
+.nav_dots1,
+.nav_dots2 {
+  margin: 0 0.05vw;
+  transform: translateY(0.05vw);
+}
+
+.nav_dots0 {
+  background-color: var(--yellowPink3);
+}
+
+.nav_dots1 {
+  background-color: var(--yellowPink2);
+}
+
+.nav_dots2 {
+  background-color: var(--yellowPink1);
+}
+
+#nav_resume {
+  all: unset;
+  color: var(--yellow);
+  font-family: var(--font);
+  font-weight: 700;
+  letter-spacing: 0.08vw;
+  font-size: 1.1vw;
+  padding: 0.3vw 0.5vw;
+  border-radius: 0.7vw;
+  margin-right: 0.5vw;
+  margin-left: 0.1vw;
+  width: 5vw;
+  text-align: center;
+
+  border: var(--yellow) 2px solid;
+
+  &:hover {
+    cursor: pointer;
+    font-size: 1.2vw;
+  }
+}
+
+.homebutton {
+  all: unset;
+  margin-left: 2.5vw;
+  width: 2.15vw;
+  height: 2.2vw;
+  border-radius: 45% 45% 0% 0% / 45% 45% 0% 0%;
+  cursor: pointer;
+
+  div {
+    width: 1.2vw;
+    height: 1.1vw;
+    background-image: linear-gradient(to left, var(--yellow), var(--yellowPink3));
+    opacity: 0.01;
+    transition: all 0.3s;
+
+    transform: translateY(1vw) translateX(0.5vw);
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  svg {
+    all: unset;
+    display: block;
+
+    position: relative;
+
+    top: -1.6vw;
+    left: -0.45vw;
+
+    width: 3vw;
+    height: 3vw;
+  }
+}

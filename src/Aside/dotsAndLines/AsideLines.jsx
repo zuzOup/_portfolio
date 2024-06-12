@@ -1,4 +1,3 @@
-import "./dotsAndLines.css";
 
 function AsideLines() {
   return (
