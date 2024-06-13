@@ -1,0 +1,114 @@
+#accomplishments {
+  padding: 5vh 0;
+
+  .article_dots > * {
+    background-color: var(--yellowPink3) !important;
+  }
+}
+
+#acc-content {
+  padding: 3.5vw 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vw;
+
+  button {
+    all: unset;
+    overflow: hidden;
+    cursor: pointer;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: 16vw;
+    height: 12vw;
+
+    background-image: linear-gradient(to left, var(--yellowPink3), var(--yellowPink1));
+    border-radius: 0.5;
+    padding: 0.1vw;
+    box-sizing: border-box;
+  }
+
+  img {
+    width: 99%;
+    height: 99%;
+    margin: 0.07vw;
+    opacity: 1;
+  }
+
+  /* img.imgCell.loading {
+     opacity: 0;
+     transition: all 0.1s;
+   } */
+
+  .cover_text {
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+    top: -12.5vw;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+
+    transform: translateY(1vw);
+
+    transition: all 400ms;
+    transition-delay: 30ms;
+
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 300ms;
+    }
+
+    h4,
+    h5 {
+      margin: 0;
+
+      font-family: var(--font);
+      text-align: center;
+    }
+
+    h4 {
+      color: var(--pink);
+      font-weight: 700;
+      padding: 4.8vw 1vw 0 1vw;
+
+      font-size: 1vw;
+    }
+
+    h5 {
+      color: var(--beige);
+      font-weight: 600;
+      padding: 0.05vw 1vw 0 1vw;
+
+      font-size: 1.3vw;
+      font-style: italic;
+    }
+  }
+
+  .cover {
+    opacity: 0.98;
+    z-index: 5;
+    position: relative;
+    top: -23.2vw;
+    left: -17.2vw;
+    height: 200%;
+    width: 200%;
+    transform: scale(0.1);
+    border-radius: 50%;
+    background-color: rgba(1, 1, 1, 0.85);
+    background-image: radial-gradient(circle, var(--yellowPink3), var(--yellowPink1));
+
+    box-shadow: 0px 0px 0.5vw 0.1vw var(--yellow);
+    transition: all 750ms ease-in-out;
+
+    &.active {
+      transform: scale(1.55);
+    }
+  }
+}

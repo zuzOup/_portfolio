@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PropTypes } from "prop-types";
 
 const svg = (
   <svg
@@ -26,7 +27,7 @@ l17.707,11.059C39.411,16.016,39.695,17.247,39.109,18.186z"
   </svg>
 );
 
-function HomeLinkSVG() {
+function HomeLinkSVG({ isScroll }) {
   const [active, setActive] = useState("");
 
   const handleEnter = () => {
@@ -52,6 +53,8 @@ function HomeLinkSVG() {
         {svg}
       </a>
     );
+  } else if (isScroll === "top" || window.scrollY < 150) {
+    return <div></div>;
   } else {
     return (
       <button
@@ -70,3 +73,7 @@ function HomeLinkSVG() {
 }
 
 export default HomeLinkSVG;
+
+HomeLinkSVG.propTypes = {
+  isScroll: PropTypes.string,
+};

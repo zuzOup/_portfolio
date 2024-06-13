@@ -46,7 +46,7 @@ function Nav() {
   return (
     <header id="header">
       <nav className={isScroll}>
-        {isScroll !== "top" ? <HomeLinkSVG /> : <div></div>}
+        <HomeLinkSVG isScroll={isScroll} />
         <ul>
           {links.map((item, i) => {
             return (
