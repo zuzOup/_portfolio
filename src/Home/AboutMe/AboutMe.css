@@ -1,86 +1,95 @@
-#aboutMe {
-  height: 90vh;
-  padding: 5vh 0;
-}
-
-.article_dots_aboutMe > *,
-.article_dots_archive > * {
+.article_dots_aboutMe > * {
   background-color: var(--yellowPink3) !important;
 }
 
-.article_aboutMe_outherSpan {
-  display: flex;
-  height: 100%;
-}
+#aboutMe {
+  height: 90vh;
+  padding: 5vh 0;
 
-.article_aboutMe_text {
-  display: flex;
-  flex-direction: column;
-  padding: 1.5vw 5vw 0 2vw;
-}
+  .article_dots > * {
+    background-color: var(--yellowPink3) !important;
+  }
 
-.article_aboutMe_text > p,
-.article_aboutMe_text a,
-.article_aboutMe_text a > span {
-  font-family: var(--font);
-  font-weight: 400;
-  font-size: 1.2vw;
-  color: var(--darkGreen);
-  text-align: justify;
-  line-height: 1.4;
-}
+  .content {
+    display: flex;
+    height: 100%;
+  }
 
-.article_aboutMe_text a {
-  text-decoration: none;
+  .text {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5vw 5vw 0 2vw;
 
-  font-weight: 800;
+    p,
+    a,
+    a > span {
+      font-family: var(--font);
+      font-weight: 400;
+      font-size: 1.2vw;
+      color: var(--darkGreen);
+      text-align: justify;
+      line-height: 1.4;
+    }
 
-  transition: all 0.08s linear;
-}
+    a {
+      text-decoration: none;
 
-.article_aboutMe_text a:hover {
-  color: var(--pink);
-}
+      font-weight: 800;
 
-.article_aboutMe_here {
-  font-weight: 600 !important;
-}
+      transition: all 0.08s linear;
+    }
 
-.article_aboutMe_here:hover {
-  color: var(--yellow) !important;
-}
+    a:hover {
+      color: var(--pink);
+    }
 
-.article_aboutMe_stack {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5vw;
-}
+    a.here {
+      font-weight: 600;
+    }
 
-.article_aboutMe_stack li {
-  width: 3vw;
-  height: 3vw;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+    a.here:hover {
+      color: var(--yellow);
+    }
+  }
 
-.article_aboutMe_photo {
-  padding-top: 2.2vw;
-  height: 100%;
-}
+  .stack {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5vw;
 
-.article_aboutMe_photo > * {
-  /*https://codepen.io/christopherware/pen/OZjZXN*/
+    li {
+      width: 3vw;
+      height: 3vw;
 
-  position: relative;
-  width: 18vw;
-  height: 24vw;
+      display: flex;
+      justify-content: center;
+      align-content: center;
 
-  transition: all 0.15s linear;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .photo {
+    padding-top: 2.2vw;
+    height: 100%;
+
+    /*inspired by https://codepen.io/christopherware/pen/OZjZXN*/
+
+    & > * {
+      position: relative;
+      width: 18vw;
+      height: 24vw;
+
+      transition: all 0.15s linear;
+    }
+  }
 }
 
 .photo_frame {
@@ -90,26 +99,28 @@
   margin: 5vw;
   transform: rotate(3deg);
   z-index: 10;
-}
-.photo_frame > img {
-  margin: auto;
-  height: 95%;
-  width: 95%;
-  border: double 0.4vw var(--pink);
-  transition: all 0.15s linear;
+
+  img {
+    margin: auto;
+    height: 95%;
+    width: 95%;
+    border: double 0.4vw var(--pink);
+    transition: all 0.15s linear;
+  }
+
+  img.active {
+    height: 98% !important;
+    width: 98% !important;
+  }
 }
 
-.photo_active {
-  height: 98% !important;
-  width: 98% !important;
-}
-
-#photo_frame1 {
-  height: 24vw;
+#frame1 {
   top: -29.9vw;
   left: 7vw;
   z-index: 5;
   transform: rotate(12deg);
+
+  border: 2px solid var(--beige);
 
   /*https://10015.io/tools/css-background-pattern-generator*/
   background: calc(0.9 * 0.8125vw) calc(0.9 * 0.8125vw) / calc(2 * 0.8125vw)
@@ -122,15 +133,15 @@
       conic-gradient(at 40% 40%, #0000 75%, var(--beige) 0),
     conic-gradient(from 90deg at 20% 20%, var(--darkGreen) 25%, var(--beige) 0) 0 0 /
       0.8125vw 0.8125vw;
+
+  &.active {
+    transform: rotate(15deg) !important;
+    left: 7.4vw !important;
+    top: -30.1vw !important;
+  }
 }
 
-.frame1_active {
-  transform: rotate(15deg) !important;
-  left: 7.4vw !important;
-  top: -30.1vw !important;
-}
-
-#photo_frame2 {
+#frame2 {
   width: 20vw;
   top: -53.5vw;
   left: 3.5vw;
@@ -149,25 +160,20 @@
   background-size: 1vw 1vw;
   background-position: 0 0, calc(1vw / 2) calc(1vw / 2);
   background-color: var(--beige);
+
+  &.active {
+    transform: rotate(-15deg) !important;
+    left: 3.1vw !important;
+    top: -53.7vw;
+  }
 }
 
-.frame2_active {
-  transform: rotate(-15deg) !important;
-  left: 3.1vw !important;
-  top: -53.7vw;
-}
-
-.cursor_sparkle {
-  position: absolute;
-  width: 15px;
-  height: 15px;
+#sparkle {
+  position: absolute !important;
+  width: 15px !important;
+  height: 15px !important;
 
   z-index: 15;
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-image: url(./sparkle.svg);
 
   transition: none;
 }

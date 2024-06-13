@@ -61,3 +61,7 @@ body::-webkit-scrollbar-thumb {
   width: 0.55vw;
   border-radius: 100%;
 }
+
+.article_dots_archive > * {
+  background-color: var(--yellowPink3) !important;
+}

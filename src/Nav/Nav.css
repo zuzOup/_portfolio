@@ -38,10 +38,6 @@ nav {
     box-shadow: 0px 4px 27px 0px var(--brown);
   }
 
-  &.top > .homebutton {
-    opacity: 0 !important;
-  }
-
   ul {
     display: flex;
     justify-content: center;

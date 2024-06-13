@@ -8,11 +8,11 @@ import AboutMe_photo from "./AboutMe_photo";
 function AboutMe() {
   return (
     <section id="aboutMe">
-      <SectionHeader title={"About Me"} class_title={"aboutMe"} />
-      <span className="article_aboutMe_outherSpan">
+      <SectionHeader title={"About Me"} />
+      <div className="content">
         <AboutMe_text />
         <AboutMe_photo />
-      </span>
+      </div>
     </section>
   );
 }

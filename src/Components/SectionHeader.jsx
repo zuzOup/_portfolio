@@ -2,15 +2,15 @@ import { PropTypes } from "prop-types";
 
 import "./SectionHeader.css";
 
-function SectionHeader({ title, class_title }) {
+function SectionHeader({ title }) {
   return (
     <div className="sectionHeader">
-      <div className={`article_dots article_dots_${class_title}`}>
+      <div className="article_dots">
         <div className="smallDot"></div>
         <div className="bigDot"></div>
       </div>
       <h2>{title}</h2>
-      <div className={`article_dots article_dots_${class_title}`}>
+      <div className="article_dots">
         <div className="bigDot"></div>
         <div className="smallDot"></div>
       </div>
@@ -20,7 +20,6 @@ function SectionHeader({ title, class_title }) {
 
 SectionHeader.propTypes = {
   title: PropTypes.string,
-  class_title: PropTypes.string,
 };
 
 export default SectionHeader;

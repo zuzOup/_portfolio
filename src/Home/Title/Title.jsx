@@ -25,14 +25,12 @@ function Title() {
         phases of my career path. I&apos;m making progress on a daily basis as I&apos;m
         highly motivated to constantly develop my skills and grow professionally.
       </p>
-
       <div id="carousel">
         <p className="p-carousel">I specialise in</p>
         <div>
           <Carousel />
         </div>
       </div>
-
       <a href="mailto:zuzanaoupicka@gmail.com" target="_blank" onMouseLeave={button}>
         Get in touch!
       </a>

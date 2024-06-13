@@ -4,29 +4,35 @@ import { useState } from "react";
 import Sparkle from "./Sparkle";
 
 function AboutMe_photo() {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState("");
+
+  const leaveHandle = (e) => {
+    if (
+      e.relatedTarget.id !== "sparkle" &&
+      e.relatedTarget.tagName !== "svg" &&
+      e.relatedTarget.tagName !== "path"
+    )
+      setIsActive("");
+  };
 
   return (
-    <span className="article_aboutMe_photo">
-      <span className="photo_frame">
-        
+    <div className="photo">
+      <div className="photo_frame">
         <img
           src="/photo.jpg"
           alt="Profile picture"
           id="profile_photo"
-          className={isActive ? "photo_active" : "false"}
+          className={isActive}
           onMouseEnter={() => {
-            setIsActive(true);
+            setIsActive("active");
           }}
-          onMouseLeave={() => {
-            setIsActive(false);
-          }}
+          onMouseLeave={leaveHandle}
         />
-      </span>
-      <div id="photo_frame1" className={isActive ? "frame1_active" : ""}></div>
-      <div id="photo_frame2" className={isActive ? "frame2_active" : ""}></div>
-      {isActive && <Sparkle />}
-    </span>
+      </div>
+      <div id="frame1" className={isActive}></div>
+      <div id="frame2" className={isActive}></div>
+      {isActive === "active" && <Sparkle />}
+    </div>
   );
 }
 
