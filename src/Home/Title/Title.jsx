@@ -27,9 +27,8 @@ function Title() {
       </p>
       <div id="carousel">
         <p className="p-carousel">I specialise in</p>
-        <div>
-          <Carousel />
-        </div>
+
+        <Carousel />
       </div>
       <a href="mailto:zuzanaoupicka@gmail.com" target="_blank" onMouseLeave={button}>
         Get in touch!

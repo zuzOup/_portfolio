@@ -149,20 +149,25 @@
   align-content: center;
   justify-content: center;
   transform: translateX(1.5vw);
+  padding-bottom: 3vh;
+  flex-wrap: wrap;
+  height: 3vw;
 
   .p-carousel {
     width: fit-content;
     margin: 0;
     font-size: 1.3vw !important;
+    padding-bottom: 0;
   }
 
   & > div {
-    transform: translateX(0.5vw) translateY(0.15vw);
+    transform: translateX(0.5vw) translateY(-0.1vw);
     overflow-y: hidden;
     height: 1.8vw;
     min-width: 7vw;
     letter-spacing: 1px;
     font-weight: 700;
+    font-size: 1.4vw;
 
     /*https://html-css-js.com/css/generator/text-shadow/*/
     text-shadow: 0.5px 0.5px 0 var(--brown), 0.5px -0.5px 0 var(--brown),
