@@ -1,24 +1,24 @@
 import "./Title.css";
 
-import Carousel from "./Carousel/Carousel";
+import Carousel from "./Carousel";
 
 function Title() {
   function button(e) {
-    e.target.classList.add("article_title_link_out");
+    e.target.classList.add("animationEnd");
     e.target.addEventListener(
       "animationend",
       () => {
-        e.target.classList.remove("article_title_link_out");
+        e.target.classList.remove("animationEnd");
       },
       { once: true }
     );
   }
 
   return (
-    <section id="article_title">
+    <section id="title">
       <h3>Hi, my name is</h3>
       <h1>
-        Zuzana Oupická<span className="article_title_dotOveri"></span>
+        Zuzana Oupická<span className="dot_i"></span>
       </h1>
       <p>
         I&apos;m a <b>front-end developer</b> located in Canada, exploring the initial
@@ -26,19 +26,14 @@ function Title() {
         highly motivated to constantly develop my skills and grow professionally.
       </p>
 
-      <p className="article_title_spec">
-        I specialise in
-        <span id="carousel">
+      <div id="carousel">
+        <p className="p-carousel">I specialise in</p>
+        <div>
           <Carousel />
-        </span>
-      </p>
+        </div>
+      </div>
 
-      <a
-        id="article_title_link"
-        href="mailto:zuzanaoupicka@gmail.com"
-        target="_blank"
-        onMouseLeave={button}
-      >
+      <a href="mailto:zuzanaoupicka@gmail.com" target="_blank" onMouseLeave={button}>
         Get in touch!
       </a>
     </section>

@@ -6,13 +6,13 @@ import HomeLinkSVG from "./HomeLinkSVG";
 import "./Nav.css";
 
 const links = [
-  { href: "../#article_aboutMe", text: "About me" },
-  { href: "../#article_projects", text: "Projects" },
-  { href: "../#article_contact", text: "Contact" },
+  { href: "../#aboutMe", text: "About me" },
+  { href: "../#projects", text: "Projects" },
+  { href: "../#contact", text: "Contact" },
 ];
 
 function Nav() {
-  const [isScroll, setIsScroll] = useState("");
+  const [isScroll, setIsScroll] = useState("top");
 
   const timerId = useRef();
 
@@ -26,7 +26,7 @@ function Nav() {
       if (scrollDown && this.scrollY > 100) {
         setIsScroll("hidden");
       } else if (this.scrollY === 0) {
-        setIsScroll("");
+        setIsScroll("top");
       } else {
         setIsScroll("active");
         timerId.current = setTimeout(() => {

@@ -4,17 +4,17 @@ import "./SectionHeader.css";
 
 function SectionHeader({ title, class_title }) {
   return (
-    <span className="article_h2_span">
+    <div className="sectionHeader">
       <div className={`article_dots article_dots_${class_title}`}>
-        <span className="smallDot"></span>
-        <span className="bigDot"></span>
+        <div className="smallDot"></div>
+        <div className="bigDot"></div>
       </div>
       <h2>{title}</h2>
       <div className={`article_dots article_dots_${class_title}`}>
-        <span className="bigDot"></span>
-        <span className="smallDot"></span>
+        <div className="bigDot"></div>
+        <div className="smallDot"></div>
       </div>
-    </span>
+    </div>
   );
 }
 

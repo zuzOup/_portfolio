@@ -30,8 +30,4 @@ function Carousel() {
   );
 }
 
-{
-  /* <span className="article_title_span_middle article_title_span_3">HTML</span>; */
-}
-
 export default Carousel;

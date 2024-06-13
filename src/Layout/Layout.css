@@ -33,26 +33,3 @@ article * h2 {
   color: var(--darkGreen);
   padding: 0 2vw;
 }
-
-.article_h2_span {
-  display: flex;
-  justify-content: center;
-}
-
-.article_dots {
-  display: flex;
-  align-items: center;
-}
-
-.article_dots > .bigDot {
-  width: 0.68vw !important;
-  height: 0.68vw !important;
-  transform: translateY(0.2vw);
-}
-
-.article_dots > .smallDot {
-  width: 0.45vw !important;
-  height: 0.45vw !important;
-  margin: 0 0.35vw;
-  transform: translateY(0.22vw);
-}

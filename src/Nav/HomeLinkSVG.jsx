@@ -40,34 +40,34 @@ function HomeLinkSVG() {
   };
 
   //TODO: dev: "5273/" build: "app/"
-  switch (window.location.href.split("5173/")[1]) {
-    case "accomplishments":
-      return (
-        <a
-          href="../"
-          className="homebutton"
-          target="_self"
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleLeave}
-        >
-          <div className={active}></div>
-          {svg}
-        </a>
-      );
-    case "":
-      return (
-        <button
-          className="homebutton"
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleLeave}
-          onClick={() => {
-            scrollTo(0, 0);
-          }}
-        >
-          <div className={active}></div>
-          {svg}
-        </button>
-      );
+
+  if (window.location.href.split("5173/")[1] === "accomplishments") {
+    return (
+      <a
+        href="../"
+        className="homebutton"
+        target="_self"
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+      >
+        <div className={active}></div>
+        {svg}
+      </a>
+    );
+  } else {
+    return (
+      <button
+        className="homebutton"
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+        onClick={() => {
+          scrollTo(0, 0);
+        }}
+      >
+        <div className={active}></div>
+        {svg}
+      </button>
+    );
   }
 }
 
