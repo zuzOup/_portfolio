@@ -5,12 +5,12 @@
   --brown: #ad9462;
   --darkGreen: #005249;
 
-  --yellow: #ffc501;
-  --yellowPink1: #ffbe51;
-  --yellowPink2: #ffbc84;
-  --yellowPink3: #ffc2b1;
-  --yellowPink4: #fda190;
-  --pink: #fd8a7d;
+  --yellow: rgb(255, 197, 1);
+  --yellowPink1: rgb(255, 190, 81);
+  --yellowPink2: rgb(255, 188, 132);
+  --yellowPink3: rgb(255, 194, 177);
+  --yellowPink4: rgb(253, 161, 144);
+  --pink: rgb(253, 138, 125);
 
   --font: "Urbanist", sans-serif;
 }

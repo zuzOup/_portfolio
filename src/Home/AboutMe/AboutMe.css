@@ -1,7 +1,3 @@
-.article_dots_aboutMe > * {
-  background-color: var(--yellowPink3) !important;
-}
-
 #aboutMe {
   height: 90vh;
   padding: 5vh 0;
