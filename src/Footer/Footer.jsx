@@ -14,6 +14,7 @@ function Footer() {
         </a>
       </p>
       <p>
+        {/* TODO: add link to my github */}
         ⁺₊✧ &nbsp; Made with ♡ by <b>Zuzana Oupická</b> &nbsp; ✧₊⁺
       </p>
     </footer>
