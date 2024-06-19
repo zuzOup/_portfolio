@@ -27,18 +27,3 @@ dist-ssr
 .firebase
 
 old
-
-
-
-
-_extra
-_extra/
-.firebase
-.firebase/
-.firebase/*
-.eslintrc
-.eslintrc.cjs
-.firebaserc
-firebase.json
-
-vite.config.js
