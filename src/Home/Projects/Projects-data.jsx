@@ -88,52 +88,6 @@ export const projects_square = [
   },
 ];
 
-// export async function fetchData(setter) {
-//   await fetch("https://api.github.com/users/ZuzOup/repos")
-//     .then((res) => res.json())
-//     .then((data) => {
-//       console.log(modData(data));
-//       setter(modData(data));
-//     })
-//     .catch((error) => console.log(error));
-// }
-
-// function modData(data) {
-//   const name = (name) => {
-//     let name1 = name
-//       .split("-")
-//       .map((x) => {
-//         return x[0] !== "_"
-//           ? x.charAt(0).toUpperCase() + x.slice(1)
-//           : x.charAt(1).toUpperCase() + x.slice(2);
-//       })
-//       .join(" ");
-
-//     if (name1.includes("Old")) {
-//       const name2 = name1.split("Old");
-//       name1 = name2[0] + "(Old ver.)";
-//     }
-
-//     return name1;
-//   };
-
-//   const data1 = data.map((x) => {
-//     return {
-//       name: name(x.name),
-//       text: x.description || "",
-//       github: x.html_url,
-//       web: x.homepage,
-//       stack: x.language,
-//     };
-//   });
-
-//   const data2 = data1.filter(
-//     (x) => !["Blog", "Text Editor", "Portfolio", "ZuzOup.github.io"].includes(x.name)
-//   );
-
-//   return data2;
-// }
-
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------
