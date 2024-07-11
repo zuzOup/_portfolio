@@ -1,28 +1,31 @@
-import { PropTypes } from "prop-types";
+import { useEffect, useState } from "react";
+
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import Nav from "../Nav/Nav";
 import Aside from "../Aside/Aside";
 import Home from "../Home/Home";
-import Accomplishments from "../Accomplishments/Accomplishments";
 import Footer from "../Footer/Footer";
 
 import "./Layout.css";
 
 function Layout() {
+  const [render, setRender] = useState(<div></div>);
+
+  useEffect(() => {
+    setRender(<Home setRender={setRender} />);
+  }, []);
+
   return (
     <>
-      <Nav />
+      <Nav render={render} setRender={setRender} />
       <main id="main">
         <Aside left={true} />
         <article>
           <BrowserRouter>
             <Switch>
               <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/accomplishments">
-                <Accomplishments />
+                {render}
               </Route>
               <Route render={() => <Redirect to={{ pathname: "/" }} />} />
             </Switch>
@@ -34,9 +37,5 @@ function Layout() {
     </>
   );
 }
-
-Layout.propTypes = {
-  acc: PropTypes.bool,
-};
 
 export default Layout;

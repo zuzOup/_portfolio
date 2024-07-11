@@ -18,19 +18,121 @@ export const projects_big = [
   },
 ];
 
-export const project_squares = [
+export const projects_square = [
   {
-    name: "",
-    text: "",
-    github: "",
-    web: "",
-    stack: "",
+    name: "Advent Of Code",
+    text: `Solutions to the <a target="_blank" href="https://adventofcode.com">Advent Of Code</a> puzzles (2022, 2023)`,
+    github: "https://github.com/zuzOup/Advent-of-code",
+    stack: ["JS"],
   },
-  {},
-  {},
-  {},
-  {},
+  {
+    name: "The Odin Project",
+    text: `Completed projects from <a target="_blank" href="https://www.theodinproject.com/">The Odin Project</a> (Full Stack JavaScript Path)`,
+    github: "https://github.com/zuzOup/The-Odin-Project",
+    web: "https://zuzoup.github.io/The-Odin-Project/",
+    stack: ["HTML", "CSS", "JS"],
+  },
+  {
+    name: "Wes Bos Projects",
+    text: `Finished projects from <a target="_blank" href="https://wesbos.com/courses/">Wes Bos' courses</a>`,
+    github: "https://github.com/zuzOup/Wes-Bos-Projects",
+    web: "https://zuzoup.github.io/Wes-Bos-Projects/",
+    stack: ["HTML", "CSS", "JS"],
+  },
+  {
+    name: "Codewars",
+    text: `Completed katas at <a target="_blank" href="https://www.codewars.com/">Codewars</a>`,
+    web: "https://www.codewars.com/users/zuzOup/completed_solutions",
+    stack: ["JS"],
+  },
+  {
+    name: "Codepens",
+    text: `Pens at <a target="_blank" href="https://codepen.io/">Codepen</a>`,
+    web: "https://codepen.io/zuzOup/pens/",
+    stack: ["HTML", "CSS", "JS"],
+  },
+  {
+    name: "Codecademy",
+    text: `Projects I have completed for the Front-End Engineer career path on Codecademy`,
+    github: "https://github.com/zuzOup/Codecademy",
+    web: "https://zuzoup.github.io/Codecademy/",
+    stack: ["HTML", "CSS", "JS"],
+  },
+  {
+    name: "Blog (Old ver.)",
+    text: "Personal travel blog/journal. Old ver.",
+    github: "https://github.com/zuzOup/_blog-old-version",
+    web: "https://zuzoup.github.io/_blog-old-version/",
+    stack: ["HTML", "CSS", "JS"],
+  },
+  {
+    name: "Text Editor (Old ver.)",
+    text: "Old version of text editor for my blog (JS)",
+    github: "https://github.com/zuzOup/_text-editor-old",
+    web: "https://zuzoup.github.io/_text-editor-old/",
+    stack: ["HTML", "CSS", "JS"],
+  },
+  {
+    name: "Weather Cards",
+    text: "CSS project - animated weather/forecast cards",
+    github: "https://github.com/zuzOup/_weather-cards",
+    web: "https://zuzoup.github.io/_weather-cards/",
+    stack: ["HTML", "CSS", "JS"],
+  },
+  {
+    name: "Wedding Gallery",
+    text: "CSS + JSS photo gallery",
+    github: "https://github.com/zuzOup/_wedding-gallery",
+    web: "https://zuzoup.github.io/_wedding-gallery/",
+    stack: ["HTML", "CSS", "JS"],
+  },
 ];
+
+// export async function fetchData(setter) {
+//   await fetch("https://api.github.com/users/ZuzOup/repos")
+//     .then((res) => res.json())
+//     .then((data) => {
+//       console.log(modData(data));
+//       setter(modData(data));
+//     })
+//     .catch((error) => console.log(error));
+// }
+
+// function modData(data) {
+//   const name = (name) => {
+//     let name1 = name
+//       .split("-")
+//       .map((x) => {
+//         return x[0] !== "_"
+//           ? x.charAt(0).toUpperCase() + x.slice(1)
+//           : x.charAt(1).toUpperCase() + x.slice(2);
+//       })
+//       .join(" ");
+
+//     if (name1.includes("Old")) {
+//       const name2 = name1.split("Old");
+//       name1 = name2[0] + "(Old ver.)";
+//     }
+
+//     return name1;
+//   };
+
+//   const data1 = data.map((x) => {
+//     return {
+//       name: name(x.name),
+//       text: x.description || "",
+//       github: x.html_url,
+//       web: x.homepage,
+//       stack: x.language,
+//     };
+//   });
+
+//   const data2 = data1.filter(
+//     (x) => !["Blog", "Text Editor", "Portfolio", "ZuzOup.github.io"].includes(x.name)
+//   );
+
+//   return data2;
+// }
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------

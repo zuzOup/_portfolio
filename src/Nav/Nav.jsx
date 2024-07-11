@@ -1,7 +1,8 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { PropTypes } from "prop-types";
 
 import HomeLinkSVG from "./HomeLinkSVG";
+import Home from "../Home/Home";
 
 import "./Nav.css";
 
@@ -11,27 +12,15 @@ const links = [
   { href: "../#contact", text: "Contact" },
 ];
 
-function Nav() {
+function Nav({ render, setRender }) {
   const [isScroll, setIsScroll] = useState("top");
-
-  const timerId = useRef();
 
   useEffect(() => {
     function scroll() {
-      if (timerId.current) clearTimeout(timerId.current);
-
-      const scrollDown = this.oldScroll < this.scrollY;
-      this.oldScroll = this.scrollY;
-
-      if (scrollDown && this.scrollY > 100) {
+      if (this.scrollY > 100) {
         setIsScroll("hidden");
-      } else if (this.scrollY === 0) {
+      } else if (this.scrollY <= 100) {
         setIsScroll("top");
-      } else {
-        setIsScroll("active");
-        timerId.current = setTimeout(() => {
-          setIsScroll("hidden");
-        }, 2000);
       }
     }
 
@@ -39,14 +28,30 @@ function Nav() {
 
     return () => {
       window.removeEventListener("scroll", scroll);
-      clearTimeout(timerId.current);
     };
   }, []);
+
+  const HomeLinkSVG_return = () => {
+    setRender(<Home setRender={setRender} />);
+  };
+
+  const HomeLinkSVG_scroll = () => {
+    scrollTo(0, 0);
+  };
 
   return (
     <header id="header">
       <nav className={isScroll}>
-        <HomeLinkSVG isScroll={isScroll} />
+        {isScroll === "top" &&
+          !(
+            render.type.name === "Accomplishments" || render.type.name === "Project_List"
+          ) && <div></div>}
+        {isScroll === "hidden" && <HomeLinkSVG click={HomeLinkSVG_scroll} />}
+        {(render.type.name === "Accomplishments" ||
+          render.type.name === "Project_List") && (
+          <HomeLinkSVG click={HomeLinkSVG_return} />
+        )}
+
         <ul>
           {links.map((item, i) => {
             return (
@@ -72,4 +77,4 @@ function Nav() {
 
 export default Nav;
 
-Nav.propTypes = { acc: PropTypes.bool };
+Nav.propTypes = { render: PropTypes.object, setRender: PropTypes.func };

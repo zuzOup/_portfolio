@@ -1,9 +1,18 @@
+import { PropTypes } from "prop-types";
+
+import Accomplishments from "../../Accomplishments/Accomplishments";
+
 import { stack_svg } from "./stack_SVG";
 
 const stack = ["html", "css", "js", "react", "npm", "tailwind", "firebase"];
 // , "html", "css", "js", "ts","react", "npm","figma", "mongo", "bootstrap", "tailwind","node","mui","styled","sass","graphQL"
 
-function AboutMe_text() {
+function AboutMe_text({ setRender }) {
+  const buttonHandle = () => {
+    scrollTo(0, 0);
+    setRender(<Accomplishments setRender={setRender} />);
+  };
+
   return (
     <div className="text">
       <p>
@@ -22,9 +31,6 @@ function AboutMe_text() {
         <a href="https://advancedreact.com/" target="_blank">
           React
         </a>
-        {/* TODO: predelat!!!!!! */}
-        &nbsp; programs, a<i>samsing samsing</i> course by <i>někdo smart</i> on Udemy{" "}
-        <i>(asi)</i>
         ,&nbsp;
         <a
           href="https://www.codecademy.com/learn/paths/front-end-engineer-career-path"
@@ -39,9 +45,9 @@ function AboutMe_text() {
           The Odin Project
         </a>
         . Certificates of completion can be found&nbsp;
-        <a href="./accomplishments" target="_self" className="here">
+        <button onClick={buttonHandle} className="here">
           here
-        </a>
+        </button>
         .
       </p>
       <p>Here are a few technologies I&apos;ve been working with recently:</p>
@@ -55,3 +61,7 @@ function AboutMe_text() {
 }
 
 export default AboutMe_text;
+
+AboutMe_text.propTypes = {
+  setRender: PropTypes.func,
+};

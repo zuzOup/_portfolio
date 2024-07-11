@@ -27,53 +27,28 @@ l17.707,11.059C39.411,16.016,39.695,17.247,39.109,18.186z"
   </svg>
 );
 
-function HomeLinkSVG({ isScroll }) {
+function HomeLinkSVG({ click }) {
   const [active, setActive] = useState("");
 
-  const handleEnter = () => {
-    setActive("active");
-  };
-
-  const handleLeave = () => {
-    setActive("");
-  };
-
-  //TODO: dev: "5273/" build: "app/"
-
-  if (window.location.href.split("5173/")[1] === "accomplishments") {
-    return (
-      <a
-        href="../"
-        className="homebutton"
-        target="_self"
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
-      >
-        <div className={active}></div>
-        {svg}
-      </a>
-    );
-  } else if (isScroll === "top" || window.scrollY < 150) {
-    return <div></div>;
-  } else {
-    return (
-      <button
-        className="homebutton"
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
-        onClick={() => {
-          scrollTo(0, 0);
-        }}
-      >
-        <div className={active}></div>
-        {svg}
-      </button>
-    );
-  }
+  return (
+    <button
+      className="homebutton"
+      onMouseEnter={() => {
+        setActive("active");
+      }}
+      onMouseLeave={() => {
+        setActive("");
+      }}
+      onClick={click}
+    >
+      <div className={active}></div>
+      {svg}
+    </button>
+  );
 }
 
 export default HomeLinkSVG;
 
 HomeLinkSVG.propTypes = {
-  isScroll: PropTypes.string,
+  click: PropTypes.func,
 };

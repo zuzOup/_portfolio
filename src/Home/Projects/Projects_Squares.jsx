@@ -1,13 +1,36 @@
 import PropTypes from "prop-types";
+import parse from "html-react-parser";
+
+import { svg_git, svg_web } from "./Projects-data";
 
 function Projects_Squares({ data }) {
-  //   const name = data.name || "";
-  //   const text = data.text || "";
-  //   const stack = data.stack || [];
-  //   const github = data.github || "https://github.com/zuzOup";
-  //   const web = data.web || "https://github.com/zuzOup";
+  const name = data.name;
+  const text = data.text;
+  const github = data.github;
+  const web = data.web;
+  // const stack = data.stack || [];
 
-  return <div>Projects_Squares</div>;
+  console.log(github);
+  return (
+    <div>
+      <div>
+        <h3>{name}</h3>
+        <p>{parse(text)}</p>
+        <span>
+          {github && (
+            <a target="_blank" href={github}>
+              {svg_git()}
+            </a>
+          )}
+          {web && (
+            <a target="_blank" href={web}>
+              {svg_web()}
+            </a>
+          )}
+        </span>
+      </div>
+    </div>
+  );
 }
 
 export default Projects_Squares;
