@@ -1,27 +1,29 @@
 import { useState } from "react";
-import { PropTypes } from "prop-types";
+
+import { useHistory } from "react-router-dom";
 
 import SectionHeader from "../../Components/SectionHeader";
 
 import Projects_Big from "./Projects_Big";
 import Projects_Squares from "./Projects_Squares";
 
-import Project_List from "../../Project_List/Project_list";
-
 import { projects_big, projects_square } from "./Projects-data";
 
 import "./Projects.css";
 
-function Projects({ setRender }) {
+function Projects() {
   const [show, setShow] = useState(4);
+
+  const history = useHistory();
 
   const showMore = () => {
     setShow(projects_square.length);
   };
 
   const openList = () => {
-    scrollTo(0, 0);
-    setRender(<Project_List setRender={setRender} />);
+    console.log(1);
+    scrollTo(0, 55);
+    history.push("/project_list");
   };
 
   return (
@@ -49,7 +51,3 @@ function Projects({ setRender }) {
   );
 }
 export default Projects;
-
-Projects.propTypes = {
-  setRender: PropTypes.func,
-};

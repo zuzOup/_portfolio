@@ -16,7 +16,7 @@ const conditions = (str) => {
     .filter((x, i) => i % 2 === 0)
     .map((x, i) => {
       return {
-        name: x,
+        name: x.split("[")[1].split("]")[0],
         repo: `https://github.com/zuzOup/The-Odin-Project/tree/main/${x
           .split(" ")
           .join("-")}/`,

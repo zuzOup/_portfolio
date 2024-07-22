@@ -57,11 +57,11 @@ aside {
     border-radius: 100%;
     justify-content: center;
     align-items: center;
-  }
 
-  svg {
-    height: 95%;
-    width: 95%;
+    svg {
+      height: 98%;
+      width: 98%;
+    }
   }
 }
 

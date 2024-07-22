@@ -5,7 +5,7 @@ export const projects_big = [
     stack: ["React", "Firebase"],
     github: "https://github.com/zuzOup/blog",
     web: "https://na-rok-torontakama.web.app/",
-    img: "/public/projects/blog.png",
+    img: "/projects/blog.png",
   },
 
   {
@@ -14,7 +14,7 @@ export const projects_big = [
     stack: ["React", "Firebase"],
     github: "https://github.com/zuzOup/text-editor",
     web: "https://na-rok-torontakama-editor.netlify.app/",
-    img: "/public/projects/editor.png",
+    img: "/projects/editor.png",
   },
 ];
 

@@ -1,18 +1,14 @@
 import { PropTypes } from "prop-types";
 
-import Accomplishments from "../../Accomplishments/Accomplishments";
+import { useHistory } from "react-router-dom";
 
 import { stack_svg } from "./stack_SVG";
 
 const stack = ["html", "css", "js", "react", "npm", "tailwind", "firebase"];
 // , "html", "css", "js", "ts","react", "npm","figma", "mongo", "bootstrap", "tailwind","node","mui","styled","sass","graphQL"
 
-function AboutMe_text({ setRender }) {
-  const buttonHandle = () => {
-    scrollTo(0, 0);
-    setRender(<Accomplishments setRender={setRender} />);
-  };
-
+function AboutMe_text() {
+  const history = useHistory();
   return (
     <div className="text">
       <p>
@@ -45,7 +41,13 @@ function AboutMe_text({ setRender }) {
           The Odin Project
         </a>
         . Certificates of completion can be found&nbsp;
-        <button onClick={buttonHandle} className="here">
+        <button
+          onClick={() => {
+            scrollTo(0, 55);
+            history.push("/accomplishments");
+          }}
+          className="here"
+        >
           here
         </button>
         .

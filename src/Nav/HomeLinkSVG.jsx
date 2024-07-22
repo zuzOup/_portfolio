@@ -27,12 +27,12 @@ l17.707,11.059C39.411,16.016,39.695,17.247,39.109,18.186z"
   </svg>
 );
 
-function HomeLinkSVG({ click }) {
+function HomeLinkSVG({ click, isScroll }) {
   const [active, setActive] = useState("");
 
   return (
     <button
-      className="homebutton"
+      className={`homebutton ${isScroll}`}
       onMouseEnter={() => {
         setActive("active");
       }}
@@ -51,4 +51,5 @@ export default HomeLinkSVG;
 
 HomeLinkSVG.propTypes = {
   click: PropTypes.func,
+  isScroll: PropTypes.string,
 };

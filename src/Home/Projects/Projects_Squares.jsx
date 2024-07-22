@@ -9,8 +9,7 @@ function Projects_Squares({ data }) {
   const github = data.github;
   const web = data.web;
   // const stack = data.stack || [];
-
-  console.log(github);
+  
   return (
     <div>
       <div>

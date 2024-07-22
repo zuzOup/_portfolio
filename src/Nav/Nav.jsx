@@ -1,25 +1,30 @@
 import { useEffect, useState } from "react";
-import { PropTypes } from "prop-types";
+
+import { useLocation, useHistory } from "react-router-dom";
 
 import HomeLinkSVG from "./HomeLinkSVG";
-import Home from "../Home/Home";
 
 import "./Nav.css";
 
 const links = [
-  { href: "../#aboutMe", text: "About me" },
-  { href: "../#projects", text: "Projects" },
-  { href: "../#contact", text: "Contact" },
+  { id: "aboutMe", text: "About me" },
+  { id: "projects", text: "Projects" },
+  { id: "contact", text: "Contact" },
 ];
 
-function Nav({ render, setRender }) {
+function Nav() {
   const [isScroll, setIsScroll] = useState("top");
+  const [scrollID, setScrollID] = useState("");
+
+  const location = useLocation();
+
+  const history = useHistory();
 
   useEffect(() => {
     function scroll() {
-      if (this.scrollY > 100) {
+      if (this.scrollY > 50) {
         setIsScroll("hidden");
-      } else if (this.scrollY <= 100) {
+      } else if (this.scrollY <= 50) {
         setIsScroll("top");
       }
     }
@@ -31,35 +36,54 @@ function Nav({ render, setRender }) {
     };
   }, []);
 
-  const HomeLinkSVG_return = () => {
-    setRender(<Home setRender={setRender} />);
-  };
+  /*homebutton*/
 
-  const HomeLinkSVG_scroll = () => {
+  const link_scroll = () => {
     scrollTo(0, 0);
   };
+
+  const link_archive = () => {
+    history.push("/");
+  };
+
+  /*buttons */
+  const scroll = (id) => {
+    if (location.pathname !== "/") {
+      history.push("/");
+      setScrollID(id);
+    } else {
+      const el = document.getElementById(id);
+      el.scrollIntoView();
+    }
+  };
+
+  useEffect(() => {
+    const el = document.getElementById(scrollID);
+    if (el) {
+      el.scrollIntoView();
+    }
+  }, [location]); //eslint-disable-line
 
   return (
     <header id="header">
       <nav className={isScroll}>
-        {isScroll === "top" &&
-          !(
-            render.type.name === "Accomplishments" || render.type.name === "Project_List"
-          ) && <div></div>}
-        {isScroll === "hidden" && <HomeLinkSVG click={HomeLinkSVG_scroll} />}
-        {(render.type.name === "Accomplishments" ||
-          render.type.name === "Project_List") && (
-          <HomeLinkSVG click={HomeLinkSVG_return} />
+        {location.pathname === "/" && (
+          <HomeLinkSVG click={link_scroll} isScroll={isScroll} />
         )}
+        {location.pathname !== "/" && <HomeLinkSVG click={link_archive} />}
 
         <ul>
           {links.map((item, i) => {
             return (
               <li key={i}>
                 <div className={`smallDot nav_dots${i}`}></div>
-                <a href={item.href} target="_self">
+                <button
+                  onClick={() => {
+                    scroll(item.id);
+                  }}
+                >
                   {item.text}
-                </a>
+                </button>
                 <div className={`smallDot nav_dots${i}`}></div>
               </li>
             );
@@ -76,5 +100,3 @@ function Nav({ render, setRender }) {
 }
 
 export default Nav;
-
-Nav.propTypes = { render: PropTypes.object, setRender: PropTypes.func };
