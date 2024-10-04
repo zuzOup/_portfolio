@@ -1,19 +1,9 @@
 import "./Title.css";
 
 import Carousel from "./Carousel";
+import GetInTouch from "../../Components/GetInTouch";
 
 function Title() {
-  function button(e) {
-    e.target.classList.add("animationEnd");
-    e.target.addEventListener(
-      "animationend",
-      () => {
-        e.target.classList.remove("animationEnd");
-      },
-      { once: true }
-    );
-  }
-
   return (
     <section id="title">
       <h3>Hi, my name is</h3>
@@ -27,12 +17,9 @@ function Title() {
       </p>
       <div id="carousel">
         <p className="p-carousel">I specialise in</p>
-
         <Carousel />
       </div>
-      <a href="mailto:zuzanaoupicka@gmail.com" target="_blank" onMouseLeave={button}>
-        Get in touch!
-      </a>
+      <GetInTouch size={"big"} />
     </section>
   );
 }

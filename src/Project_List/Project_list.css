@@ -33,6 +33,11 @@
     grid-template-columns: 15vw auto 30px 30px;
     column-gap: 10px;
     border-bottom: 1px solid var(--yellowPink2);
+
+    div {
+      font-family: var(--font);
+    }
+
     a {
       all: unset;
       width: 30px;

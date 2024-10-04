@@ -27,16 +27,19 @@
     height: 12vw;
 
     background-image: linear-gradient(to left, var(--yellowPink3), var(--yellowPink1));
-    border-radius: 0.5;
+    border-radius: 3px;
     padding: 0.1vw;
     box-sizing: border-box;
+    box-shadow: 1px 1px 5px 1px #00000015;
   }
 
-  img {
+  img,
+  svg {
     width: 99%;
     height: 99%;
     margin: 0.07vw;
     opacity: 1;
+    border-radius: 3px;
   }
 
   /* img.imgCell.loading {
@@ -48,7 +51,7 @@
     cursor: pointer;
     z-index: 10;
     position: relative;
-    top: -12.5vw;
+    top: -13vw;
     left: 0;
     height: 100%;
     width: 100%;

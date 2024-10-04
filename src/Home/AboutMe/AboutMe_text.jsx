@@ -43,7 +43,7 @@ function AboutMe_text() {
         . Certificates of completion can be found&nbsp;
         <button
           onClick={() => {
-            scrollTo(0, 55);
+            scrollTo(0, 0);
             history.push("/accomplishments");
           }}
           className="here"

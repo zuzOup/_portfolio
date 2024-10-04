@@ -1,0 +1,106 @@
+.getInTouch {
+  font-size: 0.9vw;
+  font-weight: 600;
+  width: fit-content;
+  border: var(--darkGreen) 1px solid;
+  border-radius: 0.6vw;
+  margin: 6vh auto 0 auto;
+  padding: 0.2vw 0.45vw;
+  text-decoration: none;
+  align-self: center;
+
+  text-shadow: none;
+  background-color: var(--beige);
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+.getInTouch.big {
+  font-size: 1.2vw;
+}
+
+.getInTouch:hover {
+  text-shadow: 0 0 0.01px var(--darkGreen);
+
+  animation: gradient 0.5s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.getInTouch.animationEnd {
+  animation: gradient-out 0.7s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes gradient {
+  0% {
+    background: linear-gradient(180deg, var(--beige) 100%, var(--yellowPink3) 100%);
+  }
+  10% {
+    background: linear-gradient(180deg, var(--beige) 95.5%, var(--yellowPink3) 100%);
+  }
+  20% {
+    background: linear-gradient(180deg, var(--beige) 91%, var(--yellowPink3) 100%);
+  }
+  30% {
+    background: linear-gradient(180deg, var(--beige) 86.5%, var(--yellowPink3) 100%);
+  }
+  40% {
+    background: linear-gradient(180deg, var(--beige) 82%, var(--yellowPink3) 100%);
+  }
+  50% {
+    background: linear-gradient(180deg, var(--beige) 77.5%, var(--yellowPink3) 100%);
+  }
+  60% {
+    background: linear-gradient(180deg, var(--beige) 73%, var(--yellowPink3) 100%);
+  }
+  70% {
+    background: linear-gradient(180deg, var(--beige) 68.5%, var(--yellowPink3) 100%);
+  }
+  80% {
+    background: linear-gradient(180deg, var(--beige) 64%, var(--yellowPink3) 100%);
+  }
+  90% {
+    background: linear-gradient(180deg, var(--beige) 59.5%, var(--yellowPink3) 100%);
+  }
+  100% {
+    background: linear-gradient(180deg, var(--beige) 55%, var(--yellowPink3) 100%);
+  }
+}
+
+@keyframes gradient-out {
+  0% {
+    background: linear-gradient(180deg, var(--beige) 55%, var(--yellowPink3) 100%);
+  }
+  10% {
+    background: linear-gradient(180deg, var(--beige) 59.5%, var(--yellowPink3) 100%);
+  }
+  20% {
+    background: linear-gradient(180deg, var(--beige) 64%, var(--yellowPink3) 100%);
+  }
+  30% {
+    background: linear-gradient(180deg, var(--beige) 68.5%, var(--yellowPink3) 100%);
+  }
+  40% {
+    background: linear-gradient(180deg, var(--beige) 73%, var(--yellowPink3) 100%);
+  }
+  50% {
+    background: linear-gradient(180deg, var(--beige) 77.5%, var(--yellowPink3) 100%);
+  }
+  60% {
+    background: linear-gradient(180deg, var(--beige) 82%, var(--yellowPink3) 100%);
+  }
+  70% {
+    background: linear-gradient(180deg, var(--beige) 86.5%, var(--yellowPink3) 100%);
+  }
+  80% {
+    background: linear-gradient(180deg, var(--beige) 91%, var(--yellowPink3) 100%);
+  }
+  90% {
+    background: linear-gradient(180deg, var(--beige) 95.5%, var(--yellowPink3) 100%);
+  }
+  100% {
+    background: linear-gradient(180deg, var(--beige) 100%, var(--yellowPink3) 100%);
+  }
+}

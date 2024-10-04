@@ -18,13 +18,6 @@ function Modal({ index, onClose }) {
   const [modalActive, setModalActive] = useState("");
 
   useEffect(() => {
-    list.forEach((x) => {
-      const img = new Image();
-      img.src = `./certificates/${x.name}.png`;
-    });
-  }, []);
-
-  useEffect(() => {
     function handleKeyDown(e) {
       if (e.keyCode === 27) {
         setModalActive("");
@@ -41,16 +34,9 @@ function Modal({ index, onClose }) {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       ScrollLock.allow();
-      window.scrollTo(0, refScrollY.current);
+      window.scroll({ top: refScrollY.current, left: 0, behavior: "instant" });
     };
   }, [onClose]);
-
-  function outsideModalClick(e) {
-    if (e.target === e.currentTarget) {
-      setModalActive("");
-      onClose();
-    }
-  }
 
   function leftButton() {
     setImgPath((currentImgPath) => {
@@ -75,7 +61,7 @@ function Modal({ index, onClose }) {
   return (
     <div id="acc_modal">
       <div className={`modal_inner ${modalActive}`}>
-        <span onClick={outsideModalClick}>
+        <span>
           <button className={`arrow ${modalActive} left`} onClick={leftButton}>
             <svg
               viewBox="0 0 24 24"

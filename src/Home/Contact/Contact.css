@@ -1,0 +1,44 @@
+#contact {
+  height: 75vh;
+  padding: 5vh 0 0 0;
+
+  .article_dots > * {
+    background-color: var(--yellowPink1) !important;
+  }
+
+  div.text {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div.text > * {
+    margin: 0;
+
+    font-family: var(--font);
+    text-align: center;
+
+    color: var(--darkGreen);
+  }
+
+  p {
+    width: 70%;
+
+    padding: 5vh 0;
+    font-size: 1.5vw;
+    font-weight: 300;
+
+    a {
+      all: unset;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+    }
+
+    a:hover {
+      color: var(--yellowPink1);
+    }
+  }
+}

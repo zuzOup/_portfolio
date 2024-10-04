@@ -18,8 +18,10 @@ const ScrollLock = {
       const modal = document.getElementById("modal");
       const modal_inner = document.getElementById("modal_inner");
 
-      modal.style.top = "11vh";
-      modal_inner.style.top = "-11vh";
+      if (modal && modal_inner) {
+        modal.style.top = "11vh";
+        modal_inner.style.top = "-11vh";
+      }
     }
   },
 

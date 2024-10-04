@@ -59,8 +59,8 @@ aside {
     align-items: center;
 
     svg {
-      height: 98%;
-      width: 98%;
+      height: 100%;
+      width: 100%;
     }
   }
 }

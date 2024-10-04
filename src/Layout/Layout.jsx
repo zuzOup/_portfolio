@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import Title from "../Home/Title/Title";
 import AboutMe from "../Home/AboutMe/AboutMe";
 import Projects from "../Home/Projects/Projects";
+import Contact from "../Home/Contact/Contact";
 
 import Accomplishments from "../Accomplishments/Accomplishments";
 
@@ -27,7 +28,7 @@ function Layout() {
                 <Title />
                 <AboutMe />
                 <Projects />
-                {/* <Contact /> */}
+                <Contact />
               </Route>
               <Route exact path="/accomplishments">
                 <Accomplishments />

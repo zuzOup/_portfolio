@@ -46,12 +46,6 @@ export const projects_square = [
     stack: ["JS"],
   },
   {
-    name: "Codepens",
-    text: `Pens at <a target="_blank" href="https://codepen.io/">Codepen</a>`,
-    web: "https://codepen.io/zuzOup/pens/",
-    stack: ["HTML", "CSS", "JS"],
-  },
-  {
     name: "Codecademy",
     text: `Projects I have completed for the Front-End Engineer career path on Codecademy`,
     github: "https://github.com/zuzOup/Codecademy",
@@ -70,13 +64,6 @@ export const projects_square = [
     text: "Old version of text editor for my blog (JS)",
     github: "https://github.com/zuzOup/_text-editor-old",
     web: "https://zuzoup.github.io/_text-editor-old/",
-    stack: ["HTML", "CSS", "JS"],
-  },
-  {
-    name: "Weather Cards",
-    text: "CSS project - animated weather/forecast cards",
-    github: "https://github.com/zuzOup/_weather-cards",
-    web: "https://zuzoup.github.io/_weather-cards/",
     stack: ["HTML", "CSS", "JS"],
   },
   {

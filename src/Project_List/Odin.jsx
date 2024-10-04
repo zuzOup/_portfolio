@@ -7,6 +7,7 @@ import SectionBody from "./SectionBody.jsx";
 const conditions = (str) => {
   const newStr = str.split("**");
   newStr.shift();
+
   const desc = newStr
     .filter((x, i) => i % 2 !== 0)
     .map((x) => x.split("&nbsp; ")[1])
@@ -15,15 +16,17 @@ const conditions = (str) => {
   const newArr = newStr
     .filter((x, i) => i % 2 === 0)
     .map((x, i) => {
+      const name = x.split("[")[1].split("]")[0];
+
       return {
-        name: x.split("[")[1].split("]")[0],
-        repo: `https://github.com/zuzOup/The-Odin-Project/tree/main/${x
-          .split(" ")
-          .join("-")}/`,
-        url: `https://zuzoup.github.io/The-Odin-Project/${x.split(" ").join("-")}/`,
+        name: name.split("-").join(" "),
+        repo: `https://github.com/zuzOup/The-Odin-Project/tree/main/${name}/`,
+        url: x.split("(")[1].slice(0, -1),
         description: desc[i],
       };
     });
+
+  console.log(newArr);
 
   return newArr;
 };

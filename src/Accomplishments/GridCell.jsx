@@ -6,8 +6,8 @@ import Cover from "./Cover";
 
 import Modal from "./modal/Modal";
 
-function GridCell({ index, course, name }) {
-  const src = `./certificates/${name}.png`;
+function GridCell({ index, course, name, svg }) {
+  const src = `/certificates/${name}.png`;
   const alt = `${course} - ${name}`;
 
   const [isActive, setIsActive] = useState("");
@@ -35,7 +35,8 @@ function GridCell({ index, course, name }) {
   return (
     <>
       <button onMouseEnter={hover} onMouseLeave={hoverClear} onClick={handleClickButton}>
-        <img src={src} alt={alt} className="imgCell"></img>
+        {svg()}
+        {/* <img src={src} alt={alt} className="imgCell"></img> */}
         <Cover course={course} name={name} isActive={isActive} />
       </button>
       {showModal &&
@@ -48,6 +49,7 @@ GridCell.propTypes = {
   course: PropTypes.string,
   name: PropTypes.string,
   index: PropTypes.number,
+  svg: PropTypes.func,
 };
 
 export default GridCell;

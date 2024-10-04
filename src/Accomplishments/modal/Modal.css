@@ -71,7 +71,7 @@
 
     background-color: var(--yellowPink2);
 
-    transform: translateY(-2vw);
+    transform: translateY(-100px);
     transition: transform 300ms, background-color 0.1s, margin-top 0.1s;
     transition-property: transform, background-color, margin-top;
     transition-delay: 0s, 0s, 0s;
