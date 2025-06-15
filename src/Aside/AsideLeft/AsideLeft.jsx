@@ -1,6 +1,6 @@
 const links = [
   { id: "github", href: "https://github.com/zuzOup" },
-  { id: "linkedin", href: "" },
+  { id: "linkedin", href: "https://www.linkedin.com/in/zuzana-oupicka" },
   { id: "codepen", href: "https://codepen.io/zuzOup" },
 ];
 
