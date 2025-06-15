@@ -89,8 +89,8 @@ function Nav() {
             );
           })}
           <li>
-            <a href="/CV_ZuzanaOupicka.pdf" target="_blank" id="nav_resume">
-              Resume
+            <a href="/Resume.pdf" target="_blank" id="nav_resume" >
+              Résumé
             </a>
           </li>
         </ul>
