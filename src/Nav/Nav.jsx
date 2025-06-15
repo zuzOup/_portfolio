@@ -89,7 +89,7 @@ function Nav() {
             );
           })}
           <li>
-            <a href="/Resume.pdf" target="_blank" id="nav_resume" >
+            <a href="/Resume.pdf" target="_blank" id="nav_resume">
               Résumé
             </a>
           </li>
