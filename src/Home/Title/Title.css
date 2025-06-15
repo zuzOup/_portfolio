@@ -21,17 +21,25 @@
     font-size: 6vw;
     font-weight: 500;
     color: var(--pink);
+    em {
+      all: unset;
+      color: var(--yellow);
+    }
+    em.animate {
+      color: var(--pink);
+    }
   }
 
-  .dot_i {
+  #dot_i {
     display: flex;
     top: -5.6vw;
     left: 46.4vw;
     position: relative;
     width: 0.8vw;
     height: 0.8vw;
-    background-color: var(--yellow);
+    background-color: var(--transparent);
     border-radius: 100%;
+    z-index: 1000;
   }
 
   p {
@@ -39,7 +47,7 @@
     margin: 0 auto;
     padding-bottom: 3vh;
     font-size: 1.5vw;
-    font-weight: 300;
+    font-weight: 350;
   }
 }
 

@@ -1,0 +1,135 @@
+#dot_i.animate {
+  animation: bounce 2s linear forwards;
+}
+
+@keyframes bounce {
+  0% {
+    background-color: var(--yellow);
+    transform: translate(-63vw, -8.57143vw);
+  }
+  2.5% {
+    transform: translate(-61.425vw, -8.71429vw);
+  }
+  5% {
+    transform: translate(-59.85vw, -9vw);
+  }
+  7.5% {
+    transform: translate(-58.275vw, -9.07143vw);
+  }
+  10% {
+    transform: translate(-56.7vw, -9.21429vw);
+  }
+  /* First peak */
+  12.5% {
+    transform: translate(-55.125vw, -9.28571vw);
+  }
+  15% {
+    transform: translate(-53.55vw, -9.21429vw);
+  }
+  17.5% {
+    transform: translate(-51.975vw, -9.07143vw);
+  }
+  20% {
+    transform: translate(-50.4vw, -9vw);
+  }
+  22.5% {
+    transform: translate(-48.825vw, -8.71429vw);
+  }
+  25% {
+    transform: translate(-47.25vw, -8.57143vw);
+  }
+  27.5% {
+    transform: translate(-45.675vw, -8.14286vw);
+  }
+  30% {
+    transform: translate(-44.1vw, -7.57143vw);
+  }
+  33% {
+    transform: translate(-42.525vw, -7.14286vw);
+  }
+  36% {
+    transform: translate(-40.95vw, -6.42857vw);
+  }
+  39% {
+    transform: translate(-39.375vw, -5.71429vw);
+  }
+  41.5% {
+    transform: translate(-37.8vw, -5.07143vw);
+  }
+  44% {
+    transform: translate(-36.225vw, -4.42857vw);
+  }
+  46% {
+    transform: translate(-34.65vw, -2.85714vw);
+  }
+  48% {
+    transform: translate(-33.075vw, -1.78571vw);
+  }
+  /* First valley */
+  50% {
+    transform: translate(-31.5vw, -0.9vw);
+  }
+  52.5% {
+    transform: translate(-29.925vw, -1.42857vw);
+  }
+  55% {
+    transform: translate(-28.35vw, -2.5vw);
+  }
+  57.5% {
+    transform: translate(-26.775vw, -3vw);
+  }
+  60% {
+    transform: translate(-25.2vw, -3.71429vw);
+  }
+  62.5% {
+    transform: translate(-23.625vw, -4.28571vw);
+  }
+  65% {
+    transform: translate(-22.05vw, -4.5vw);
+  }
+  /* Second peak */
+  67.5% {
+    transform: translate(-20.475vw, -4.64286vw);
+  }
+  70% {
+    transform: translate(-18.9vw, -4.5vw);
+  }
+  72.5% {
+    transform: translate(-17.325vw, -4.28571vw);
+  }
+  75% {
+    transform: translate(-15.75vw, -3.71429vw);
+  }
+  77.5% {
+    transform: translate(-14.175vw, -3vw);
+  }
+  80% {
+    transform: translate(-12.6vw, -2.5vw);
+  }
+  82.5% {
+    transform: translate(-11.025vw, -1.42857vw);
+  }
+  /* Second valley */
+  85% {
+    transform: translate(-9.45vw, -0.9vw);
+  }
+  87.5% {
+    transform: translate(-7.875vw, -1.27143vw);
+  }
+  90% {
+    transform: translate(-6.3vw, -1.42857vw);
+  }
+  92.5% {
+    transform: translate(-4.725vw, -1.57143vw);
+  }
+  95% {
+    transform: translate(-3.15vw, -1.42857vw);
+  }
+  97.5% {
+    transform: translate(-1.575vw, -1.27143vw);
+  }
+  100% {
+    background-color: var(--yellow);
+    transform: translate(0vw, 0vw);
+  }
+}
