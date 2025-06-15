@@ -1,5 +1,9 @@
-#dot_i.animate {
+#dot_i_container.animate {
   animation: bounce 2s linear forwards;
+
+  #dot_i {
+    background-color: var(--yellow) !important;
+  }
 }
 
 @keyframes bounce {
@@ -38,31 +42,31 @@
   25% {
     transform: translate(-47.25vw, -8.57143vw);
   }
-  27.5% {
+  28% {
     transform: translate(-45.675vw, -8.14286vw);
   }
-  30% {
+  31% {
     transform: translate(-44.1vw, -7.57143vw);
   }
-  33% {
+  34% {
     transform: translate(-42.525vw, -7.14286vw);
   }
-  36% {
+  37% {
     transform: translate(-40.95vw, -6.42857vw);
   }
-  39% {
+  39.5% {
     transform: translate(-39.375vw, -5.71429vw);
   }
-  41.5% {
+  42% {
     transform: translate(-37.8vw, -5.07143vw);
   }
-  44% {
+  44.5% {
     transform: translate(-36.225vw, -4.42857vw);
   }
-  46% {
+  46.5% {
     transform: translate(-34.65vw, -2.85714vw);
   }
-  48% {
+  48.5% {
     transform: translate(-33.075vw, -1.78571vw);
   }
   /* First valley */
