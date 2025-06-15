@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-const arr = ["HTML", "CSS", "JS", "React"];
+const arr = ["HTML", "CSS", "JS","TS", "React"];
 
 function Carousel() {
   const [index, setIndex] = useState(0);
