@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 
 import { useLocation, useHistory } from "react-router-dom";
 
@@ -13,9 +13,28 @@ const links = [
   { id: "contact", text: "Contact" },
 ];
 
+const initialState = {
+  scrollPosition: "top",
+  scrollID: "",
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "SET_SCROLL":
+      return { ...state, scrollPosition: action.payload };
+    case "SET_SCROLL_ID":
+      return { ...state, scrollID: action.payload };
+    // case "RESET":
+    //   return initialState;
+    default:
+      return state;
+  }
+}
+
 function Nav() {
-  const [isScroll, setIsScroll] = useState("top");
-  const [scrollID, setScrollID] = useState("");
+  const [state, dispatch] = useReducer(reducer, initialState);
+  // const [scrollPosition, setscrollPosition] = useState("top");
+  // const [scrollID, setScrollID] = useState("");
 
   const location = useLocation();
 
@@ -24,9 +43,11 @@ function Nav() {
   useEffect(() => {
     function scroll() {
       if (this.scrollY > 50) {
-        setIsScroll("hidden");
+        dispatch({ type: "SET_SCROLL", payload: "hidden" });
+        // setscrollPosition("hidden");
       } else if (this.scrollY <= 50) {
-        setIsScroll("top");
+        dispatch({ type: "SET_SCROLL", payload: "top" });
+        // setscrollPosition("top");
       }
     }
 
@@ -44,6 +65,7 @@ function Nav() {
   };
 
   const link_archive = () => {
+    scrollTo(0, 0);
     history.push("/");
   };
 
@@ -51,7 +73,7 @@ function Nav() {
   const scroll = (id) => {
     if (location.pathname !== "/") {
       history.push("/");
-      setScrollID(id);
+      dispatch({ type: "SET_SCROLL_ID", payload: id });
     } else {
       const el = document.getElementById(id);
       el.scrollIntoView();
@@ -59,7 +81,7 @@ function Nav() {
   };
 
   useEffect(() => {
-    const el = document.getElementById(scrollID);
+    const el = document.getElementById(state.scrollID);
     if (el) {
       el.scrollIntoView();
     }
@@ -67,9 +89,9 @@ function Nav() {
 
   return (
     <header id="header">
-      <nav className={isScroll}>
+      <nav className={state.scrollPosition}>
         {location.pathname === "/" && (
-          <HomeLinkSVG click={link_scroll} isScroll={isScroll} />
+          <HomeLinkSVG click={link_scroll} scrollPosition={state.scrollPosition} />
         )}
         {location.pathname !== "/" && <HomeLinkSVG click={link_archive} />}
 
