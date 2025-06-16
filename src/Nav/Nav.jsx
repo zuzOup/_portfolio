@@ -5,6 +5,7 @@ import { useLocation, useHistory } from "react-router-dom";
 import HomeLinkSVG from "./HomeLinkSVG";
 
 import "./Nav.css";
+import "./ResumeButton.css";
 
 const links = [
   { id: "aboutMe", text: "About me" },
@@ -76,7 +77,7 @@ function Nav() {
           {links.map((item, i) => {
             return (
               <li key={i}>
-                <div className={`smallDot nav_dots${i}`}></div>
+                <div className={`nav_dots nav_dots${i}`}></div>
                 <button
                   onClick={() => {
                     scroll(item.id);
@@ -84,13 +85,15 @@ function Nav() {
                 >
                   {item.text}
                 </button>
-                <div className={`smallDot nav_dots${i}`}></div>
+                <div className={`nav_dots nav_dots${i}`}></div>
               </li>
             );
           })}
           <li>
             <a href="/Resume.pdf" target="_blank" id="nav_resume">
-              Résumé
+              <div>
+                <span>Résumé</span>
+              </div>
             </a>
           </li>
         </ul>

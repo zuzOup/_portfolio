@@ -1,0 +1,91 @@
+#nav_resume {
+  all: unset;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 6.4vw;
+  height: 2.3vw;
+  border-radius: 1000px;
+
+  margin-right: 0.5vw;
+  margin-left: 0.1vw;
+
+  font-family: var(--font);
+  font-weight: 700;
+  letter-spacing: 0.08vw;
+  font-size: 1.2vw;
+
+  color: var(--darkGreen);
+  border: var(--darkGreen) 2px solid;
+
+  box-shadow: 0.5px 0.5px 0 0 var(--darkGreen), 1px 1px 0 0 var(--darkGreen),
+    1.5px 1.5px 0 0 var(--darkGreen);
+
+  transition: transform 150ms ease, box-shadow 150ms ease, font-size 50ms ease;
+
+  &:hover {
+    cursor: pointer;
+    font-size: 1.3vw;
+
+    & > div {
+      background-color: var(--yellowPink2);
+      transition: background-color 1000ms ease;
+    }
+  }
+
+  &:active {
+    box-shadow: 0 0 0 0px var(--darkGreen);
+    transform: translate(3px, 3px);
+  }
+
+  & > div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+
+    width: 6.4vw;
+    height: 2.3vw;
+    border-radius: 1000px;
+
+    transition: background-color 1000ms ease;
+
+    background-color: var(--yellowPink1);
+
+    &::before {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 1000px;
+      opacity: 0.9;
+      background-image: radial-gradient(rgb(255 255 255 / 80%) 20%, transparent 20%),
+        radial-gradient(rgb(255 255 255 / 100%) 20%, transparent 20%);
+      background-position: 0 0, 4px 4px;
+      background-size: 10px 10px;
+      mix-blend-mode: hard-light;
+      animation: dots 0.7s infinite linear;
+    }
+
+    & > span {
+      pointer-events: none;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@keyframes dots {
+  0% {
+    background-position: 0 0, 5px 5px;
+  }
+  100% {
+    background-position: 10px 0, 15px 5px;
+  }
+}
