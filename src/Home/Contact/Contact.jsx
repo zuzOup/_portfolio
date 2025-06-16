@@ -1,5 +1,6 @@
-import GetInTouch from "../../Components/GetInTouch";
+import Button_GetInTouch from "../../Components/Button_GetInTouch";
 import SectionHeader from "../../Components/SectionHeader";
+import ContactForm from "./ContactForm";
 
 import "./Contact.css";
 
@@ -16,8 +17,9 @@ function Contact() {
           </a>
           . Thanks for stopping by my portfolio!
         </p>
-        <GetInTouch size={"big"} />
+        <Button_GetInTouch />
       </div>
+      <ContactForm />
     </section>
   );
 }

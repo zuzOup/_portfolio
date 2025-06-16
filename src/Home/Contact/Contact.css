@@ -1,10 +1,10 @@
 #contact {
-  height: 75vh;
-  padding: 5vh 0 0 0;
+  height: 90vh;
+  padding: 15vh 0 5vh 0;
 
-  .sectionHeader {
+  /* .sectionHeader {
     padding-top: 15vh;
-  }
+  } */
 
   .article_dots > * {
     background-color: var(--yellowPink1) !important;

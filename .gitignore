@@ -31,4 +31,6 @@ dist-ssr
 
 old
 
+.env
+
 Resume.pdf
