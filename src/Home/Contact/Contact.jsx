@@ -1,10 +1,23 @@
+import { useEffect } from "react";
+
 import SectionHeader from "../../Components/SectionHeader";
 import ContactForm from "./ContactForm";
 
 import "./Contact.css";
-
+import { useHistory } from "react-router-dom";
 
 function Contact() {
+  const history = useHistory();
+
+  useEffect(() => {
+    let pageUrl = window.location.href;
+    if (pageUrl.includes("#contact")) {
+      const contactSection = document.getElementById("contact");
+      contactSection.scrollIntoView();
+      history.push("/");
+    }
+  });
+
   return (
     <section id="contact">
       <SectionHeader title={"Contact"} class_title={"contact"} />
@@ -19,7 +32,6 @@ function Contact() {
         </p>
       </div>
       <ContactForm />
-     
     </section>
   );
 }
