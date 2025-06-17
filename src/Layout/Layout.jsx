@@ -13,12 +13,15 @@ import Accomplishments from "../Accomplishments/Accomplishments";
 
 import Project_List from "../Project_List/Project_list";
 
+import SVGFilter from "../Components/SVGFilter";
+
 import "./Layout.css";
 
 function Layout() {
   return (
     <>
       <BrowserRouter>
+        <SVGFilter />
         <Nav />
         <main id="main">
           <Aside left={true} />

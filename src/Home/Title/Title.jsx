@@ -4,7 +4,9 @@ import "./Title.css";
 import "./Title_bounce.css";
 
 import Carousel from "./Carousel";
-import GetInTouch from "../../Components/GetInTouch";
+
+import Butt from "../../Components/Butt";
+import Butt_inside from "../../Components/Butt_inside";
 
 function Title() {
   const [animationStart, setAnimationStart] = useState({ dot: "", Z: "", O: "" });
@@ -44,7 +46,11 @@ function Title() {
         <p className="p-carousel">I specialise in</p>
         <Carousel />
       </div>
-      <GetInTouch size={"big"} />
+      <Butt classs="title">
+        <a className="butt-btn title" target="_blank" href="./#contact">
+          <Butt_inside classs="title" text="Get in touch!" />
+        </a>
+      </Butt>
     </section>
   );
 }

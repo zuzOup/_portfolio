@@ -1,45 +1,64 @@
 form {
-  max-width: 500px;
-  margin: 2rem auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 2rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  font-family: sans-serif;
+
+  gap: 1vh;
+  width: 100%;
+  max-width: 50%;
+  margin: 0.5vw auto;
+  padding: 1vw 2vw;
+  background-color: var(--yellowBeige);
+  outline: 4px solid var(--yellowBeige);
+  border: 2px dashed var(--yellow);
+  border-radius: 1.5rem;
+  /* box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05); */
+  font-family: var(--font);
+  color: var(--darkGreen);
+
+  input {
+    border-radius: 1000px;
+  }
+
+  textarea {
+    border-radius: 25px;
+  }
 
   input,
   textarea {
-    width: 100%;
     padding: 0.75rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    resize: vertical;
+    border: 2px solid var(--yellow);
+
+    font-size: 1vw;
+    background: #fffefc;
+    color: var(--darkGreen);
+    font-family: var(--font);
+
+    transition: border-color 0.3s;
   }
 
   input:focus,
   textarea:focus {
-    border-color: #0077ff;
     outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+    border-color: var(--pink);
   }
 
-  button {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    background-color: #0077ff;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  textarea {
+    min-height: 120px;
+    resize: vertical;
   }
 
-  button:hover {
-    background-color: #005fcc;
+  .recaptcha-info {
+    padding-top: 0.5vw;
+    font-size: 0.4vw;
+    color: var(--brown);
+
+    a {
+      text-decoration: none;
+      color: var(--pink);
+      transition: text-shadow 0.1s linear;
+    }
+    a:hover {
+      text-shadow: 0px 0px 0.5px var(--pink);
+    }
   }
 }

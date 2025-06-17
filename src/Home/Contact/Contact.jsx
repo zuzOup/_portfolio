@@ -1,8 +1,8 @@
-import Button_GetInTouch from "../../Components/Button_GetInTouch";
 import SectionHeader from "../../Components/SectionHeader";
 import ContactForm from "./ContactForm";
 
 import "./Contact.css";
+
 
 function Contact() {
   return (
@@ -15,11 +15,11 @@ function Contact() {
           <a href="mailto:zuzanaoupicka@gmail.com" target="_blank">
             zuzanaoupicka@gmail.com
           </a>
-          . Thanks for stopping by my portfolio!
+          &nbsp;or through the contact form below. Thanks for stopping by my portfolio!
         </p>
-        <Button_GetInTouch />
       </div>
       <ContactForm />
+     
     </section>
   );
 }

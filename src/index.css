@@ -5,6 +5,7 @@
   --brown: #ad9462;
   --darkGreen: #005249;
 
+  --yellowBeige: #fff5de;
   --yellow: rgb(255, 197, 1);
   --yellowPink1: rgb(255, 190, 81);
   --yellowPink2: rgb(255, 188, 132);
@@ -66,4 +67,8 @@ body::-webkit-scrollbar-thumb {
 
 .article_dots_archive > * {
   background-color: var(--yellowPink3) !important;
+}
+
+.grecaptcha-badge {
+  visibility: hidden !important;
 }
