@@ -21,12 +21,25 @@ form {
 
   textarea {
     border-radius: 25px;
+
+    min-height: 120px;
+    resize: vertical;
   }
 
-  input,
-  textarea {
+  /* https://codepen.io/lucasyem/pen/ZEEYKdj */
+
+  .form_group {
+    width: 100%;
+    position: relative;
+  }
+
+  .field {
     padding: 0.75rem 1rem;
     border: 2px solid var(--yellow);
+    margin: 2px 0;
+
+    box-sizing: border-box;
+    width: 100%;
 
     font-size: 1vw;
     background: #fffefc;
@@ -36,15 +49,44 @@ form {
     transition: border-color 0.3s;
   }
 
-  input:focus,
-  textarea:focus {
+  .field::placeholder {
+    color: transparent;
+  }
+
+  .field:placeholder-shown ~ label {
+    font-size: 0.9vw;
+    cursor: text;
+    top: 1.05vw;
+    left: 0.8vw;
+
+    color: var(--brown);
+    background: white;
+  }
+
+  .field:focus {
     outline: none;
     border-color: var(--pink);
   }
 
-  textarea {
-    min-height: 120px;
-    resize: vertical;
+  label,
+  .field:focus ~ label {
+    display: block;
+    position: absolute;
+    padding: 0 5px;
+
+    top: -0.3vw;
+    left: 1.5vw;
+
+    font-size: 0.7vw;
+    font-weight: 450;
+    color: var(--yellow);
+    background: linear-gradient(var(--yellowBeige), white);
+
+    transition: 0.2s;
+  }
+
+  .field:focus ~ label {
+    color: var(--pink);
   }
 
   .recaptcha-info {

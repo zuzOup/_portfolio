@@ -31,9 +31,43 @@ const ContactForm = () => {
 
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <input type="text" name="user_name" placeholder="Name" required />
-      <input type="email" name="user_email" placeholder="Email" required />
-      <textarea name="message" placeholder="Message" required />
+      <div className="form_group">
+        <input
+          type="text"
+          className="field"
+          placeholder=""
+          name="user_name"
+          id="user_name"
+          required
+        />
+        <label htmlFor="user_name" className="label">
+          Name
+        </label>
+      </div>
+
+      <div className="form_group">
+        <input
+          type="email"
+          className="field"
+          placeholder=""
+          name="user_email"
+          id="user_email"
+          required
+        />
+        <label htmlFor="user_email" className="label">
+          Email
+        </label>
+      </div>
+
+      <div className="form_group">
+        <textarea className="field" placeholder="" name="message" id="message" required />
+        <label htmlFor="message" className="label">
+          Message
+        </label>
+      </div>
+
+      {/* <textarea name="message" placeholder="Message" required /> */}
+
       <input type="hidden" name="g-recaptcha-response" />
       <div className="grecaptcha-badge"></div>
 
