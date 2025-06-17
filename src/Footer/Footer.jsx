@@ -14,10 +14,14 @@ function Footer() {
         </a>
       </p>
       <p>
-        {/* TODO: add link to my github */}
-        ⁺₊✧ &nbsp; Made with ♡ by <b>Zuzana Oupická</b> &nbsp; ✧₊⁺
+        ⁺₊✧ &nbsp; Made with ♡ by{" "}
+        <a className="footer-ghlink" href="https://github.com/zuzOup" target="_blank">
+          Zuzana Oupická
+        </a>{" "}
+        &nbsp; ✧₊⁺
       </p>
     </footer>
   );
 }
+
 export default Footer;
