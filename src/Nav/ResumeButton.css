@@ -21,10 +21,8 @@
 
   color: var(--darkGreen);
   background-color: var(--yellowPink1);
-  border: var(--beige) 3px solid  ;
+  border: var(--beige) 3px solid;
   outline: 4px solid var(--yellowPink1);
-
-
 
   transition: transform 150ms ease, box-shadow 150ms ease, outline 50ms ease;
 
@@ -32,6 +30,8 @@
     cursor: pointer;
 
     outline: 4px solid var(--yellowPink2);
+
+    animation: nav_resume_outline 2s ease-in-out infinite;
 
     & > div {
       background-color: var(--yellowPink2);
@@ -98,5 +98,21 @@
   }
   100% {
     background-position: 10px 0, 15px 5px;
+  }
+}
+
+@keyframes nav_resume_outline {
+  0% {
+    outline: 4px solid var(--yellowPink2);
+  }
+  8% {
+    outline: 6px solid var(--yellowPink2);
+  }
+  16% {
+    outline: 3px solid var(--yellowPink2);
+  }
+  20%,
+  100% {
+    outline: 4px solid var(--yellowPink2);
   }
 }

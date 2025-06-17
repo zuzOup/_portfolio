@@ -4,8 +4,10 @@ import { useLocation, useHistory } from "react-router-dom";
 
 import HomeLinkSVG from "./HomeLinkSVG";
 
+import ResumeButton from "./ResumeButton";
+import NavItem from "./NavItem";
+
 import "./Nav.css";
-import "./ResumeButton.css";
 
 const links = [
   { id: "aboutMe", text: "About me" },
@@ -99,24 +101,17 @@ function Nav() {
           {links.map((item, i) => {
             return (
               <li key={i}>
-                <div className={`nav_dots nav_dots${i}`}></div>
-                <button
-                  onClick={() => {
-                    scroll(item.id);
-                  }}
-                >
-                  {item.text}
-                </button>
-                <div className={`nav_dots nav_dots${i}`}></div>
+                <NavItem
+                  id={item.id}
+                  text={item.text}
+                  i={i}
+                  scroll={() => scroll(item.id)}
+                />
               </li>
             );
           })}
           <li>
-            <a href="/Resume.pdf" target="_blank" id="nav_resume">
-              <div>
-                <span>Résumé</span>
-              </div>
-            </a>
+            <ResumeButton />
           </li>
         </ul>
       </nav>
