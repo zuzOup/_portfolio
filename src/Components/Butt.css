@@ -3,6 +3,10 @@
   border-radius: 1000px;
 }
 
+.butt:has(.butt-btn:active) {
+  transform: translate(0px, 2px);
+}
+
 /* COLORS + SIZING*/
 
 .butt-txt {
