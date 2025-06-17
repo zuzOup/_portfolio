@@ -103,4 +103,19 @@ form {
       text-shadow: 0px 0px 0.5px var(--pink);
     }
   }
+
+  textarea::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  textarea::-webkit-scrollbar-track {
+    margin-top: 15px;
+    margin-bottom: 13px;
+  }
+
+  textarea::-webkit-scrollbar-thumb {
+    border-right: --beige 1px solid;
+    border-radius: 4px;
+    background: var(--yellowPink3);
+  }
 }
