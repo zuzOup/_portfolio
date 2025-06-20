@@ -8,7 +8,7 @@ function AsideRight() {
   const mail = "zuzanaoupicka@gmail.com";
 
   const triggerAnimation = async () => {
-    if (animating) return; // Prevent stacking
+    if (animating) return;
 
     setAnimating(true);
 
