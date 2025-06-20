@@ -46,12 +46,12 @@
       color: var(--pink);
     }
 
-    button.here {
+    a.here {
       font-weight: 600;
       cursor: pointer;
     }
 
-    button.here:hover {
+    a.here:hover {
       color: var(--yellow);
     }
   }
