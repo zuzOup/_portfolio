@@ -97,14 +97,14 @@ aside {
     span {
       all: unset;
       display: block;
-      transition: all 0.3s;
+      transition: all 0.3s ease-in-out;
       width: fit-content;
       pointer-events: none;
-      transition: font-weight 0.5s ease;
+     
     }
 
     &:not(.animate):hover {
-      font-weight: 350;
+      text-shadow: 0px 0px 0.1px var(--darkGreen);
     }
 
     &.animate {
@@ -196,7 +196,7 @@ aside {
   }
   100% {
     transform: translateY(0);
-    font-weight: 350;
+    text-shadow: 0px 0px 0.1px var(--darkGreen);
   }
 }
 
