@@ -13,7 +13,7 @@ function Contact() {
     let pageUrl = window.location.href;
     if (pageUrl.includes("#contact")) {
       const contactSection = document.getElementById("contact");
-      contactSection.scrollIntoView();
+      contactSection.scrollIntoView({ block: "end", inline: "nearest" });
       history.push("/");
     }
   });
