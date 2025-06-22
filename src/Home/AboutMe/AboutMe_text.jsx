@@ -1,11 +1,9 @@
 import { PropTypes } from "prop-types";
+import AboutMe_slider from "./AboutMe_slider";
+
+
 
 // import { useHistory } from "react-router-dom";
-
-import { stack_svg } from "./stack_SVG";
-
-const stack = ["html", "css", "js", "react", "npm", "tailwind", "firebase"];
-// , "html", "css", "js", "ts","react", "npm","figma", "mongo", "bootstrap", "tailwind","node","mui","styled","sass","graphQL"
 
 function AboutMe_text() {
   // const history = useHistory();
@@ -46,11 +44,7 @@ function AboutMe_text() {
         .
       </p>
       <p>Here are a few technologies I&apos;ve been working with recently:</p>
-      <ul className="stack">
-        {stack.map((item) => {
-          return <li key={item}>{stack_svg(item)}</li>;
-        })}
-      </ul>
+      <AboutMe_slider />
     </div>
   );
 }
