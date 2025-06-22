@@ -2,18 +2,10 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 
 import Sparkle from "./Sparkle";
+import Sparkle2 from "./Sparkle2";
 
 function AboutMe_photo() {
   const [isActive, setIsActive] = useState("");
-
-  const leaveHandle = (e) => {
-    if (
-      e.relatedTarget.id !== "sparkle" &&
-      e.relatedTarget.tagName !== "svg" &&
-      e.relatedTarget.tagName !== "path"
-    )
-      setIsActive("");
-  };
 
   return (
     <div className="photo">
@@ -23,15 +15,11 @@ function AboutMe_photo() {
           alt="Profile picture"
           id="profile_photo"
           className={isActive}
-          onMouseEnter={() => {
-            setIsActive("active");
-          }}
-          onMouseLeave={leaveHandle}
         />
       </div>
       <div id="frame1" className={isActive}></div>
       <div id="frame2" className={isActive}></div>
-      {isActive === "active" && <Sparkle />}
+      <Sparkle2 isActive={isActive} setIsActive={setIsActive} />
     </div>
   );
 }

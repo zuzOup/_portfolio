@@ -90,12 +90,12 @@
 
     /*inspired by https://codepen.io/christopherware/pen/OZjZXN*/
 
-    & > * {
+    & > *:not(#frame-sparkle) {
       position: relative;
       width: 18vw;
       height: 24vw;
 
-      transition: all 0.15s linear;
+      transition: all 0.15s ease-in-out;
     }
   }
 }
@@ -113,7 +113,7 @@
     height: 95%;
     width: 95%;
     border: double 0.4vw var(--pink);
-    transition: all 0.15s linear;
+    transition: all 0.15s ease-in-out;
   }
 
   img.active {
@@ -176,7 +176,7 @@
   }
 }
 
-#sparkle {
+/* #sparkle {
   position: absolute !important;
   width: 15px !important;
   height: 15px !important;
@@ -184,4 +184,62 @@
   z-index: 15;
 
   transition: none;
+} */
+
+#frame-sparkle {
+  position: relative;
+
+  transform: rotate(3deg);
+  top: -76.65vw;
+  left: 5.42vw;
+
+  height: calc(0.95 * 24vw);
+  width: calc(0.95 * 18vw);
+
+  z-index: 15;
+  overflow: hidden;
+
+  cursor: none;
+  transition: all 0.15s linear;
+}
+
+#frame-sparkle.active {
+  transform: rotate(3deg) scale(1.03);
+}
+
+.star {
+  position: fixed;
+  pointer-events: none;
+}
+
+.star:before,
+.star:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "✦";
+  font-size: 9px;
+  color: var(--yellowBeige);
+}
+
+.star-bck1:before {
+  color: transparent;
+  text-shadow: 0 0 2px var(--yellowBeige);
+}
+.star-bck2:before,
+.star-bck3:before {
+  color: transparent;
+  text-shadow: 0 0 3px var(--yellowBeige);
+}
+.star-bck4:before {
+  color: transparent;
+  text-shadow: 0 0 3px var(--yellowPink2);
+}
+.star-bck5:before {
+  color: transparent;
+  text-shadow: 0 0 3px var(--yellowPink3);
+}
+
+.star:after {
+  -webkit-text-fill-color: transparent;
 }
