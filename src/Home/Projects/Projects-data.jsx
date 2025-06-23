@@ -1,20 +1,37 @@
-export const projects_big = [
+export const project_withImg = [
   {
-    name: "Travel Blog",
-    text: "Travel blog inspired by granma's scrapbook photo albums. The blog was built using React and Vite. It is hosted on Firebase which also doubles as a database. Images are stored on Google Disc. Historical Weather API was used to get weather data for each article.",
-    stack: ["React", "Firebase"],
+    name: "Travel & Journal Blog",
+    text: "A custom travel blog and journal built with React/JavaScript. The app uses Firebase Realtime Database to store and manage content, and it’s deployed via Firebase Hosting. It includes integration with a Historical Weather API to enrich each entry with past weather data. Images are delivered through Google Drive, keeping hosting lightweight and flexible. The design draws from scrapbook aesthetics with layered visuals and personal photos, blending storytelling with real-time data.",
+    stack: ["React", "Firebase", "Firebase RTD", "Historical Weather API"],
     github: "https://github.com/zuzOup/blog",
     web: "https://na-rok-torontakama.web.app/",
     img: "/projects/blog.png",
   },
-
   {
-    name: "Blog Editor",
-    text: "Blog Editor that let's me create and edit articles for my blog. The editor was built using React and Vite and it's connected to the blog via Firebase's Realtime Database. I've used React libraries such as TipTap and DnD kit.",
-    stack: ["React", "Firebase"],
+    name: "WYSIWYG Blog Editor",
+    text: `A custom blog editor built in React/JavaScript. It uses Tiptap for rich text editing and Dnd Kit for smooth drag-and-drop content reordering. Integrated with Firebase RTD, the editor enables full CRUD functionality — allowing articles to be created, updated, or deleted in real time. It supports embedding images and dynamic data like historical weather. Styled to mirror the final blog layout, it provides a true "What You See Is What You Get" editing experience.`,
+    stack: ["JS", "Webpack", "Moment.js", "date-fns"],
     github: "https://github.com/zuzOup/text-editor",
     web: "https://na-rok-torontakama-editor.netlify.app/",
     img: "/projects/editor.png",
+  },
+  {
+    name: "Todo List App",
+    text: "A JavaScript todo list app built with Webpack, supporting multiple projects and tasks with details like title, due date, and priority. Features include task creation, editing, deletion, and completion, with data persistence via localStorage. Date handling and formatting are powered by moment and date-fns. The UI enables easy project and task management with clear priority indicators.",
+    stack: ["React", "Netlify", "jsPDF", "html2canvas-pro", "Tailwind"],
+    github: "https://github.com/zuzOup/The-Odin-Project/tree/main/Todo-List",
+    web: "https://zuzoup.github.io/The-Odin-Project/Todo-List/dist/",
+    img: "/projects/todo.png",
+  },
+
+  {
+    name: "Real-Time Resume Editor with PDF Download",
+    text: "A React application for creating and editing a personalized CV. The CV design updates in real time as users make edits and can be downloaded as a PDF with a single click using html2canvas-pro to capture a snapshot and jsPDF to generate the PDF. Styled with Tailwind CSS, the project showcases React state management, component design, and interactive UI, deployed live on a modern hosting platform.",
+    stack: ["React", "Netlify", "jsPDF", "html2canvas-pro", "Tailwind"],
+    github:
+      "https://github.com/zuzOup/The-Odin-Project/tree/main/CV-Application%2BTailwind",
+    web: "https://sweet-manatee-d66f51.netlify.app/",
+    img: "/projects/cveditor.png",
   },
 ];
 
@@ -23,55 +40,47 @@ export const projects_square = [
     name: "Advent Of Code",
     text: `Solutions to the <a target="_blank" href="https://adventofcode.com">Advent Of Code</a> puzzles (2022, 2023)`,
     github: "https://github.com/zuzOup/Advent-of-code",
-    stack: ["JS"],
   },
   {
     name: "The Odin Project",
     text: `Completed projects from <a target="_blank" href="https://www.theodinproject.com/">The Odin Project</a> (Full Stack JavaScript Path)`,
     github: "https://github.com/zuzOup/The-Odin-Project",
     web: "https://zuzoup.github.io/The-Odin-Project/",
-    stack: ["HTML", "CSS", "JS"],
   },
   {
     name: "Wes Bos Projects",
     text: `Finished projects from <a target="_blank" href="https://wesbos.com/courses/">Wes Bos' courses</a>`,
     github: "https://github.com/zuzOup/Wes-Bos-Projects",
     web: "https://zuzoup.github.io/Wes-Bos-Projects/",
-    stack: ["HTML", "CSS", "JS"],
   },
   {
     name: "Codewars",
     text: `Completed katas at <a target="_blank" href="https://www.codewars.com/">Codewars</a>`,
     web: "https://www.codewars.com/users/zuzOup/completed_solutions",
-    stack: ["JS"],
   },
   {
     name: "Codecademy",
     text: `Projects I have completed for the Front-End Engineer career path on Codecademy`,
     github: "https://github.com/zuzOup/Codecademy",
     web: "https://zuzoup.github.io/Codecademy/",
-    stack: ["HTML", "CSS", "JS"],
   },
   {
     name: "Blog (Old ver.)",
     text: "Personal travel blog/journal. Old ver.",
     github: "https://github.com/zuzOup/_blog-old-version",
     web: "https://zuzoup.github.io/_blog-old-version/",
-    stack: ["HTML", "CSS", "JS"],
   },
   {
     name: "Text Editor (Old ver.)",
     text: "Old version of text editor for my blog (JS)",
     github: "https://github.com/zuzOup/_text-editor-old",
     web: "https://zuzoup.github.io/_text-editor-old/",
-    stack: ["HTML", "CSS", "JS"],
   },
   {
     name: "Wedding Gallery",
     text: "CSS + JSS photo gallery",
     github: "https://github.com/zuzOup/_wedding-gallery",
     web: "https://zuzoup.github.io/_wedding-gallery/",
-    stack: ["HTML", "CSS", "JS"],
   },
 ];
 
@@ -79,13 +88,11 @@ export const projects_square = [
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-const color = "#005249";
-
 export const svg_git = () => {
   return (
     <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
       <path
-        stroke={color}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="12"
@@ -97,10 +104,10 @@ export const svg_git = () => {
 
 export const svg_web = () => {
   return (
-    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill={color}>
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
       <path
         d="M384,224V408a40,40,0,0,1-40,40H104a40,40,0,0,1-40-40V168a40,40,0,0,1,40-40H271.48"
-        stroke={color}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="28"
@@ -108,14 +115,14 @@ export const svg_web = () => {
       ></path>
       <polyline
         points="336 64 448 64 448 176"
-        stroke={color}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="28"
         fill={"none"}
       ></polyline>
       <line
-        stroke={color}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="28"

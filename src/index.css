@@ -15,6 +15,12 @@
 
   --red: #fd4e3f;
 
+  --brown-50: rgba(173, 148, 98, 0.5);
+  --yellowPink2-90: rgba(255, 188, 132, 0.9);
+  --yellowPink3-90: rgba(255, 194, 177, 0.9);
+  --yellowPink4-90: rgba(253, 161, 144, 0.9);
+  --pink-90: rgba(253, 138, 125, 0.9);
+
   --font: "Urbanist", sans-serif;
 }
 
