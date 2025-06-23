@@ -27,45 +27,237 @@ aside {
   }
 
   li {
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 3vw;
+    height: 3vw;
+
     border-radius: 100%;
 
-    box-shadow: 0px 0px 0px 3px var(--darkGreen) inset;
-    background-color: var(--yellowBeige);
+    .aside_left-icon-bck {
+      width: 2.5vw;
+      height: 2.5vw;
 
-    transition: background 0.1s linear;
+      /* margin: auto; */
 
-    overflow: hidden;
+      border-radius: 100%;
+
+      outline: 3px solid var(--darkGreen);
+      border: 3px dashed var(--yellowBeige);
+
+      background: var(--darkGreen);
+
+      transition: all 200ms ease-in-out;
+    }
+
+    a {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      width: 2.5vw;
+      height: 2.5vw;
+
+      border-radius: 100%;
+
+      outline: 3px solid transparent;
+      border: 3px solid transparent;
+
+      position: relative;
+      top: calc(-2.75vw - 1.5px);
+
+      background-color: transparent;
+
+      background-image: url("./icons/codepen.svg");
+
+      svg {
+        color: var(--yellowBeige);
+
+        transition: all 200ms ease-in-out;
+      }
+
+      svg.codepen {
+        width: 80%;
+        height: 80%;
+      }
+
+      svg.github {
+        width: 100%;
+        height: 100%;
+
+        transform: translateX(-0.05vw) translateY(0.05vw);
+      }
+
+      svg.linkedin {
+        width: 50%;
+        height: 50%;
+      }
+    }
+
+    &:hover {
+      .aside_left-icon-bck {
+        animation: rotate 8s infinite linear;
+      }
+    }
+
+    &:nth-child(1):hover {
+      .aside_left-icon-bck {
+        animation: rotate 8s infinite linear;
+        border: 3px dashed var(--yellowPink3);
+      }
+
+      svg,
+      path {
+        color: var(--yellowPink3);
+        transition: all 200ms ease-in-out;
+      }
+    }
+
+    &:nth-child(2):hover {
+      .aside_left-icon-bck {
+        animation: rotate 8s infinite linear;
+        border: 3px dashed var(--yellowPink2);
+      }
+
+      svg,
+      path {
+        color: var(--yellowPink2);
+        transition: all 200ms ease-in-out;
+      }
+    }
+
+    &:nth-child(3):hover {
+      .aside_left-icon-bck {
+        animation: rotate 8s infinite linear;
+        border: 3px dashed var(--yellowPink1);
+      }
+
+      svg,
+      path {
+        color: var(--yellowPink1);
+        transition: all 200ms ease-in-out;
+      }
+    }
   }
 
-  li:nth-child(1):hover {
-    background-color: var(--yellowPink3);
+  /* li {
+    width: 3vw;
+    height: 3vw;
+
+    background: red;
+
+    outline: 3px solid var(--darkGreen);
+    border: 2px dashed var(--yellowBeige);
+    background-color: var(--darkGreen);
+
+    transition: transform 500ms ease-in-out;
+
+    .aside_left-icon-bck,
+    .aside_left-icon-outline {
+      transition: all 0.1s ease-in-out;
+      position: relative;
+      margin: auto;
+
+      border-radius: 100%;
+
+      width: 2.5vw;
+      height: 2.5vw;
+    }
+
+    .aside_left-icon-bck {
+      background-color: var(--yellowBeige);
+      background-color: aqua;
+      box-shadow: 2px 2px var(--darkGreen) inset, -2px -2px var(--darkGreen) inset;
+
+      border: 3px solid var(--darkGreen);
+      outline: 3px solid var(--darkGreen);
+    }
+
+    .aside_left-icon-outline {
+      position: relative;
+      background: transparent;
+
+      border: 3px dashed var(--yellow);
+      outline: 3px solid transparent;
+
+      top: calc(-2.5vw - 3px);
+    } */
+
+  /* &:hover {
+      transform: rotate(10deg);
+
+      a {
+        transform: rotate(-10deg) scale(1.05);
+      }
+    } */
+}
+
+/* li:nth-child(1):hover {
+    .aside_left-icon-bck {
+      background-color: var(--yellowPink3);
+    }
   }
 
   li:nth-child(2):hover {
-    background-color: var(--yellowPink2);
+    .aside_left-icon-bck {
+      background-color: var(--yellowPink2);
+    }
   }
   li:nth-child(3):hover {
-    background-color: var(--yellowPink1);
+    .aside_left-icon-bck {
+      background-color: var(--yellowPink1);
+    }
   }
 
-  a {
-    display: flex;
-    height: 100%;
-    width: 100%;
+  .aside_left-icon-bck {
+    width: calc(2.5vw);
+    height: calc(2.5vw);
+    outline: 3px solid transparent;
+    border: 2px dashed transparent;
+
     border-radius: 100%;
+  } */
+
+/* a {
+    position: relative;
+    top: calc(-5vw - 6px);
+    left: 2px;
+    display: flex;
+    height: 2.5vw;
+    width: 2.5vw;
+
+    border-radius: 100%;
+
+    border: 3px solid transparent;
+    outline: 3px solid transparent;
+
+    box-shadow: 2px 2px var(--darkGreen) inset, -2px -2px var(--darkGreen) inset;
+
+    overflow: hidden;
+
     justify-content: center;
     align-items: center;
+    transition: transform 500ms ease-in-out;
 
     svg {
+      transform: scale(1.01);
+      border-radius: 100%;
       height: 100%;
       width: 100%;
     }
+  } */
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-/*Aside Right*/
+/*-------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------Aside Right-----------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------*/
 
 #aside_right {
   display: flex;
@@ -100,7 +292,6 @@ aside {
       transition: all 0.3s ease-in-out;
       width: fit-content;
       pointer-events: none;
-     
     }
 
     &:not(.animate):hover {

@@ -12,7 +12,8 @@ function AsideLeft() {
       <ul>
         {links.map((link) => {
           return (
-            <li key={link.id}>
+            <li key={link.id} className={link.id}>
+              <div className="aside_left-icon-bck"></div>
               <a href={link.href} target="_blank">
                 {svg(link.id)}
               </a>
