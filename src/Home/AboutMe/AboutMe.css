@@ -2,6 +2,10 @@
   height: 70vh;
   padding: 15vh 0 15vh 0;
 
+  svg {
+    color: var(--darkGreen);
+  }
+
   .article_dots > * {
     background-color: var(--yellowPink3) !important;
   }
