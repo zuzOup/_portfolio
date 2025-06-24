@@ -10,8 +10,6 @@ const Sparkle2 = ({ isActive, setIsActive }) => {
   const containerRef = useRef(null);
 
   const handleMouseMove = (e) => {
-    console.log(e);
-
     const container = containerRef.current;
     if (!container) return;
 
