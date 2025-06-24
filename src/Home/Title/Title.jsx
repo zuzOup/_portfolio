@@ -46,9 +46,9 @@ function Title() {
         <p className="p-carousel">I specialise in</p>
         <Carousel />
       </div>
-      <Butt classs="title">
+      <Butt className="title">
         <a className="butt-btn title" target="_blank" href="./#contact">
-          <Butt_inside classs="title" text="Get in touch!" />
+          <Butt_inside className="title" text="Get in touch!" />
         </a>
       </Butt>
     </section>

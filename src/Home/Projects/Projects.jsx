@@ -1,6 +1,6 @@
-import { useHistory } from "react-router-dom";
-
 import SectionHeader from "../../Components/SectionHeader";
+import Butt from "../../Components/Butt";
+import Butt_inside from "../../Components/Butt_inside";
 
 import Project_withImg from "./Project_withImg";
 import Projects_Squares from "./Projects_Squares";
@@ -10,13 +10,6 @@ import { project_withImg, projects_square } from "./Projects-data";
 import "./Projects.css";
 
 function Projects() {
-  const history = useHistory();
-
-  const openList = () => {
-    scrollTo(0, 0);
-    history.push("/project_list");
-  };
-
   return (
     <section id="projects">
       <SectionHeader title={"Projects"} />
@@ -31,9 +24,11 @@ function Projects() {
         })}
       </div>
 
-      <button onClick={openList} className="button_project">
-        Open Archive
-      </button>
+      <Butt className="projects">
+        <a className="butt-btn projects" target="_blank" href="./project_list">
+          <Butt_inside className="projects" text="Open Project List" />
+        </a>
+      </Butt>
     </section>
   );
 }

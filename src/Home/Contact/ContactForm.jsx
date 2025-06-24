@@ -167,9 +167,9 @@ const ContactForm = () => {
 
           <input type="hidden" name="g-recaptcha-response" />
 
-          <Butt classs="contact">
+          <Butt className="contact">
             <button className="butt-btn contact" type="submit">
-              <Butt_inside classs="contact" text="SEND" />
+              <Butt_inside className="contact" text="SEND" />
             </button>
           </Butt>
 

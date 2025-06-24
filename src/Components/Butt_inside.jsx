@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-function Butt_inside({ classs, text }) {
+function Butt_inside({ className, text }) {
   return (
     <>
-      <div className={`butt-txt ${classs}`}>{text}</div>
-      <span className={`butt-inner ${classs}`}>
+      <div className={`butt-txt ${className}`}>{text}</div>
+      <span className={`butt-inner ${className}`}>
         <span className="butt-blobs">
           <span className="butt-blobs__blob"></span>
           <span className="butt-blobs__blob"></span>
@@ -18,4 +18,4 @@ function Butt_inside({ classs, text }) {
 
 export default Butt_inside;
 
-Butt_inside.propTypes = { classs: PropTypes.string, text: PropTypes.string };
+Butt_inside.propTypes = { className: PropTypes.string, text: PropTypes.string };

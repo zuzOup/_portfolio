@@ -3,17 +3,15 @@ import PropTypes from "prop-types";
 
 import "./Butt.css";
 
-function Butt({ children, classs }) {
+function Butt({ children, className }) {
   return (
-    <>
-      <div className={`butt ${classs}`}>
-        {children}
-        <br />
-      </div>
-    </>
+    <div className={`butt ${className}`}>
+      {children}
+      <br />
+    </div>
   );
 }
 
 export default Butt;
 
-Butt.propTypes = { children: PropTypes.element, classs: PropTypes.string };
+Butt.propTypes = { children: PropTypes.element, className: PropTypes.string };

@@ -26,32 +26,3 @@ function Projects_Squares({ i }) {
 export default Projects_Squares;
 
 Projects_Squares.propTypes = { i: PropTypes.number };
-
-{
-  /* <span>
-        {github && (
-            <a target="_blank" href={github}>
-              {svg_git()}
-            </a>
-          )}
-          {web && (
-            <a target="_blank" href={web}>
-              {svg_web()}
-            </a>
-          )}
-      </span> */
-}
-{
-  /* <div className="project-square_links">
-        {github && (
-          <a target="_blank" href={github} className="github">
-            {svg_git()}
-          </a>
-        )}
-        {web && (
-          <a target="_blank" href={web} className="web">
-            {svg_web()}
-          </a>
-        )}
-      </div> */
-}
