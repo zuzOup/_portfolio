@@ -35,15 +35,12 @@ function AboutMe_slider() {
       grabCursor={true}
       slidesPerView={8}
       freeMode={true}
-      freeModeMomentum={false}
       speed={2000}
     >
       {stack.map((item) => {
         return (
-          <SwiperSlide>
-            <div key={item} className="stack-item">
-              {stack_svg(item)}
-            </div>
+          <SwiperSlide key={item}>
+            <div className="stack-item">{stack_svg(item)}</div>
           </SwiperSlide>
         );
       })}
