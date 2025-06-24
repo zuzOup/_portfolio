@@ -78,7 +78,6 @@
 
     .butt-inner {
       border: 3px solid var(--yellowPink1);
-      background-color: var(--yellowPink1);
     }
   }
 }
@@ -115,7 +114,6 @@
 
     .butt-inner {
       border: 2px solid var(--yellowPink4);
-      background-color: var(--yellowPink4);
     }
   }
 }
@@ -147,7 +145,6 @@
 
     .butt-inner {
       border: 2px solid var(--yellow);
-      background-color: var(--yellow);
     }
   }
 }
@@ -208,22 +205,16 @@
   transition: transform 0.45s;
 }
 
-.title {
-  .butt-blobs__blob {
-    background: var(--yellowPink1);
-  }
+.title .butt-blobs__blob {
+  background: var(--yellowPink1);
 }
 
-.contact {
-  .butt-blobs__blob {
-    background: var(--yellowPink4);
-  }
+.contact .butt-blobs__blob {
+  background: var(--yellowPink4);
 }
 
-.msg {
-  .butt-blobs__blob {
-    background: var(--yellow);
-  }
+.msg .butt-blobs__blob {
+  background: var(--yellow);
 }
 
 @supports (filter: url("#goo")) {
