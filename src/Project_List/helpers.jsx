@@ -17,10 +17,10 @@ export async function fetchDataMD(url, setter, conditions) {
   fetch(url, auth)
     .then((response) => response.json())
     .then((data) => {
-      const content = atob(data.content); // Convert from base64 to readable text
+      const content = atob(data.content);
       setter(conditions(content));
     })
-    .catch((error) => console.log(error)); // Catch any errors
+    .catch((error) => console.log(error));
 }
 
 export async function fetchDataWB(url, cond1, cond2, setter) {

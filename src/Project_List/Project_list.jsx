@@ -10,7 +10,7 @@ import "./Project_list.css";
 function Project_List() {
   return (
     <div id="project_list">
-      <SectionHeader title={"Projects archive"} />
+      <SectionHeader title={"Projects List"} />
       <Personal />
       <Odin />
       <WesBos />

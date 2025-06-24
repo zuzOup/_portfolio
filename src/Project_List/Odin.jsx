@@ -5,30 +5,21 @@ import ListHeader from "./ListHeader.jsx";
 import SectionBody from "./SectionBody.jsx";
 
 const conditions = (str) => {
-  const newStr = str.split("**");
+  const newStr = str.split("###");
   newStr.shift();
 
-  const desc = newStr
-    .filter((x, i) => i % 2 !== 0)
-    .map((x) => x.split("&nbsp; ")[1])
-    .map((x) => x.split("\n")[0]);
+  return newStr.reduce((acc, cur) => {
+    if (cur == undefined) return acc;
 
-  const newArr = newStr
-    .filter((x, i) => i % 2 === 0)
-    .map((x, i) => {
-      const name = x.split("[")[1].split("]")[0];
+    const arr = cur.split("\n");
 
-      return {
-        name: name.split("-").join(" "),
-        repo: `https://github.com/zuzOup/The-Odin-Project/tree/main/${name}/`,
-        url: x.split("(")[1].slice(0, -1),
-        description: desc[i],
-      };
-    });
+    const name = arr[0].split("]")[0].split("[")[1];
+    const description = arr[2].split("**").join("");
+    const repo = arr[1].split("(")[1].split(")")[0];
+    const url = arr[0].split("(")[1].split(")")[0];
 
-  console.log(newArr);
-
-  return newArr;
+    return [...acc, { name, url, repo, description }];
+  }, []);
 };
 
 function Odin() {
