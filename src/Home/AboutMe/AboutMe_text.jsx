@@ -1,12 +1,6 @@
-import { PropTypes } from "prop-types";
 import AboutMe_slider from "./AboutMe_slider";
 
-
-
-// import { useHistory } from "react-router-dom";
-
 function AboutMe_text() {
-  // const history = useHistory();
   return (
     <div className="text">
       <p>
@@ -50,7 +44,3 @@ function AboutMe_text() {
 }
 
 export default AboutMe_text;
-
-AboutMe_text.propTypes = {
-  setRender: PropTypes.func,
-};
