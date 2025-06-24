@@ -35,44 +35,49 @@ export const project_withImg = [
   },
 ];
 
+/*----------------------------------------------------------------------*/
+
 export const projects_square = [
   {
-    name: "Advent Of Code",
-    text: `Solutions to the <a target="_blank" href="https://adventofcode.com">Advent Of Code</a> puzzles (2022, 2023)`,
-    github: "https://github.com/zuzOup/Advent-of-code",
+    name: "The Odin Project",
+    text: `Practical web dev projects from *The Odin Project - Full Stack JavaScript Path*`,
+    github: "https://github.com/zuzOup/The-Odin-Project",
+    innerLink: "https://www.theodinproject.com/",
   },
   {
-    name: "The Odin Project",
-    text: `Completed projects from <a target="_blank" href="https://www.theodinproject.com/">The Odin Project</a> (Full Stack JavaScript Path)`,
-    github: "https://github.com/zuzOup/The-Odin-Project",
-    web: "https://zuzoup.github.io/The-Odin-Project/",
+    name: "Advent Of Code",
+    text: `JavaScript solutions to the *Advent of Code* challenges from 2021 to 2024`,
+    github: "https://github.com/zuzOup/Advent-of-code",
+    innerLink: "https://adventofcode.com",
   },
+
   {
     name: "Wes Bos Projects",
-    text: `Finished projects from <a target="_blank" href="https://wesbos.com/courses/">Wes Bos' courses</a>`,
+    text: `Completed projects from *Wes Bos*’ courses`,
     github: "https://github.com/zuzOup/Wes-Bos-Projects",
-    web: "https://zuzoup.github.io/Wes-Bos-Projects/",
+    innerLink: "https://wesbos.com/courses/",
   },
   {
     name: "Codewars",
-    text: `Completed katas at <a target="_blank" href="https://www.codewars.com/">Codewars</a>`,
+    text: `Solved coding katas for practicing JS skills on *Codewars*`,
     web: "https://www.codewars.com/users/zuzOup/completed_solutions",
+    innerLink: "https://www.codewars.com/",
   },
   {
     name: "Codecademy",
-    text: `Projects I have completed for the Front-End Engineer career path on Codecademy`,
+    text: `Completed front-end projects as part of the Front-End Engineer career path on *Codecademy*`,
     github: "https://github.com/zuzOup/Codecademy",
-    web: "https://zuzoup.github.io/Codecademy/",
+    innerLink: "https://www.codecademy.com/learn/paths/front-end-engineer-career-path",
   },
   {
-    name: "Blog (Old ver.)",
-    text: "Personal travel blog/journal. Old ver.",
+    name: " Travel Blog (Old version)",
+    text: "A personal travel journal built with vanilla JavaScript — simple, lightweight, and all hand-coded.",
     github: "https://github.com/zuzOup/_blog-old-version",
     web: "https://zuzoup.github.io/_blog-old-version/",
   },
   {
-    name: "Text Editor (Old ver.)",
-    text: "Old version of text editor for my blog (JS)",
+    name: "Blog Text Editor (Old ver.)",
+    text: "A custom-built text editor in JavaScript, created for writing and formatting blog posts.",
     github: "https://github.com/zuzOup/_text-editor-old",
     web: "https://zuzoup.github.io/_text-editor-old/",
   },
@@ -83,6 +88,14 @@ export const projects_square = [
     web: "https://zuzoup.github.io/_wedding-gallery/",
   },
 ];
+
+export function splitText(string, innerLink) {
+  if (!string.includes("*")) return string;
+
+  const arr = string.split("*");
+
+  return `${arr[0]}<a href="${innerLink}" target="_blank">${arr[1]}</a>${arr[2]}`;
+}
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 // -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -111,7 +124,7 @@ export const svg_web = () => {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="28"
-        fill={"none"}
+        fill="none"
       ></path>
       <polyline
         points="336 64 448 64 448 176"
@@ -119,14 +132,14 @@ export const svg_web = () => {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="28"
-        fill={"none"}
+        fill="none"
       ></polyline>
       <line
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="28"
-        fill={"none"}
+        fill="none"
         x1="224"
         y1="288"
         x2="440"

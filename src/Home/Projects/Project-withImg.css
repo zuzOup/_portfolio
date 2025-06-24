@@ -52,11 +52,21 @@
     position: relative;
     z-index: 10;
 
-    h3 {
-      margin: 0;
-      font-size: 1.4vw;
-      font-weight: 600;
-      letter-spacing: 0.4px;
+    .project-withImg_title {
+      display: flex;
+      align-items: center;
+
+      .smallDot {
+        background-color: var(--darkGreen);
+        transform: translateY(1px);
+      }
+
+      h3 {
+        margin: 0 10px;
+        font-size: 1.4vw;
+        font-weight: 600;
+        letter-spacing: 0.4px;
+      }
     }
 
     p {
@@ -85,7 +95,7 @@
       li {
         font-size: 0.8vw;
 
-        font-style: italic;
+        font-style: oblique;
       }
     }
   }

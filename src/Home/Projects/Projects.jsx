@@ -27,7 +27,7 @@ function Projects() {
       </div>
       <div className="squares">
         {projects_square.map((x, i) => {
-          return <Projects_Squares key={i} index={i} data={x} />;
+          return <Projects_Squares key={i} i={i} />;
         })}
       </div>
 

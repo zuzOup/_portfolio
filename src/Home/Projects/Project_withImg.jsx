@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
 
+import Project_links from "./Project_links";
+
+import { project_withImg } from "./Projects-data";
+
 import "./Project-withImg.css";
 
 const leftright = (num) => {
   if (num % 2 === 0 || num === 0) return "left";
   return "right";
 };
-
-import { project_withImg, svg_git, svg_web } from "./Projects-data";
 
 function Project_withImg({ i }) {
   const side = leftright(i);
@@ -22,7 +24,11 @@ function Project_withImg({ i }) {
   return (
     <div className={`project-withImg ${side}`}>
       <div className="text">
-        <h3>{name}</h3>
+        <div className="project-withImg_title">
+          <div className="smallDot"></div>
+          <h3>{name}</h3>
+          <div className="smallDot"></div>
+        </div>
         <p>{text}</p>
         <div className="stack-links">
           <ul>
@@ -30,14 +36,7 @@ function Project_withImg({ i }) {
               return <li key={x}>{x}</li>;
             })}
           </ul>
-          <div className="links">
-            <a href={github} className="github" target="_blank">
-              {svg_git()}
-            </a>
-            <a href={web} className="web" target="_blank">
-              {svg_web()}
-            </a>
-          </div>
+          <Project_links className={"links"} github={github} web={web} />
         </div>
       </div>
       <div className="picture">
