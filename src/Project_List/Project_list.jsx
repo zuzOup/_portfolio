@@ -6,12 +6,13 @@ import WesBos from "./WesBos";
 import Codecademy from "./Codecademy";
 
 import "./Project_list.css";
+import PropTypes from "prop-types";
 
-function Project_List() {
+function Project_List({ isLoaded }) {
   return (
-    <div id="project_list">
-      <SectionHeader title={"Projects List"} />
-      <Personal />
+    <div id="project_list" className={isLoaded}>
+      <SectionHeader title={"Projects List"} path={true} />
+      <Personal className={isLoaded} />
       <Odin />
       <WesBos />
       <Codecademy />
@@ -20,3 +21,7 @@ function Project_List() {
 }
 
 export default Project_List;
+
+Project_List.propTypes = {
+  isLoaded: PropTypes.string,
+};

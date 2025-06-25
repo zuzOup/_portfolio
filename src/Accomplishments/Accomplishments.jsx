@@ -7,8 +7,9 @@ import GridCell from "./GridCell";
 import { list } from "./list";
 
 import "./Accomplishments.css";
+import PropTypes from "prop-types";
 
-function Accomplishments() {
+function Accomplishments({ isLoaded }) {
   const [loadedCount, setLoadedCount] = useState(0);
 
   const handleImgLoad = () => {
@@ -25,7 +26,7 @@ function Accomplishments() {
   }, []);
 
   return (
-    <section id="accomplishments">
+    <section id="accomplishments" className={isLoaded}>
       <SectionHeader title={"Accomplishments"} />
       <div id="acc-content">
         {list.map((certificate, i) => (
@@ -44,3 +45,7 @@ function Accomplishments() {
 }
 
 export default Accomplishments;
+
+Accomplishments.propTypes = {
+  isLoaded: PropTypes.string,
+};

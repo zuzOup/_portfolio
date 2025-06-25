@@ -178,8 +178,13 @@ nav {
   cursor: pointer;
 
   &.top,
-  &.home-top {
+  &.home-top,
+  &.active {
     visibility: hidden;
+  }
+
+  &.hidden {
+    transition-delay: 0.5s;
   }
 
   div {
@@ -211,6 +216,7 @@ nav {
     color: var(--darkGreen);
   }
 }
+
 .homebutton.path {
   opacity: 0; /* fadeInUp_nav start*/
   transform: translateY(3px); /* fadeInUp_nav start*/

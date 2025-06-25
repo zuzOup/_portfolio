@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { fetchData } from "./helpers.jsx";
 
 import ListHeader from "./ListHeader.jsx";
@@ -31,15 +31,15 @@ const conditions = (arr) => {
   return newArr;
 };
 
-function Personal() {
-  const [data, setDeta] = useState([]);
+function Personal({ className }) {
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetchData("https://api.github.com/users/ZuzOup/repos", setDeta, conditions);
+    fetchData("https://api.github.com/users/ZuzOup/repos", setData, conditions);
   }, []);
 
   return (
-    <section>
+    <section className={className}>
       <ListHeader title={"Personal projects"} />
       <SectionBody data={data} />
     </section>
@@ -48,4 +48,4 @@ function Personal() {
 
 export default Personal;
 
-Personal.propTypes = { prop: PropTypes.any };
+Personal.propTypes = { className: PropTypes.string };

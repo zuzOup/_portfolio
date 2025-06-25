@@ -6,8 +6,6 @@
   --darkGreen: #005249;
   --darkGreen-resume: #005249;
 
-
-
   --yellowBeige: #fff5de;
   --yellowBeige-sparkle: #fff5de;
 
@@ -40,8 +38,6 @@
   --brown: #9c8e69;
   --darkGreen: #e0dab5;
   --darkGreen-resume: #181712;
-
-
 
   --yellowBeige: #4e5c3b;
   --yellowBeige-sparkle: #fff5de;
@@ -140,7 +136,7 @@ body::-webkit-scrollbar-thumb {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-section.loaded .sectionHeader {
+section.loaded .sectionHeader, .loaded .sectionHeader {
   opacity: 1;
   transform: none;
 }

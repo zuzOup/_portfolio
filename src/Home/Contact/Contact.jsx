@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import SectionHeader from "../../Components/SectionHeader";
 import ContactForm from "./ContactForm";
 
 import "./Contact.css";
+
 import { useHistory } from "react-router-dom";
 
 import fadeInOnScroll_hook from "../../fadeInOnScroll_hook";

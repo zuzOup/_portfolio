@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-
 import Nav from "../Nav/Nav";
 import Aside from "../Aside/Aside";
 import Footer from "../Footer/Footer";
@@ -17,18 +16,11 @@ import Project_List from "../Project_List/Project_list";
 import SVGFilter from "../Components/SVGFilter";
 
 import "./Layout.css";
-import { useEffect, useState } from "react";
+
+import isLoaded_hook from "../isLoaded_hook";
 
 function Layout() {
-  const [isLoaded, setIsLoaded] = useState("");
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoaded("loaded");
-    }, 300);
-
-    return () => clearTimeout(timeout);
-  }, []);
+  const isLoaded = isLoaded_hook();
 
   return (
     <>
@@ -46,10 +38,10 @@ function Layout() {
                 <Contact />
               </Route>
               <Route exact path="/accomplishments">
-                <Accomplishments />
+                <Accomplishments isLoaded={isLoaded} />
               </Route>
               <Route exact path="/project_list">
-                <Project_List />
+                <Project_List isLoaded={isLoaded} />
               </Route>
               <Route render={() => <Redirect to={{ pathname: "/" }} />} />
             </Switch>

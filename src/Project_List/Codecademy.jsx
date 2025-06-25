@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { fetchDataMD } from "./helpers.jsx";
 
 import ListHeader from "./ListHeader.jsx";
 import SectionBody from "./SectionBody.jsx";
+import fadeInOnScroll_hook from "../fadeInOnScroll_hook.js";
 
 const conditions = (str) => {
   const newStr = str.split("**");
@@ -34,6 +35,9 @@ const conditions = (str) => {
 function Codecademy() {
   const [data, setData] = useState([]);
 
+  const refPL_CC = useRef();
+  const isVisible = fadeInOnScroll_hook(refPL_CC);
+
   useEffect(() => {
     fetchDataMD(
       "https://api.github.com/repos/zuzoup/Codecademy/contents/README.md",
@@ -43,7 +47,7 @@ function Codecademy() {
   }, []);
 
   return (
-    <section>
+    <section className={isVisible ? "loaded" : ""} ref={refPL_CC}>
       <ListHeader title={"Codecademy"} />
       <SectionBody data={data} />
     </section>

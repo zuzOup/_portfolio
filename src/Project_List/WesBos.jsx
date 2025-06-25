@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { fetchDataWB } from "./helpers.jsx";
 
 import ListHeader from "./ListHeader.jsx";
 import SectionBody from "./SectionBody.jsx";
+import fadeInOnScroll_hook from "../fadeInOnScroll_hook.js";
 
 const cond1 = (arr) => {
   return arr.map((x) => x.name).filter((x) => !x.includes(".md"));
@@ -43,6 +44,9 @@ const cond2 = (arr) => {
 function WesBos() {
   const [data, setData] = useState([]);
 
+  const refPL_WB = useRef();
+  const isVisible = fadeInOnScroll_hook(refPL_WB);
+
   useEffect(() => {
     fetchDataWB(
       "https://api.github.com/repos/zuzoup/Wes-Bos-Projects/contents",
@@ -53,7 +57,7 @@ function WesBos() {
   }, []);
 
   return (
-    <section>
+    <section className={isVisible ? "loaded" : ""} ref={refPL_WB}>
       <ListHeader title={"Wes Bos Projects"} />
       <SectionBody data={data} />
     </section>

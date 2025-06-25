@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { fetchDataMD } from "./helpers.jsx";
 
 import ListHeader from "./ListHeader.jsx";
 import SectionBody from "./SectionBody.jsx";
+import fadeInOnScroll_hook from "../fadeInOnScroll_hook.js";
 
 const conditions = (str) => {
   const newStr = str.split("###");
@@ -25,6 +26,9 @@ const conditions = (str) => {
 function Odin() {
   const [data, setData] = useState([]);
 
+  const refPL_Odin = useRef();
+  const isVisible = fadeInOnScroll_hook(refPL_Odin);
+
   useEffect(() => {
     fetchDataMD(
       "https://api.github.com/repos/zuzoup/The-Odin-Project/contents/README.md",
@@ -34,7 +38,7 @@ function Odin() {
   }, []);
 
   return (
-    <section>
+    <section className={isVisible ? "loaded" : ""} ref={refPL_Odin}>
       <ListHeader title={"The Odin Project"} />
       <SectionBody data={data} />
     </section>

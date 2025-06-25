@@ -148,3 +148,16 @@ section:nth-child(5) {
     color: var(--pink);
   }
 }
+
+#project_list {
+  section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  section.loaded {
+    opacity: 1;
+    transform: none;
+  }
+}
