@@ -2,7 +2,7 @@ import { stack_svg } from "./stack_SVG";
 
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, FreeMode } from "swiper/modules";
 import "swiper/css";
 
 const stack = [
@@ -25,7 +25,7 @@ const stack = [
 function AboutMe_slider() {
   return (
     <Swiper
-      modules={[Autoplay]}
+      modules={[Autoplay, FreeMode]}
       loop={true}
       autoplay={{
         delay: 0,
@@ -34,8 +34,11 @@ function AboutMe_slider() {
       }}
       grabCursor={true}
       slidesPerView={8}
-      freeMode={true}
       speed={2000}
+      freeMode={{
+        enabled: true,
+        momentum: false,
+      }}
     >
       {stack.map((item) => {
         return (

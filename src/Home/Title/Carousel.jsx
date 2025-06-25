@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { delay_carousel } from "../../delays";
 
 const arr = ["HTML", "CSS", "JS", "TS", "React"];
 
 function Carousel() {
   const [index, setIndex] = useState(0);
-  const timeout = 3000;
+  const timeout = delay_carousel;
 
   useEffect(() => {
     const interval = setInterval(() => {
