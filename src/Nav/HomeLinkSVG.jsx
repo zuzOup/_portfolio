@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
 
-function HomeLinkSVG({ click, scrollPosition }) {
+function HomeLinkSVG({ click, scrollPosition = "path", delay = "0ms", isLoaded }) {
   const [active, setActive] = useState("");
 
   return (
     <button
-      className={`homebutton ${scrollPosition}`}
+      style={{ animationDelay: `${delay}` }}
+      className={`homebutton ${scrollPosition} ${isLoaded}`}
       onMouseEnter={() => {
         setActive("active");
       }}
@@ -26,6 +27,8 @@ export default HomeLinkSVG;
 HomeLinkSVG.propTypes = {
   click: PropTypes.func,
   scrollPosition: PropTypes.string,
+  delay: PropTypes.string,
+  isLoaded: PropTypes.string,
 };
 
 const svg = (

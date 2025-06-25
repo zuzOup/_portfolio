@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
-import { delay_aside } from "../../delays";
 
-function AsideRight() {
+import PropTypes from "prop-types";
+
+function AsideRight({ delayAside }) {
   const [animating, setAnimating] = useState(false);
 
   const timeoutRef = useRef(null);
@@ -21,7 +22,7 @@ function AsideRight() {
   };
 
   return (
-    <div id="aside_right" style={{ transitionDelay: `${delay_aside}ms` }}>
+    <div id="aside_right" style={{ transitionDelay: `${delayAside}ms` }}>
       <a
         href="mailto:zuzanaoupicka@gmail.com"
         target="_blank"
@@ -35,5 +36,9 @@ function AsideRight() {
     </div>
   );
 }
+
+AsideRight.propTypes = {
+  delayAside: PropTypes.number,
+};
 
 export default AsideRight;

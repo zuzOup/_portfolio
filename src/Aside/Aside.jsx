@@ -8,14 +8,25 @@ import AsideLines from "./dotsAndLines/AsideLines";
 
 import "./Aside.css";
 
-import { delay_aside } from "../delays";
+import { delay_aside, delay_aside_changed } from "../delays";
+import changeDelayOnMount_hook from "../changeDelayOnMount_hook";
 
 function Aside({ left, isLoaded }) {
+  const delayAside = changeDelayOnMount_hook(
+    delay_aside,
+    delay_aside_changed,
+    delay_aside_changed
+  );
+
   return (
-    <aside className={isLoaded} style={{ animationDelay: `${delay_aside}ms` }}>
+    <aside className={isLoaded} style={{ animationDelay: `${delayAside}ms` }}>
       <div>
         <AsideDots />
-        {left ? <AsideLeft isLoaded={isLoaded} /> : <AsideRight isLoaded={isLoaded} />}
+        {left ? (
+          <AsideLeft isLoaded={isLoaded} delayAside={delayAside} />
+        ) : (
+          <AsideRight isLoaded={isLoaded} delayAside={delayAside} />
+        )}
         <AsideLines />
       </div>
     </aside>

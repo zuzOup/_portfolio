@@ -5,7 +5,7 @@ header {
 
 nav {
   position: fixed;
-  top: 0;
+
   left: 0;
   z-index: 100;
 
@@ -21,14 +21,17 @@ nav {
   align-items: center;
 
   &.active {
+    top: 0;
     height: 11vh;
     box-shadow: 0px 4px 27px 0px var(--brown);
+    transition: all 0.3s ease-in-out;
   }
 
   &.hidden {
     top: -13vh;
     box-shadow: none;
     opacity: 0;
+    transition: all 0.3s ease-in-out;
   }
 
   &.hidden:hover {
@@ -207,4 +210,12 @@ nav {
 
     color: var(--darkGreen);
   }
+}
+.homebutton.path {
+  opacity: 0; /* fadeInUp_nav start*/
+  transform: translateY(3px); /* fadeInUp_nav start*/
+}
+
+.homebutton.path.loaded {
+  animation: fadeInUp_nav 0.4s ease forwards;
 }

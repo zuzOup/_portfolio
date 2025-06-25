@@ -4,13 +4,13 @@ const links = [
   { id: "codepen", href: "https://codepen.io/zuzOup" },
 ];
 
-import { delay_aside } from "../../delays";
+import PropTypes from "prop-types";
 
 import { svg } from "./AsideLeft_svg";
 
-function AsideLeft() {
+function AsideLeft({ delayAside }) {
   return (
-    <div id="aside_left" style={{ transitionDelay: `${delay_aside}ms` }}>
+    <div id="aside_left" style={{ transitionDelay: `${delayAside}ms` }}>
       <ul>
         {links.map((link) => {
           return (
@@ -26,5 +26,9 @@ function AsideLeft() {
     </div>
   );
 }
+
+AsideLeft.propTypes = {
+  delayAside: PropTypes.number,
+};
 
 export default AsideLeft;

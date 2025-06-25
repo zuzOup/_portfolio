@@ -10,9 +10,10 @@ import ResumeButton from "./ResumeButton";
 import NavItem from "./NavItem";
 
 import "./Nav.css";
-import { delay_nav } from "../delays";
+import { delay_nav, delay_nav_changed } from "../delays";
 
 import DarkModeToggle from "./DarkModeToggle";
+import changeDelayOnMount_hook from "../changeDelayOnMount_hook";
 
 const links = [
   { id: "aboutMe", text: "About me" },
@@ -22,6 +23,7 @@ const links = [
 
 const initialState = {
   scrollPosition: "top",
+  scrollPosition_home: "top",
   scrollID: "",
   isLoaded: false,
 };
@@ -40,6 +42,8 @@ function reducer(state, action) {
 function Nav({ isLoaded }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const delayNav = changeDelayOnMount_hook(delay_nav, 0, delay_nav_changed);
+
   const location = useLocation();
 
   const history = useHistory();
@@ -49,7 +53,7 @@ function Nav({ isLoaded }) {
       if (this.scrollY > 150) {
         dispatch({ type: "SET_SCROLL", payload: "hidden" });
       } else if (this.scrollY > 50 && this.scrollY <= 150) {
-        dispatch({ type: "SET_SCROLL", payload: "hidden home-top" });
+        dispatch({ type: "SET_SCROLL", payload: "active" });
       } else if (this.scrollY <= 50) {
         dispatch({ type: "SET_SCROLL", payload: "top" });
       }
@@ -63,14 +67,19 @@ function Nav({ isLoaded }) {
   }, []);
 
   /*homebutton*/
+  const locationPathway = location.pathname === "/";
 
-  const link_scroll = () => {
-    scrollTo(0, 0);
-  };
+  const homeButton_path = () => {
+    const scroll = () => {
+      scrollTo(0, 0);
+    };
 
-  const link_archive = () => {
-    scrollTo(0, 0);
-    history.push("/");
+    const scroll_push = () => {
+      scrollTo(0, 0);
+      history.push("/");
+    };
+
+    return locationPathway ? scroll : scroll_push;
   };
 
   /*buttons */
@@ -94,18 +103,19 @@ function Nav({ isLoaded }) {
   return (
     <header id="header">
       <nav className={state.scrollPosition}>
-        {location.pathname === "/" && (
-          <HomeLinkSVG click={link_scroll} scrollPosition={state.scrollPosition} />
-        )}
-        {location.pathname !== "/" && <HomeLinkSVG click={link_archive} />}
-
+        <HomeLinkSVG
+          click={homeButton_path()}
+          scrollPosition={locationPathway ? state.scrollPosition : "path"}
+          delay={`${(links.length + 2) * 100 + delayNav}ms`}
+          isLoaded={isLoaded}
+        />
         <ul className={isLoaded}>
-          <li style={{ animationDelay: `${delay_nav}ms` }}>
+          <li style={{ animationDelay: `${delayNav}ms` }}>
             <DarkModeToggle />
           </li>
           {links.map((item, i) => {
             return (
-              <li key={i} style={{ animationDelay: `${(i + 1) * 100 + delay_nav}ms` }}>
+              <li key={i} style={{ animationDelay: `${(i + 1) * 100 + delayNav}ms` }}>
                 <NavItem
                   id={item.id}
                   text={item.text}
@@ -115,7 +125,7 @@ function Nav({ isLoaded }) {
               </li>
             );
           })}
-          <li style={{ animationDelay: `${(links.length + 1) * 100 + delay_nav}ms` }}>
+          <li style={{ animationDelay: `${(links.length + 1) * 100 + delayNav}ms` }}>
             <ResumeButton />
           </li>
         </ul>
