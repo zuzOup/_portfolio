@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import SectionHeader from "../Components/SectionHeader";
 
@@ -9,6 +9,14 @@ import { list } from "./list";
 import "./Accomplishments.css";
 
 function Accomplishments() {
+  const [loadedCount, setLoadedCount] = useState(0);
+
+  const handleImgLoad = () => {
+    setLoadedCount((prev) => prev + 1);
+  };
+
+  const allLoaded = loadedCount === list.length;
+
   useEffect(() => {
     list.forEach((x) => {
       const img = new Image();
@@ -26,6 +34,8 @@ function Accomplishments() {
             index={i}
             course={certificate.course}
             name={certificate.name}
+            onImgLoad={handleImgLoad}
+            allLoaded={allLoaded}
           />
         ))}
       </div>

@@ -7,7 +7,7 @@ import Cover from "./Cover";
 import Modal from "./modal/Modal";
 import ImgCell from "./ImgCell";
 
-function GridCell({ index, course, name }) {
+function GridCell({ index, course, name, onImgLoad, allLoaded }) {
   const src = `/certificates/${name}.png`;
   const alt = `${course} - ${name}`;
 
@@ -35,8 +35,14 @@ function GridCell({ index, course, name }) {
 
   return (
     <>
-      <button onMouseEnter={hover} onMouseLeave={hoverClear} onClick={handleClickButton}>
-        <ImgCell src={src} alt={alt} />
+      <button
+        onMouseEnter={hover}
+        onMouseLeave={hoverClear}
+        onClick={handleClickButton}
+        className={allLoaded ? "loaded" : ""}
+        style={{ "--i": index }}
+      >
+        <ImgCell src={src} alt={alt} onImgLoad={onImgLoad} />
         <Cover course={course} name={name} isActive={isActive} />
       </button>
       {showModal &&
@@ -50,6 +56,8 @@ GridCell.propTypes = {
   name: PropTypes.string,
   index: PropTypes.number,
   svg: PropTypes.func,
+  onImgLoad: PropTypes.func,
+  allLoaded: PropTypes.bool,
 };
 
 export default GridCell;

@@ -16,6 +16,9 @@
 
   button {
     all: unset;
+    opacity: 0;
+    transform: translateY(20px);
+
     overflow: hidden;
     cursor: pointer;
 
@@ -28,13 +31,18 @@
 
     background-image: linear-gradient(to left, var(--yellowPink3), var(--yellowPink1));
     border-radius: 2.14vw;
-    /* padding: 0.1vw; */
+
     box-sizing: border-box;
     box-shadow: 1px 1px 4px 2px var(--brown-50);
+
+    &.loaded {
+      animation: fadeInUp 0.5s ease forwards;
+      animation-delay: calc(var(--i) * 100ms);
+    }
   }
 
   img {
-    opacity: 0;
+    opacity: 0.9;
     transition: opacity 0.3s ease-in;
 
     width: 88%;
@@ -45,10 +53,6 @@
     border-radius: 1.545vw;
 
     border: 4px dotted var(--pink);
-
-    &.loaded {
-      opacity: 0.9;
-    }
   }
 
   .cover_text {
@@ -132,5 +136,16 @@
     &.active {
       transform: scale(1.55);
     }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
