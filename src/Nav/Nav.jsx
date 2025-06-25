@@ -12,6 +12,8 @@ import NavItem from "./NavItem";
 import "./Nav.css";
 import { delay_nav } from "../delays";
 
+import DarkModeToggle from "./DarkModeToggle";
+
 const links = [
   { id: "aboutMe", text: "About me" },
   { id: "projects", text: "Projects" },
@@ -98,7 +100,9 @@ function Nav({ isLoaded }) {
         {location.pathname !== "/" && <HomeLinkSVG click={link_archive} />}
 
         <ul className={isLoaded}>
-          <li style={{ animationDelay: `${delay_nav}ms` }}>☀️</li>
+          <li style={{ animationDelay: `${delay_nav}ms` }}>
+            <DarkModeToggle />
+          </li>
           {links.map((item, i) => {
             return (
               <li key={i} style={{ animationDelay: `${(i + 1) * 100 + delay_nav}ms` }}>

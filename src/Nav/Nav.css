@@ -14,7 +14,7 @@ nav {
 
   background-color: var(--beige);
 
-  transition: all 0.2s linear;
+  transition: all 0.3s ease-in-out;
 
   display: flex;
   justify-content: space-between;

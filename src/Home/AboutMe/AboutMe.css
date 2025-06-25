@@ -3,7 +3,7 @@
   padding: 15vh 0 15vh 0;
 
   svg {
-    color: var(--darkGreen);
+    color: var(--yellowPink4);
   }
 
   .article_dots > * {
@@ -180,16 +180,6 @@
   }
 }
 
-/* #sparkle {
-  position: absolute !important;
-  width: 15px !important;
-  height: 15px !important;
-
-  z-index: 15;
-
-  transition: none;
-} */
-
 #frame-sparkle {
   position: relative;
 
@@ -223,12 +213,12 @@
   left: 0;
   content: "✦";
   font-size: 9px;
-  color: var(--yellowBeige);
+  color: var(--yellowBeige-sparkle);
 }
 
 .star-bck1:before {
   color: transparent;
-  text-shadow: 0 0 2px var(--yellowBeige);
+  text-shadow: 0 0 2px var(--yellowBeige-sparkle);
 }
 .star-bck2:before,
 .star-bck3:before {

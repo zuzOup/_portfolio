@@ -9,9 +9,9 @@ function Contact__ConfirmationMessage({ hideConfMsg }) {
         Thanks for reaching out! I’ve received your message and will get back to you soon
       </p>
 
-      <Butt classs="contact">
-        <button className="butt-btn contact msg" onClick={hideConfMsg}>
-          <Butt_inside classs="contact msg" text="Send another message" />
+      <Butt className="msg">
+        <button className="butt-btn msg" onClick={hideConfMsg}>
+          <Butt_inside className="msg" text="Send another message" />
         </button>
       </Butt>
     </div>

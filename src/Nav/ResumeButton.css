@@ -19,7 +19,7 @@
   letter-spacing: 0.08vw;
   font-size: 1.2vw;
 
-  color: var(--darkGreen);
+  color: var(--darkGreen-resume);
   background-color: var(--yellowPink1);
   border: var(--beige) 3px solid;
   outline: 4px solid var(--yellowPink1);
