@@ -8,20 +8,23 @@ import AsideLines from "./dotsAndLines/AsideLines";
 
 import "./Aside.css";
 
-function Aside({ left }) {
+import { delay_aside } from "../delays";
+
+function Aside({ left, isLoaded }) {
   return (
-    <aside>
+    <aside className={isLoaded} style={{ animationDelay: `${delay_aside}ms` }}>
       <div>
         <AsideDots />
-        {left ? <AsideLeft /> : <AsideRight />}
+        {left ? <AsideLeft isLoaded={isLoaded} /> : <AsideRight isLoaded={isLoaded} />}
         <AsideLines />
       </div>
     </aside>
   );
 }
 
+export default Aside;
+
 Aside.propTypes = {
   left: PropTypes.bool,
+  isLoaded: PropTypes.string,
 };
-
-export default Aside;

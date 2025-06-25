@@ -1,5 +1,6 @@
 aside {
   width: 8vw;
+  opacity: 0; /*fadeInUp_Aside start*/
 
   & > div {
     position: fixed;
@@ -14,7 +15,25 @@ aside {
   }
 }
 
+aside.loaded {
+  animation: fadeInUp_Aside 0.6s ease forwards; /*fadeInUp_Aside start*/
+
+  #aside_left,
+  #aside_right {
+    transform: translateY(0px); /*fadeInUp_Aside start*/
+  }
+}
+
+@keyframes fadeInUp_Aside {
+  to {
+    opacity: 1;
+  }
+}
+
 #aside_left {
+  transform: translateY(5px); /*fadeInUp_Aside start*/
+  transition: all 0.5s ease-in-out; /*fadeInUp_Aside start*/
+
   ul {
     display: flex;
     flex-direction: column;
@@ -35,8 +54,6 @@ aside {
     .aside_left-icon-bck {
       width: 2.5vw;
       height: 2.5vw;
-
-      /* margin: auto; */
 
       border-radius: 100%;
 
@@ -159,6 +176,9 @@ aside {
   align-items: start;
   width: 8vw;
   height: 18vw;
+
+  transform: translateY(5px); /*fadeInUp_Aside start*/
+  transition: all 0.5s ease-in-out; /*fadeInUp_Aside start*/
 
   a {
     display: flex;

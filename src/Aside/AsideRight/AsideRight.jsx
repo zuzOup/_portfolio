@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { delay_aside } from "../../delays";
 
 function AsideRight() {
   const [animating, setAnimating] = useState(false);
@@ -20,7 +21,7 @@ function AsideRight() {
   };
 
   return (
-    <div id="aside_right">
+    <div id="aside_right" style={{ transitionDelay: `${delay_aside}ms` }}>
       <a
         href="mailto:zuzanaoupicka@gmail.com"
         target="_blank"

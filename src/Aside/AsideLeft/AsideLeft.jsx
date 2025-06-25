@@ -4,11 +4,13 @@ const links = [
   { id: "codepen", href: "https://codepen.io/zuzOup" },
 ];
 
+import { delay_aside } from "../../delays";
+
 import { svg } from "./AsideLeft_svg";
 
 function AsideLeft() {
   return (
-    <div id="aside_left">
+    <div id="aside_left" style={{ transitionDelay: `${delay_aside}ms` }}>
       <ul>
         {links.map((link) => {
           return (

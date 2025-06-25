@@ -14,6 +14,9 @@
     padding-top: 12vh;
     font-size: 2vw;
     font-weight: 200;
+
+    opacity: 0; /*FadeInSide_title start*/
+    transform: translateX(20px); /*FadeInSide_title start*/
   }
 
   .h1-container {
@@ -25,6 +28,9 @@
     height: 10vh;
     padding-bottom: 4vh;
     margin: 4vh 0 3.8vh 0;
+
+    opacity: 0; /*FadeInSide_title start*/
+    transform: translateX(20px); /*FadeInSide_title start*/
   }
 
   h1 {
@@ -64,6 +70,11 @@
     font-weight: 350;
     letter-spacing: 0.02em;
   }
+
+  & > p {
+    opacity: 0; /*FadeInSide_title start*/
+    transform: translateX(20px); /*FadeInSide_title start*/
+  }
 }
 
 @keyframes h1_bounce {
@@ -80,12 +91,53 @@
   }
 }
 
+/* cubic-bezier(0.33, 1, 0.68, 1) */
+
+#title.loaded {
+  h3 {
+    animation: FadeInSide_title 1s ease 100ms forwards;
+  }
+
+  .h1-container {
+    animation: FadeInSide_title 1s ease 250ms forwards;
+  }
+
+  & > p {
+    animation: FadeInSide_title 1s ease 400ms forwards;
+  }
+
+  #carousel {
+    animation: FadeInSide_carousel 1s ease 550ms forwards;
+  }
+
+  .butt {
+    animation: FadeInSide_title 1s ease 700ms forwards !important;
+  }
+}
+
+@keyframes FadeInSide_title {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes FadeInSide_carousel {
+  to {
+    opacity: 1;
+    transform: translateX(1.5vw);
+  }
+}
+
 #carousel {
+  opacity: 0; /*FadeInSide_carousel start*/
+  transform: translateX(calc(1.5vw + 20px)); /*FadeInSide_carousel start*/
+
   display: flex;
   width: 100%;
   align-content: center;
   justify-content: center;
-  transform: translateX(1.5vw);
+
   padding-bottom: 3vh;
   flex-wrap: wrap;
   height: 3vw;

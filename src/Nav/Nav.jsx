@@ -1,3 +1,5 @@
+import { PropTypes } from "prop-types";
+
 import { useEffect, useReducer } from "react";
 
 import { useLocation, useHistory } from "react-router-dom";
@@ -8,6 +10,7 @@ import ResumeButton from "./ResumeButton";
 import NavItem from "./NavItem";
 
 import "./Nav.css";
+import { delay_nav } from "../delays";
 
 const links = [
   { id: "aboutMe", text: "About me" },
@@ -18,6 +21,7 @@ const links = [
 const initialState = {
   scrollPosition: "top",
   scrollID: "",
+  isLoaded: false,
 };
 
 function reducer(state, action) {
@@ -26,17 +30,13 @@ function reducer(state, action) {
       return { ...state, scrollPosition: action.payload };
     case "SET_SCROLL_ID":
       return { ...state, scrollID: action.payload };
-    // case "RESET":
-    //   return initialState;
     default:
       return state;
   }
 }
 
-function Nav() {
+function Nav({ isLoaded }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  // const [scrollPosition, setscrollPosition] = useState("top");
-  // const [scrollID, setScrollID] = useState("");
 
   const location = useLocation();
 
@@ -44,12 +44,12 @@ function Nav() {
 
   useEffect(() => {
     function scroll() {
-      if (this.scrollY > 50) {
+      if (this.scrollY > 150) {
         dispatch({ type: "SET_SCROLL", payload: "hidden" });
-        // setscrollPosition("hidden");
+      } else if (this.scrollY > 50 && this.scrollY <= 150) {
+        dispatch({ type: "SET_SCROLL", payload: "hidden home-top" });
       } else if (this.scrollY <= 50) {
         dispatch({ type: "SET_SCROLL", payload: "top" });
-        // setscrollPosition("top");
       }
     }
 
@@ -97,10 +97,11 @@ function Nav() {
         )}
         {location.pathname !== "/" && <HomeLinkSVG click={link_archive} />}
 
-        <ul>
+        <ul className={isLoaded}>
+          <li style={{ animationDelay: `${delay_nav}ms` }}>☀️</li>
           {links.map((item, i) => {
             return (
-              <li key={i}>
+              <li key={i} style={{ animationDelay: `${(i + 1) * 100 + delay_nav}ms` }}>
                 <NavItem
                   id={item.id}
                   text={item.text}
@@ -110,7 +111,7 @@ function Nav() {
               </li>
             );
           })}
-          <li>
+          <li style={{ animationDelay: `${(links.length + 1) * 100 + delay_nav}ms` }}>
             <ResumeButton />
           </li>
         </ul>
@@ -120,3 +121,7 @@ function Nav() {
 }
 
 export default Nav;
+
+Nav.propTypes = {
+  isLoaded: PropTypes.string,
+};

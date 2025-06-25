@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
+
 import Nav from "../Nav/Nav";
 import Aside from "../Aside/Aside";
 import Footer from "../Footer/Footer";
@@ -16,19 +17,30 @@ import Project_List from "../Project_List/Project_list";
 import SVGFilter from "../Components/SVGFilter";
 
 import "./Layout.css";
+import { useEffect, useState } from "react";
 
 function Layout() {
+  const [isLoaded, setIsLoaded] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoaded("loaded");
+    }, 300);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <>
       <BrowserRouter>
         <SVGFilter />
-        <Nav />
+        <Nav isLoaded={isLoaded} />
         <main id="main">
-          <Aside left={true} />
+          <Aside left={true} isLoaded={isLoaded} />
           <article>
             <Switch>
               <Route exact path="/">
-                <Title />
+                <Title isLoaded={isLoaded} />
                 <AboutMe />
                 <Projects />
                 <Contact />
@@ -42,7 +54,7 @@ function Layout() {
               <Route render={() => <Redirect to={{ pathname: "/" }} />} />
             </Switch>
           </article>
-          <Aside left={false} />
+          <Aside left={false} isLoaded={isLoaded} />
         </main>
         <Footer />
       </BrowserRouter>

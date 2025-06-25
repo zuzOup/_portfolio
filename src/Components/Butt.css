@@ -3,6 +3,13 @@
   border-radius: 1000px;
 }
 
+.butt.title {
+  opacity: 0; /*FadeInSide_title start*/
+  transform: translateX(20px); /*FadeInSide_title start*/
+}
+
+
+
 .butt:has(.butt-btn:active) {
   transform: translate(0px, 2px);
 }

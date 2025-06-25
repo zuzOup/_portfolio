@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { PropTypes } from "prop-types";
 
 import "./Title.css";
 import "./Title_bounce.css";
@@ -8,26 +9,28 @@ import Carousel from "./Carousel";
 import Butt from "../../Components/Butt";
 import Butt_inside from "../../Components/Butt_inside";
 
-function Title() {
+import { delay_bounce } from "../../delays";
+
+function Title({ isLoaded }) {
   const [animationStart, setAnimationStart] = useState({ dot: "", Z: "", O: "" });
 
   useEffect(() => {
-    const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+    const wait = (ms) => new Promise((res) => setTimeout(res, ms));
 
     async function runAnimations() {
-      await delay(300);
+      await wait(300 + delay_bounce);
       setAnimationStart((x) => ({ ...x, dot: "animate" }));
-      await delay(1000);
+      await wait(1000);
       setAnimationStart((x) => ({ ...x, Z: "animate" }));
-      await delay(620);
+      await wait(620);
       setAnimationStart((x) => ({ ...x, O: "animate" }));
     }
 
-    runAnimations();
-  }, []);
+    isLoaded && runAnimations();
+  }, [isLoaded]);
 
   return (
-    <section id="title">
+    <section id="title" className={isLoaded}>
       <h3>Hi, my name is</h3>
       <div className="h1-container">
         <h1 className={animationStart.Z}>Zuzana</h1>
@@ -55,3 +58,7 @@ function Title() {
   );
 }
 export default Title;
+
+Title.propTypes = {
+  isLoaded: PropTypes.string,
+};

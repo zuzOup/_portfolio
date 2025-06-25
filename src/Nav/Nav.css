@@ -46,7 +46,14 @@ nav {
     list-style-type: none;
   }
 
+  ul.loaded li {
+    animation: fadeInUp_nav 0.4s ease forwards;
+  }
+
   li {
+    opacity: 0; /* fadeInUp_nav start*/
+    transform: translateY(3px); /* fadeInUp_nav start*/
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +74,11 @@ nav {
   }
 
   li:has(button:hover) {
-    transform: translateY(-2px);
+    transform: translateY(-2px) !important;
+  }
+
+  li:has(button:active) {
+    transform: translateY(-1px) !important;
   }
 
   button:hover {
@@ -75,6 +86,14 @@ nav {
     cursor: pointer;
   }
 }
+
+@keyframes fadeInUp_nav {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .nav_dots {
   height: 0.4vw;
   width: 0.4vw;
@@ -155,7 +174,8 @@ nav {
   border-radius: 45% 45% 0% 0% / 45% 45% 0% 0%;
   cursor: pointer;
 
-  &.top {
+  &.top,
+  &.home-top {
     visibility: hidden;
   }
 
@@ -184,5 +204,7 @@ nav {
 
     width: 3vw;
     height: 3vw;
+
+    color: var(--darkGreen);
   }
 }
