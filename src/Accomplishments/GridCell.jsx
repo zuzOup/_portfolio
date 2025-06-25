@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Cover from "./Cover";
 
 import Modal from "./modal/Modal";
-import ImgCell from "./ImgCell";
+
 
 function GridCell({ index, course, name, onImgLoad, allLoaded }) {
   const src = `/certificates/${name}.png`;
@@ -42,7 +42,7 @@ function GridCell({ index, course, name, onImgLoad, allLoaded }) {
         className={allLoaded ? "loaded" : ""}
         style={{ "--i": index }}
       >
-        <ImgCell src={src} alt={alt} onImgLoad={onImgLoad} />
+        <img src={src} alt={alt} onLoad={onImgLoad} />
         <Cover course={course} name={name} isActive={isActive} />
       </button>
       {showModal &&
