@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-import Sparkle from "./Sparkle";
 import Sparkle2 from "./Sparkle2";
 
 function AboutMe_photo() {

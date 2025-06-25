@@ -4,8 +4,10 @@ function Cover({ course, name, isActive }) {
   return (
     <>
       <div className={`cover_text ${isActive}`}>
-        <h4>{course}</h4>
-        <h5>{name}</h5>
+        <div className="cover_text-inner">
+          <h4>{course}</h4>
+          <h5>{name}</h5>
+        </div>
       </div>
       <div className={`cover ${isActive}`}></div>
     </>

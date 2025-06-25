@@ -27,45 +27,66 @@
     height: 12vw;
 
     background-image: linear-gradient(to left, var(--yellowPink3), var(--yellowPink1));
-    border-radius: 3px;
-    padding: 0.1vw;
+    border-radius: 2.14vw;
+    /* padding: 0.1vw; */
     box-sizing: border-box;
-    box-shadow: 1px 1px 5px 1px #00000015;
+    box-shadow: 1px 1px 4px 2px var(--brown-50);
   }
 
-  img,
-  svg {
-    width: 99%;
-    height: 99%;
-    margin: 0.07vw;
-    opacity: 1;
-    border-radius: 3px;
-  }
+  img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
 
-  /* img.imgCell.loading {
-     opacity: 0;
-     transition: all 0.1s;
-   } */
+    width: 88%;
+    height: 88%;
+
+    margin: calc(0.72vw - 4px) calc(0.96vw - 4px);
+
+    border-radius: 1.545vw;
+
+    border: 4px dotted var(--pink);
+
+    &.loaded {
+      opacity: 0.9;
+    }
+  }
 
   .cover_text {
     cursor: pointer;
     z-index: 10;
     position: relative;
-    top: -13vw;
-    left: 0;
+
+    top: calc(-12vw - 4px);
+
     height: 100%;
     width: 100%;
     opacity: 0;
 
-    transform: translateY(1vw);
-
     transition: all 400ms;
     transition-delay: 30ms;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &.active {
       opacity: 1;
       transform: translateY(0);
       transition-delay: 300ms;
+    }
+
+    .cover_text-inner {
+      width: 88%;
+      height: 88%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 1.545vw;
+
+      border: 4px dotted var(--beige);
     }
 
     h4,
@@ -79,7 +100,6 @@
     h4 {
       color: var(--pink);
       font-weight: 700;
-      padding: 4.8vw 1vw 0 1vw;
 
       font-size: 1vw;
     }
@@ -87,7 +107,6 @@
     h5 {
       color: var(--beige);
       font-weight: 600;
-      padding: 0.05vw 1vw 0 1vw;
 
       font-size: 1.3vw;
       font-style: italic;
@@ -95,7 +114,7 @@
   }
 
   .cover {
-    opacity: 0.98;
+    opacity: 0.99;
     z-index: 5;
     position: relative;
     top: -23.2vw;

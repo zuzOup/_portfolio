@@ -5,8 +5,9 @@ import { createPortal } from "react-dom";
 import Cover from "./Cover";
 
 import Modal from "./modal/Modal";
+import ImgCell from "./ImgCell";
 
-function GridCell({ index, course, name, svg }) {
+function GridCell({ index, course, name }) {
   const src = `/certificates/${name}.png`;
   const alt = `${course} - ${name}`;
 
@@ -35,8 +36,7 @@ function GridCell({ index, course, name, svg }) {
   return (
     <>
       <button onMouseEnter={hover} onMouseLeave={hoverClear} onClick={handleClickButton}>
-        {svg()}
-        {/* <img src={src} alt={alt} className="imgCell"></img> */}
+        <ImgCell src={src} alt={alt} />
         <Cover course={course} name={name} isActive={isActive} />
       </button>
       {showModal &&

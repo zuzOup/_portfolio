@@ -26,7 +26,6 @@ function Accomplishments() {
             index={i}
             course={certificate.course}
             name={certificate.name}
-            svg={certificate.svg}
           />
         ))}
       </div>
