@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import SectionHeader from "../../Components/SectionHeader";
 import ContactForm from "./ContactForm";
@@ -6,8 +6,15 @@ import ContactForm from "./ContactForm";
 import "./Contact.css";
 import { useHistory } from "react-router-dom";
 
+import fadeInOnScroll_hook from "../../fadeInOnScroll_hook";
+
+import FadeInDiv from "../../Components/FadeInDiv";
+
 function Contact() {
   const history = useHistory();
+
+  const refContact = useRef();
+  const isVisible = fadeInOnScroll_hook(refContact);
 
   useEffect(() => {
     let pageUrl = window.location.href;
@@ -19,9 +26,9 @@ function Contact() {
   });
 
   return (
-    <section id="contact">
-      <SectionHeader title={"Contact"} class_title={"contact"} />
-      <div className="text">
+    <section id="contact" className={isVisible ? "loaded" : ""}>
+      <SectionHeader title={"Contact"} ref={refContact} />
+      <FadeInDiv className="text" isVisible={isVisible}>
         <p>
           If you like my work and would like me to be part of your team, please feel free
           to reach out. You can contact me via email at&nbsp;
@@ -30,8 +37,8 @@ function Contact() {
           </a>
           &nbsp;or through the contact form below. Thanks for stopping by my portfolio!
         </p>
-      </div>
-      <ContactForm />
+        <ContactForm />
+      </FadeInDiv>
     </section>
   );
 }

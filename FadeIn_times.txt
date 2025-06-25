@@ -1,0 +1,31 @@
+
+
+
+
+Title 
+
+h3 (Hi, my name is)
+
+.h1-container (ZO )
+
+p:not(#carousel) 
+
+
+---------------
+
+Nav starts at 1000ms   --   @keyframes fadeInUp_nav
+
+animation delay in JSX
+
+5 li's   150ms delay each  -> runs for 0.4s  
+
+1000  ☀️ 
+1150  About
+1300 Projects
+1450  contact 
+1600  Resume btn  (ends at 2000)
+
+
+-------------- 
+
+Aside  delay 1750ms   - @keyframes FadeInSide_title + transition for aside_left/ aside_right

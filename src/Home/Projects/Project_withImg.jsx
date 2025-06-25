@@ -6,12 +6,20 @@ import { project_withImg } from "./Projects-data";
 
 import "./Project-withImg.css";
 
+import { useRef } from "react";
+
+import fadeInOnScroll_hook from "../../fadeInOnScroll_hook";
+import FadeInDiv from "../../Components/FadeInDiv";
+
 const leftright = (num) => {
   if (num % 2 === 0 || num === 0) return "left";
   return "right";
 };
 
 function Project_withImg({ i }) {
+  const refProject_withImg = useRef();
+  const isVisible = fadeInOnScroll_hook(refProject_withImg);
+
   const side = leftright(i);
 
   const name = project_withImg[i].name || "";
@@ -22,7 +30,11 @@ function Project_withImg({ i }) {
   const img = project_withImg[i].img || "";
 
   return (
-    <div className={`project-withImg ${side}`}>
+    <FadeInDiv
+      className={`project-withImg ${side}`}
+      isVisible={isVisible}
+      ref={refProject_withImg}
+    >
       <div className="text">
         <div className="project-withImg_title">
           <div className="smallDot"></div>
@@ -44,7 +56,7 @@ function Project_withImg({ i }) {
           <img src={img} alt={`Webpage Preview - ${name}`} />
         </a>
       </div>
-    </div>
+    </FadeInDiv>
   );
 }
 
