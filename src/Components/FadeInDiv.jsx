@@ -2,6 +2,8 @@ import { forwardRef } from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
+
+
 const fadeInStyles = css`
   opacity: 0;
   transform: translateY(20px);
@@ -14,8 +16,7 @@ const fadeInStyles = css`
     opacity: 1;
     transform: none;
   `};
-`;
-const StyledDiv = styled.section.withConfig({
+`;const StyledDiv = styled.section.withConfig({
   shouldForwardProp: (prop) => !["visible", "delay"].includes(prop),
 })`
   ${fadeInStyles}

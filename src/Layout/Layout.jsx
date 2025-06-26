@@ -18,11 +18,9 @@ import SVGFilter from "../Components/SVGFilter";
 import "./Layout.css";
 
 import isLoaded_hook from "../isLoaded_hook";
-import filterCheck from "../filterCheck";
 
 function Layout() {
   const isLoaded = isLoaded_hook();
-  filterCheck();
 
   return (
     <>

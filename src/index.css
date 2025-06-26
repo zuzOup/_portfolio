@@ -1,5 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --beige: #181712;
+    --brown: #9c8e69;
+    --darkGreen: #e0dab5;
+    --darkGreen-resume: #181712;
+
+    --yellowBeige: #4e5c3b;
+    --yellowBeige-sparkle: #fff5de;
+
+    --yellow: #88ac6e;
+
+    --yellowPink1: #7ea27a;
+    --yellowPink2: #749f8d;
+    --yellowPink3: #6a9ca0;
+    --yellowPink4: #6098b4;
+    --pink: #86b6ec;
+
+    --red: #e0524b;
+
+    --brown-50: rgba(156, 142, 105, 0.5);
+
+    --yellowPink2-90: rgba(116, 159, 141, 0.95);
+    --yellowPink3-90: rgba(106, 156, 160, 0.95);
+    --yellowPink4-90: rgba(96, 152, 180, 0.95);
+
+    --pink-90: rgba(136, 172, 110, 0.95);
+
+    --yellowPink2-80: rgba(116, 159, 141, 0.85);
+    --yellowPink4-70: rgba(96, 152, 180, 0.75);
+
+    --white: #181712;
+  }
+}
+
 :root {
   --beige: #fff8ea;
   --brown: #ad9462;
@@ -50,7 +85,7 @@
   --yellowPink4: #6098b4;
   --pink: #86b6ec;
 
-  --red: #e0524b; /* slightly darker green */
+  --red: #e0524b;
 
   --brown-50: rgba(156, 142, 105, 0.5);
 
@@ -136,7 +171,8 @@ body::-webkit-scrollbar-thumb {
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-section.loaded .sectionHeader, .loaded .sectionHeader {
+section.loaded .sectionHeader,
+.loaded .sectionHeader {
   opacity: 1;
   transform: none;
 }

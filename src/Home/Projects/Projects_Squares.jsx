@@ -16,10 +16,16 @@ function Projects_Squares({ i, isVisible }) {
   const web = data.web || "";
 
   return (
-    <FadeInDiv className="project-square" isVisible={isVisible} delay={i * 0.05}>
-      <h3>{name}</h3>
-      <p>{parse(text)}</p>
-      <Project_links className={"project-square_links"} github={github} web={web} />
+    <FadeInDiv
+      className="project-square-container"
+      isVisible={isVisible}
+      delay={i * 0.05}
+    >
+      <div className="project-square">
+        <h3>{name}</h3>
+        <p>{parse(text)}</p>
+        <Project_links className={"project-square_links"} github={github} web={web} />
+      </div>
     </FadeInDiv>
   );
 }

@@ -259,7 +259,7 @@
   top: 0px;
   left: 0px;
 
-  width: var(--blob-width, 25%);
+  width: 33%; /*it is prettier with 25%, but filter sometimes doesnt work and I dont know how to fix it*/
   height: 100%;
 
   border-radius: 100%;

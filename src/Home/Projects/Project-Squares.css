@@ -25,7 +25,6 @@
     var(--yellowPink4-70)
   );
 
-  
   border-radius: 15px;
 
   border: 5px solid var(--beige);
@@ -34,7 +33,6 @@
   transition: all 0.1s ease-in-out;
 
   &:hover {
-    /* transform: translateY(-5px); */
     outline: 5px dotted var(--pink);
     transform: scale(1.02);
   }
@@ -57,7 +55,7 @@
 
     a {
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 750;
       transition: all 0.1s ease-in-out;
     }
 

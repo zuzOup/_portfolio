@@ -18,9 +18,19 @@ function Modal({ index, onClose }) {
 
   useEffect(() => {
     function handleKeyDown(e) {
-      if (e.keyCode === 27) {
-        setModalActive("");
-        onClose();
+      switch (e.keyCode) {
+        case 27: // Escape
+          setModalActive("");
+          onClose();
+          break;
+        case 37: // Left Arrow
+          leftButton();
+          break;
+        case 39: // Right Arrow
+          rightButton();
+          break;
+        default:
+          break;
       }
     }
     setModalActive("active");
