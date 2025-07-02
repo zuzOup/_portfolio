@@ -3,7 +3,7 @@ import parse from "html-react-parser";
 
 import "./Project-Squares.css";
 
-import { projects_square, splitText, svg_git, svg_web } from "./Projects-data";
+import { projects_square, splitText } from "./Projects-data";
 import Project_links from "./Project_links";
 import FadeInDiv from "../../Components/FadeInDiv";
 

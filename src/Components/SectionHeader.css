@@ -1,6 +1,17 @@
 .sectionHeader {
   display: flex;
   justify-content: center;
+
+  h2 {
+    all: unset;
+    font-family: var(--font);
+    text-align: center;
+    font-size: 2.8vw;
+    font-weight: 500;
+
+    color: var(--darkGreen);
+    padding: 0 2vw;
+  }
 }
 
 .article_dots {
@@ -8,14 +19,35 @@
   align-items: center;
 
   .bigDot {
-    width: 0.68vw !important;
-    height: 0.68vw !important;
+    width: 0.68vw;
+    height: 0.68vw;
     transform: translateY(0.2vw);
   }
   .smallDot {
-    width: 0.45vw !important;
-    height: 0.45vw !important;
+    width: 0.45vw;
+    height: 0.45vw;
     margin: 0 0.35vw;
     transform: translateY(0.22vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionHeader h2 {
+    font-size: 2.5rem;
+    padding: 0 2vw;
+  }
+
+  .article_dots {
+    .bigDot {
+      width: 0.6rem;
+      height: 0.6rem;
+      transform: translateY(2px);
+    }
+    .smallDot {
+      width: 0.4rem;
+      height: 0.4rem;
+      margin: 0 5px;
+      transform: translateY(2px);
+    }
   }
 }

@@ -23,13 +23,8 @@ article > section {
   justify-content: start;
 }
 
-article * h2 {
-  all: unset;
-  font-family: var(--font);
-  text-align: center;
-  font-size: 2.8vw;
-  font-weight: 500;
-
-  color: var(--darkGreen);
-  padding: 0 2vw;
+@media (max-width: 768px) {
+  article > section {
+    width: 90vw;
+  }
 }

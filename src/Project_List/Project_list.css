@@ -88,7 +88,7 @@
   }
 }
 
-.article_dots {
+/* .article_dots {
   transform: translateY(-0.2vw);
   display: flex;
   align-items: center;
@@ -106,7 +106,7 @@
     width: 0.55vw !important;
     border-radius: 100%;
   }
-}
+} */
 
 /* Dots + links colors*/
 

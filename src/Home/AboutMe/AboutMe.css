@@ -237,3 +237,39 @@
 .star:after {
   -webkit-text-fill-color: transparent;
 }
+
+@media (max-width: 768px) {
+  #aboutMe {
+    min-height: 80vh;
+    padding: 20px 0;
+
+    .content {
+      position: relative;
+      display: block;
+    }
+
+    .text,
+    .photo {
+      padding: 1.5vw 0 0 0;
+      max-width: 100%;
+      width: 100%;
+      p,
+      a,
+      button,
+      a > span {
+        font-size: 1.2rem;
+      }
+    }
+
+    .photo {
+      display: none;
+    }
+
+    .stack-item {
+      width: 9vw !important;
+      height: 9vw !important;
+    }
+  }
+
+  
+}

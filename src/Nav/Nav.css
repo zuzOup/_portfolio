@@ -187,18 +187,14 @@ nav {
     transition-delay: 0.5s;
   }
 
-  div {
+  .homebutton_bck {
     width: 1.2vw;
     height: 1.1vw;
     background-image: linear-gradient(to left, var(--yellow), var(--yellowPink3));
     opacity: 0.01;
-    transition: all 0.3s;
+    transition: transform 0.3 ease-in;
 
     transform: translateY(1vw) translateX(0.5vw);
-
-    &.active {
-      opacity: 1;
-    }
   }
 
   svg {
@@ -216,6 +212,14 @@ nav {
     color: var(--darkGreen);
   }
 }
+.homebutton.hidden .homebutton_bck,
+.homebutton.path .homebutton_bck {
+  transition: opacity 0.3s;
+}
+
+.homebutton:hover .homebutton_bck {
+  opacity: 1;
+}
 
 .homebutton.path {
   opacity: 0; /* fadeInUp_nav start*/
@@ -225,3 +229,4 @@ nav {
 .homebutton.path.loaded {
   animation: fadeInUp_nav 0.4s ease forwards;
 }
+

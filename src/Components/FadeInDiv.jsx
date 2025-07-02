@@ -16,7 +16,7 @@ const fadeInStyles = css`
     opacity: 1;
     transform: none;
   `};
-`;const StyledDiv = styled.section.withConfig({
+`;const StyledDiv = styled.div.withConfig({
   shouldForwardProp: (prop) => !["visible", "delay"].includes(prop),
 })`
   ${fadeInStyles}

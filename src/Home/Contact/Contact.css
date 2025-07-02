@@ -2,10 +2,6 @@
   min-height: 90vh;
   padding: 15vh 0 5vh 0;
 
-  /* .sectionHeader {
-    padding-top: 15vh;
-  } */
-
   .article_dots > * {
     background-color: var(--yellowPink1) !important;
   }
@@ -47,17 +43,28 @@
       color: var(--yellowPink1);
     }
   }
+}
 
-  /* fade in settings
+@media (max-width: 768px) {
+  #contact {
+    width: 100vw;
+    height: auto;
+    min-height: auto;
+    padding: 50px 0 50px 0;
 
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    p {
+      padding: 10px 0 30px 0;
+      font-size: 1.2rem;
+    }
 
-  &.loaded {
-    opacity: 1;
-    transform: none;
-  } */
+    form {
+      width: 85%;
+      max-width: 85%;
+      padding: 10px;
+    }
 
-  /*----fade in settings*/
+    .butt-txt {
+      font-size: 1.5rem;
+    }
+  }
 }

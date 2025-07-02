@@ -33,3 +33,16 @@ footer {
     font-weight: 550;
   }
 }
+
+@media (max-width: 768px) {
+  footer {
+    p,
+    a {
+      font-size: 12px;
+    }
+    .footer_p_smaller,
+    .footer_p_smaller > a {
+      font-size: 10px;
+    }
+  }
+}

@@ -6,6 +6,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  #dot_i_container.animate {
+    animation: none;
+  }
+}
+
 @keyframes bounce {
   0% {
     background-color: var(--yellow);

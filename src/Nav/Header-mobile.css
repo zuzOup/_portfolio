@@ -1,0 +1,47 @@
+.mobile_header_btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+  nav,
+  header {
+    height: 70px;
+  }
+
+  nav.top {
+    justify-content: center;
+
+    .homebutton {
+      display: none;
+    }
+
+    ul {
+      width: 95vw;
+      padding: 0;
+      justify-content: space-between;
+
+      button,
+      a div {
+        font-size: 1.2rem;
+      }
+    }
+    .nav_dots {
+      height: 6px;
+      width: 6px;
+    }
+
+    #nav_resume,
+    #nav_resume > div {
+      width: 90px;
+      height: 30px;
+    }
+  }
+
+  nav.active{
+    all:unset
+  }
+}

@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-import Nav from "../Nav/Nav";
 import Aside from "../Aside/Aside";
 import Footer from "../Footer/Footer";
 
@@ -18,6 +17,7 @@ import SVGFilter from "../Components/SVGFilter";
 import "./Layout.css";
 
 import isLoaded_hook from "../isLoaded_hook";
+import Header from "../Nav/Header";
 
 function Layout() {
   const isLoaded = isLoaded_hook();
@@ -26,7 +26,7 @@ function Layout() {
     <>
       <BrowserRouter>
         <SVGFilter />
-        <Nav isLoaded={isLoaded} />
+        <Header isLoaded={isLoaded} />
         <main id="main">
           <Aside left={true} isLoaded={isLoaded} />
           <article>

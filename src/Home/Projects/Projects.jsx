@@ -21,6 +21,9 @@ function Projects() {
   const refSquares = useRef();
   const isVisible_squares = fadeInOnScroll_hook(refSquares);
 
+  const refSquaresButt = useRef();
+  const isVisible_squaresButt = fadeInOnScroll_hook(refSquaresButt);
+
   return (
     <section id="projects" className={isVisible ? "loaded" : ""}>
       <SectionHeader title={"Projects"} ref={refProjectHeader} />
@@ -29,14 +32,19 @@ function Projects() {
           return <Project_withImg key={i} i={i} />;
         })}
       </div>
-      <div className="squares" ref={refSquares}>
+      <div className={isVisible_squares ? "loaded squares" : "squares"} ref={refSquares}>
         {projects_square.map((x, i) => {
           return <Projects_Squares key={i} i={i} isVisible={isVisible_squares} />;
         })}
       </div>
-      <FadeInDiv isVisible={isVisible_squares} delay={0.5}>
+      <FadeInDiv isVisible={isVisible_squaresButt} >
         <Butt className="projects">
-          <a className="butt-btn projects" target="_blank" href="./project_list">
+          <a
+            className="butt-btn projects"
+            target="_blank"
+            href="./project_list"
+            ref={refSquaresButt}
+          >
             <Butt_inside className="projects" text="Open Project List" />
           </a>
         </Butt>

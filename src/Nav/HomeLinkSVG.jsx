@@ -2,21 +2,13 @@ import { useState } from "react";
 import { PropTypes } from "prop-types";
 
 function HomeLinkSVG({ click, scrollPosition = "path", delay = "0ms", isLoaded }) {
-  const [active, setActive] = useState("");
-
   return (
     <button
       style={{ animationDelay: `${delay}` }}
       className={`homebutton ${scrollPosition} ${isLoaded}`}
-      onMouseEnter={() => {
-        setActive("active");
-      }}
-      onMouseLeave={() => {
-        setActive("");
-      }}
       onClick={click}
     >
-      <div className={active}></div>
+      <div className="homebutton_bck"></div>
       {svg}
     </button>
   );
