@@ -54,7 +54,7 @@ function formReducer(state, action) {
 }
 
 function isValidEmail(email) {
-  return /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email);
+  return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,}$/.test(email);
 }
 
 const ContactForm = () => {
@@ -69,8 +69,11 @@ const ContactForm = () => {
     dispatch({ type: "SET_ERROR", field: name, error: "" });
   };
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
+
+    // Validate form fields first
+    let hasErrors = false;
 
     if (!isValidEmail(state.values.user_email)) {
       dispatch({
@@ -78,59 +81,70 @@ const ContactForm = () => {
         field: "user_email",
         error: errorMessages.email_invalid,
       });
-
       highlightError("user_email");
+      hasErrors = true;
     }
 
     if (Object.values(state.values).some((x) => x === "")) {
       Object.entries(state.values).forEach((x) => {
         if (x[1] === "") {
           highlightError(x[0]);
-
           dispatch({
             type: "SET_ERROR",
             field: x[0],
             error: errorMessages[x[0]],
           });
+          hasErrors = true;
         }
       });
-    } else {
-      const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
-      const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    }
 
-      window.grecaptcha.ready(() => {
-        window.grecaptcha.execute(siteKey, { action: "submit" }).then(async (token) => {
-          try {
-            // First, verify token on your backend
-            const verifyResponse = await fetch(
-              "https://vercel-recaptcha-backend-ldnwrmkv5-zuzanas-projects-50428d1f.vercel.app/api/verifyRecaptcha",
-              {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ token }),
-              }
-            );
+    if (hasErrors) return;
 
-            const verifyData = await verifyResponse.json();
+    // Get environment variables
+    const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-            if (verifyData.success) {
-              const formData = new FormData(formRef.current);
-              formData.append("g-recaptcha-response", token);
+    // Check if EmailJS environment variables are set
+    if (!serviceID || !templateID || !publicKey) {
+      alert(
+        "Contact form is not properly configured. Please contact the site administrator."
+      );
+      return;
+    }
 
-              await emailjs.sendForm(serviceID, templateID, formRef.current, publicKey);
+    // Check if reCAPTCHA is loaded
+    if (!window.grecaptcha) {
+      alert("reCAPTCHA is not loaded. Please refresh the page and try again.");
+      return;
+    }
 
-              dispatch({ type: "RESET" });
-            } else {
-              alert("reCAPTCHA verification failed. Please try again.");
-            }
-          } catch (error) {
-            alert("Failed to verify reCAPTCHA or send message. Please try again.");
-            console.error(error);
-          }
+    try {
+      // Execute reCAPTCHA immediately before sending (prevents expiration)
+      const token = await new Promise((resolve, reject) => {
+        window.grecaptcha.ready(() => {
+          window.grecaptcha
+            .execute(siteKey, { action: "submit" })
+            .then(resolve)
+            .catch(reject);
         });
       });
+
+      if (!token) {
+        throw new Error("No reCAPTCHA token received");
+      }
+
+      // Add token to form data
+      const formData = new FormData(formRef.current);
+      formData.append("g-recaptcha-response", token);
+
+      await emailjs.sendForm(serviceID, templateID, formRef.current, publicKey);
+
+      dispatch({ type: "RESET" });
+    } catch (error) {
+      alert("Failed to send message. Please try again.");
     }
   };
 

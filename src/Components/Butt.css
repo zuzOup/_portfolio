@@ -16,11 +16,12 @@
 
 .butt-txt {
   position: relative;
-  z-index: 2;
   top: 2px;
+  z-index: 2;
+
+  font-size: 1.3vw;
 
   color: var(--beige) !important;
-  font-size: 1.3vw;
 
   transition: all 0.3s ease-in-out;
 
@@ -42,38 +43,40 @@
 }
 
 .butt-btn {
-  z-index: 1;
-  display: inline-block;
   position: relative;
+  z-index: 1;
+
+  display: inline-block;
+
+  border-radius: 1000px;
 
   background-color: transparent;
 
   cursor: pointer;
-  border-radius: 1000px;
   text-decoration: none !important;
 }
 
 .butt-btn.title {
   padding: 0.6vw 1.4rem;
 
-  outline: 5px transparent solid;
   border: 3px solid transparent;
+  outline: 5px transparent solid;
 
   &::before {
     content: "";
 
     position: absolute;
-    z-index: 1;
     left: 0;
     top: 0;
+    z-index: 1;
 
     width: 100%;
     height: 100%;
 
-    outline: 5px solid var(--pink);
     border: 3px dashed var(--beige);
-
     border-radius: 1000px;
+
+    outline: 5px solid var(--pink);
 
     transition: all 0.5s ease-in-out;
   }
@@ -96,29 +99,29 @@
 .butt-btn.contact {
   padding: 0.2vw 1.4rem;
 
-  outline: 3px transparent solid;
   border: 2px solid transparent;
+  outline: 3px transparent solid;
 
   &::before {
     content: "";
 
     position: absolute;
-    z-index: 1;
     left: 0;
     top: 0;
+    z-index: 1;
 
     width: 100%;
     height: 100%;
 
-    outline: 3px solid var(--yellow);
     border: 2px dashed var(--beige);
-
     border-radius: 1000px;
+
+    outline: 3px solid var(--yellow);
 
     transition: all 0.5s ease-in-out;
   }
 
-  &:hover {
+  &:hover:not(:disabled) {
     .butt-txt {
       transform: scale(1.05);
     }
@@ -130,6 +133,11 @@
       border: 2px solid var(--yellowPink4);
     }
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
 
 .butt-btn.msg {
@@ -137,17 +145,16 @@
     content: "";
 
     position: absolute;
-    z-index: 1;
     left: 0;
     top: 0;
+    z-index: 1;
 
     width: 100%;
     height: 100%;
 
-    outline: 3px solid var(--darkGreen);
     border: 2px dashed var(--beige);
-
     border-radius: 1000px;
+    outline: 3px solid var(--darkGreen);
 
     transition: all 0.5s ease-in-out;
   }
@@ -169,24 +176,24 @@
 .butt-btn.projects {
   padding: 0.6vw 1.4rem;
 
-  outline: 5px transparent solid;
   border: 3px solid transparent;
+  outline: 5px transparent solid;
 
   &::before {
     content: "";
 
     position: absolute;
-    z-index: 1;
     left: 0;
     top: 0;
+    z-index: 1;
 
     width: 100%;
     height: 100%;
 
-    outline: 5px solid var(--yellowPink2);
     border: 3px dashed var(--beige);
-
     border-radius: 1000px;
+
+    outline: 5px solid var(--yellowPink2);
 
     transition: all 0.5s ease-in-out;
   }
@@ -207,49 +214,54 @@
 }
 
 .butt-inner {
-  z-index: -1;
   position: absolute;
   left: 0px;
   top: 0px;
-
-  overflow: hidden;
+  z-index: -1;
 
   width: 100%;
   height: 100%;
 
   border-radius: 1000px;
 
+  overflow: hidden;
+
   transition: all 0.3s ease-in-out;
 
   &.title {
-    outline: 5px solid transparent;
     border: 3px solid var(--pink);
+    outline: 5px solid transparent;
+
     background: var(--pink);
   }
 
   &.contact {
-    outline: 3px solid transparent;
     border: 2px solid var(--yellow);
+    outline: 3px solid transparent;
+
     background: var(--yellow);
   }
 
   &.msg {
-    outline: 3px solid transparent;
     border: 2px solid var(--darkGreen);
+    outline: 3px solid transparent;
+
     background: var(--darkGreen);
   }
 
   &.projects {
-    outline: 5px solid transparent;
     border: 3px solid var(--yellowPink2);
+    outline: 5px solid transparent;
+
     background: var(--yellowPink2);
   }
 }
 
 .butt-blobs {
-  display: block;
   position: relative;
   height: 100%;
+
+  display: block;
 
   filter: url("#goo");
 }

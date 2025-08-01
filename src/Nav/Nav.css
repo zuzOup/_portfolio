@@ -5,20 +5,19 @@ header {
 
 nav {
   position: fixed;
-
   left: 0;
   z-index: 100;
 
   width: 100%;
   height: 14vh;
 
-  background-color: var(--beige);
-
-  transition: all 0.3s ease-in-out;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  background-color: var(--beige);
+
+  transition: all 0.3s ease-in-out;
 
   &.active {
     top: 0;
@@ -28,16 +27,20 @@ nav {
   }
 
   &.hidden {
-    top: -13vh;
-    box-shadow: none;
     opacity: 0;
+    top: -13vh;
+
+    box-shadow: none;
+
     transition: all 0.3s ease-in-out;
   }
 
   &.hidden:hover {
     opacity: 1;
-    height: 11vh;
     top: 0;
+
+    height: 11vh;
+
     box-shadow: 0px 4px 27px 0px var(--brown);
   }
 
@@ -61,17 +64,21 @@ nav {
     justify-content: center;
     align-items: center;
 
-    margin: 0 0.8vw;
-
     transition: transform 0.1s ease-in-out;
 
     button {
       all: unset;
+
       margin: 0 0.4vw;
-      color: var(--darkGreen);
+
       font-family: var(--font);
       font-weight: 600;
       font-size: 1.1vw;
+
+      color: var(--darkGreen);
+
+      cursor: pointer;
+
       transition: text-shadow 0.05s linear;
     }
   }
@@ -90,10 +97,9 @@ nav {
 
   button:hover {
     text-shadow: 0 0 0.02px var(--darkGreen);
-    cursor: pointer;
   }
 
-  .dark-mode-btn{
+  .dark-mode-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,14 +107,17 @@ nav {
 
   .dark-mode-btn svg {
     display: block;
+
     min-height: 25px;
     min-width: 25px;
     height: 1.5vw;
     width: 1.5vw;
+
     color: var(--yellow);
   }
 
-  .dark-mode-btn button, .dark-mode-btn {
+  .dark-mode-btn button,
+  .dark-mode-btn {
     margin: 0;
   }
 }
@@ -123,9 +132,10 @@ nav {
 .nav_dots {
   height: 0.4vw;
   width: 0.4vw;
+  margin: 0 0.05vw;
+
   border-radius: 100%;
 
-  margin: 0 0.05vw;
   transform: translateY(0.04vw);
   transition: all 50ms ease-in-out;
 }
@@ -194,10 +204,13 @@ nav {
 
 .homebutton {
   all: unset;
+
   margin-left: 2.5vw;
   width: 2.15vw;
   height: 2.2vw;
+
   border-radius: 45% 45% 0% 0% / 45% 45% 0% 0%;
+
   cursor: pointer;
 
   &.top,
@@ -213,28 +226,30 @@ nav {
   .homebutton_bck {
     width: 1.2vw;
     height: 1.1vw;
+
     background-image: linear-gradient(to left, var(--yellow), var(--yellowPink3));
     opacity: 0.01;
-    transition: transform 0.3 ease-in;
 
     transform: translateY(1vw) translateX(0.5vw);
+    transition: transform 0.3 ease-in;
   }
 
   svg {
     all: unset;
-    display: block;
 
     position: relative;
-
     top: -1.6vw;
     left: -0.45vw;
 
     width: 3vw;
     height: 3vw;
 
+    display: block;
+
     color: var(--darkGreen);
   }
 }
+
 .homebutton.hidden .homebutton_bck,
 .homebutton.path .homebutton_bck {
   transition: opacity 0.3s;

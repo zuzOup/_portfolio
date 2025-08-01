@@ -3,33 +3,33 @@
 #nav_resume {
   all: unset;
 
+  width: 6.4vw;
+  height: 2.3vw;
+  margin-right: 0.5vw;
+  margin-left: 0.1vw;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 6.4vw;
-  height: 2.3vw;
+  border: var(--beige) 3px solid;
   border-radius: 1000px;
-
-  margin-right: 0.5vw;
-  margin-left: 0.1vw;
+  outline: 4px solid var(--yellowPink1);
 
   font-family: var(--font);
   font-weight: 700;
-  letter-spacing: 0.08vw;
   font-size: 1.2vw;
+  letter-spacing: 0.08vw;
 
   color: var(--darkGreen-resume);
   background-color: var(--yellowPink1);
-  border: var(--beige) 3px solid;
-  outline: 4px solid var(--yellowPink1);
 
   transition: transform 150ms ease, box-shadow 150ms ease, outline 50ms ease;
 
   &:hover:not(.mobile) {
-    cursor: pointer;
-
     outline: 4px solid var(--yellowPink2);
+
+    cursor: pointer;
 
     animation: nav_resume_outline 2s ease-in-out infinite;
 
@@ -37,8 +37,8 @@
       background-color: var(--yellowPink2);
       transition: background-color 500ms ease;
       & > span {
-        transition: all 150ms ease;
         transform: scale(1.1);
+        transition: all 150ms ease;
       }
     }
   }
@@ -51,41 +51,49 @@
 
   & > div {
     position: relative;
+
+    width: 6.3vw;
+    height: 2.2vw;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    pointer-events: none;
-
-    width: 6.3vw;
-    height: 2.2vw;
     border-radius: 1000px;
-
-    transition: background-color 500ms ease;
 
     background-color: var(--yellowPink1);
 
+    pointer-events: none;
+
+    transition: background-color 500ms ease;
+
     &::before {
-      pointer-events: none;
       content: "";
       position: absolute;
       inset: 0;
+
       border-radius: 1000px;
       opacity: 0.9;
+
       background-image: radial-gradient(rgb(255 255 255 / 80%) 20%, transparent 20%),
         radial-gradient(rgb(255 255 255 / 100%) 20%, transparent 20%);
       background-position: 0 0, 4px 4px;
       background-size: 10px 10px;
+
       mix-blend-mode: hard-light;
+      pointer-events: none;
+
       animation: dots 0.7s infinite linear;
     }
 
     & > span {
-      pointer-events: none;
       position: relative;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      pointer-events: none;
 
       transition: all 150ms ease;
     }

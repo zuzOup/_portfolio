@@ -1,25 +1,22 @@
 @media (max-width: 768px) {
   header.mobile {
     position: fixed;
+    top: 10px;
+    right: 10px;
     z-index: 1500;
 
-    transition: all 600ms ease-in-out;
+    width: 46px;
+    height: 46px;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 
-    background-color: var(--pink);
-  }
-
-  header.mobile {
-    top: 10px;
-    right: 10px;
-
     border-radius: 100%;
-    width: 46px;
-    height: 46px;
+
+    background-color: var(--pink);
+
+    transition: all 600ms ease-in-out;
   }
 
   header.mobile.open {
@@ -29,36 +26,39 @@
 
   button.mobile-btn {
     all: unset;
+
     position: fixed;
-    z-index: 1505;
-    background-color: var(--pink);
-
-    border: 3px dashed var(--beige);
-    outline: 3px solid var(--pink);
-
     top: 10px;
     right: 10px;
+    z-index: 1505;
 
-    border-radius: 100%;
     width: 46px;
     height: 46px;
-
-    transition: all 400ms ease-in-out;
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
+    border: 3px dashed var(--beige);
+    border-radius: 100%;
+    outline: 3px solid var(--pink);
+
+    background-color: var(--pink);
+
+    transition: all 400ms ease-in-out;
+
     span {
       display: block;
       width: 50%;
+      height: 3px;
 
       border-radius: 3px;
-      height: 3px;
+
       background: var(--yellowBeige);
-      transition: all 0.3s;
+
       position: relative;
+      transition: all 0.3s;
     }
 
     span + span {
@@ -110,28 +110,30 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+
     background-color: transparent;
   }
 
   ul.mobile {
+    width: 80vw;
+    height: 70vh;
     margin-top: 10vh;
     padding: 0;
+
     z-index: 1502;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
-    width: 80vw;
-    height: 70vh;
   }
 
   li.mobile {
-    margin: 10px 0;
-    display: flex;
     width: 100%;
-    margin: 0;
+    margin: 10px 0;
+
     z-index: 1503;
+
+    display: flex;
 
     .nav_dots {
       height: 10px;
@@ -163,20 +165,21 @@
   }
 
   #nav_resume {
-    animation: none !important;
+    width: 180px;
+    height: 60px;
     margin: 50px 0 10px 0;
 
     font-weight: 600;
-    width: 180px;
-    height: 60px;
 
     background-color: var(--beige);
-    outline: 5px solid var(--beige);
     border: 1px solid var(--pink);
+    outline: 5px solid var(--beige);
+
+    animation: none !important;
 
     div {
-      height: 60px;
       width: 180px;
+      height: 60px;
 
       display: flex;
       justify-content: center;
@@ -189,17 +192,6 @@
       font-size: 35px;
       font-style: oblique;
       color: var(--beige);
-    }
-  }
-
-  @keyframes slideInRightFade {
-    from {
-      opacity: 0;
-      transform: translateX(60px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
     }
   }
 
@@ -233,6 +225,21 @@
     animation-delay: 0.55s;
   }
 
+  li.mobile:not(.open) {
+    animation: slideOutRightFade 0.4s forwards;
+  }
+
+  @keyframes slideInRightFade {
+    from {
+      opacity: 0;
+      transform: translateX(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   @keyframes slideOutRightFade {
     from {
       opacity: 1;
@@ -242,10 +249,6 @@
       opacity: 0;
       transform: translateX(60px);
     }
-  }
-
-  li.mobile:not(.open) {
-    animation: slideOutRightFade 0.4s forwards;
   }
 
   @keyframes top {
