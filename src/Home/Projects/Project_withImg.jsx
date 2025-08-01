@@ -8,7 +8,7 @@ import "./Project-withImg.css";
 
 import { useRef } from "react";
 
-import fadeInOnScroll_hook from "../../fadeInOnScroll_hook";
+import useFadeInOnScroll_hook from "../../hooks/fadeInOnScroll_hook";
 import FadeInDiv from "../../Components/FadeInDiv";
 
 const leftright = (num) => {
@@ -18,7 +18,7 @@ const leftright = (num) => {
 
 function Project_withImg({ i }) {
   const refProject_withImg = useRef();
-  const isVisible = fadeInOnScroll_hook(refProject_withImg);
+  const isVisible = useFadeInOnScroll_hook(refProject_withImg);
 
   const side = leftright(i);
 

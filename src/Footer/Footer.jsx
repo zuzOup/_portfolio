@@ -1,9 +1,9 @@
-import windowSize_hook from "../windowSize_hook";
+import useWindowSize from "../hooks/useWindowSize";
 import "./Footer.css";
 import FooterLinks from "./FooterLinks";
 
 function Footer() {
-  const isMobile = windowSize_hook() <= 768;
+  const isMobile = useWindowSize() <= 768;
   return (
     <>
       {isMobile && <FooterLinks />}

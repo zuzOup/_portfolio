@@ -88,25 +88,6 @@
   }
 }
 
-/* .article_dots {
-  transform: translateY(-0.2vw);
-  display: flex;
-  align-items: center;
-  opacity: 1;
-
-  .smallDot {
-    margin: 0 0.35vw;
-    height: 0.3vw !important;
-    width: 0.3vw !important;
-    border-radius: 100%;
-  }
-
-  .bigDot {
-    height: 0.55vw !important;
-    width: 0.55vw !important;
-    border-radius: 100%;
-  }
-} */
 
 /* Dots + links colors*/
 

@@ -9,12 +9,12 @@ const links = [
 
 import "./FooterLinks.css";
 
-import fadeInOnScroll_hook from "../fadeInOnScroll_hook";
+import useFadeInOnScroll_hook from "../hooks/fadeInOnScroll_hook";
 import FadeInDiv from "../Components/FadeInDiv";
 
 function FooterLinks() {
   const refFooterLinks = useRef();
-  const isVisible = fadeInOnScroll_hook(refFooterLinks);
+  const isVisible = useFadeInOnScroll_hook(refFooterLinks);
 
   return (
     <FadeInDiv ref={refFooterLinks} isVisible={isVisible} className="footer_links">

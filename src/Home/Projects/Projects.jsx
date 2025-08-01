@@ -9,20 +9,20 @@ import { project_withImg, projects_square } from "./Projects-data";
 
 import "./Projects.css";
 
-import fadeInOnScroll_hook from "../../fadeInOnScroll_hook";
+import useFadeInOnScroll_hook from "../../hooks/fadeInOnScroll_hook";
 
 import { useRef } from "react";
 import FadeInDiv from "../../Components/FadeInDiv";
 
 function Projects() {
   const refProjectHeader = useRef();
-  const isVisible = fadeInOnScroll_hook(refProjectHeader);
+  const isVisible = useFadeInOnScroll_hook(refProjectHeader);
 
   const refSquares = useRef();
-  const isVisible_squares = fadeInOnScroll_hook(refSquares);
+  const isVisible_squares = useFadeInOnScroll_hook(refSquares);
 
   const refSquaresButt = useRef();
-  const isVisible_squaresButt = fadeInOnScroll_hook(refSquaresButt);
+  const isVisible_squaresButt = useFadeInOnScroll_hook(refSquaresButt);
 
   return (
     <section id="projects" className={isVisible ? "loaded" : ""}>
@@ -37,7 +37,7 @@ function Projects() {
           return <Projects_Squares key={i} i={i} isVisible={isVisible_squares} />;
         })}
       </div>
-      <FadeInDiv isVisible={isVisible_squaresButt} >
+      <FadeInDiv isVisible={isVisible_squaresButt}>
         <Butt className="projects">
           <a
             className="butt-btn projects"

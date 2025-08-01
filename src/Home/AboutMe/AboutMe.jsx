@@ -5,12 +5,12 @@ import "./AboutMe.css";
 import AboutMe_text from "./AboutMe_text";
 import AboutMe_photo from "./AboutMe_photo";
 import { useRef } from "react";
-import fadeInOnScroll_hook from "../../fadeInOnScroll_hook";
+import useFadeInOnScroll_hook from "../../hooks/fadeInOnScroll_hook";
 import FadeInDiv from "../../Components/FadeInDiv";
 
 function AboutMe() {
   const refAboutMe = useRef();
-  const isVisible = fadeInOnScroll_hook(refAboutMe);
+  const isVisible = useFadeInOnScroll_hook(refAboutMe);
 
   return (
     <section id="aboutMe" className={isVisible ? "loaded" : ""}>

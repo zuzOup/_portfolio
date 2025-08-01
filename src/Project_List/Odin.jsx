@@ -3,7 +3,7 @@ import { fetchDataMD } from "./helpers.jsx";
 
 import ListHeader from "./ListHeader.jsx";
 import SectionBody from "./SectionBody.jsx";
-import fadeInOnScroll_hook from "../fadeInOnScroll_hook.js";
+import useFadeInOnScroll_hook from "../hooks/fadeInOnScroll_hook.js";
 
 const conditions = (str) => {
   const newStr = str.split("###");
@@ -27,7 +27,7 @@ function Odin() {
   const [data, setData] = useState([]);
 
   const refPL_Odin = useRef();
-  const isVisible = fadeInOnScroll_hook(refPL_Odin);
+  const isVisible = useFadeInOnScroll_hook(refPL_Odin);
 
   useEffect(() => {
     fetchDataMD(

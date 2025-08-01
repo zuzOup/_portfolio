@@ -241,7 +241,9 @@
 @media (max-width: 768px) {
   #aboutMe {
     min-height: 80vh;
+    height: fit-content;
     padding: 20px 0;
+    margin-top: 5vh;
 
     .content {
       position: relative;

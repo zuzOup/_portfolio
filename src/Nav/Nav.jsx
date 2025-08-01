@@ -13,19 +13,13 @@ import "./Nav.css";
 import { delay_nav, delay_nav_changed } from "../delays";
 
 import DarkModeToggle from "./DarkModeToggle";
-import changeDelayOnMount_hook from "../changeDelayOnMount_hook";
 
-const links = [
-  { id: "aboutMe", text: "About me" },
-  { id: "projects", text: "Projects" },
-  { id: "contact", text: "Contact" },
-];
+import useChangeDelayOnMount_hook from "../hooks/useChangeDelayOnMount_hook";
+import { links } from "./links";
 
 const initialState = {
   scrollPosition: "top",
-  scrollPosition_home: "top",
   scrollID: "",
-  isLoaded: false,
 };
 
 function reducer(state, action) {
@@ -39,10 +33,10 @@ function reducer(state, action) {
   }
 }
 
-function Nav({ isLoaded, className = "", setIsNavOpen }) {
+function Nav({ isLoaded, className = "" }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const delayNav = changeDelayOnMount_hook(delay_nav, 0, delay_nav_changed);
+  const delayNav = useChangeDelayOnMount_hook(delay_nav, 0, delay_nav_changed);
 
   const location = useLocation();
 
@@ -53,21 +47,9 @@ function Nav({ isLoaded, className = "", setIsNavOpen }) {
       if (this.scrollY > 150) {
         dispatch({ type: "SET_SCROLL", payload: "hidden" });
       } else if (this.scrollY > 50 && this.scrollY <= 150) {
-        setIsNavOpen((x) => {
-          if (x === true) {
-            return !x;
-          } else return x;
-        });
-        console.log("nav isnt open");
         dispatch({ type: "SET_SCROLL", payload: "active" });
       } else if (this.scrollY <= 50) {
         dispatch({ type: "SET_SCROLL", payload: "top" });
-        console.log("nav is open");
-        setIsNavOpen((x) => {
-          if (x === false) {
-            return !x;
-          } else return x;
-        });
       }
     }
 
@@ -103,8 +85,6 @@ function Nav({ isLoaded, className = "", setIsNavOpen }) {
       const el = document.getElementById(id);
       el.scrollIntoView();
     }
-
-    setIsNavOpen(false);
   };
 
   useEffect(() => {
@@ -115,34 +95,36 @@ function Nav({ isLoaded, className = "", setIsNavOpen }) {
   }, [location]); //eslint-disable-line
 
   return (
-    <nav className={`${className} ${state.scrollPosition}`}>
-      <HomeLinkSVG
-        click={homeButton_path()}
-        scrollPosition={locationPathway ? state.scrollPosition : "path"}
-        delay={`${(links.length + 2) * 100 + delayNav}ms`}
-        isLoaded={isLoaded}
-      />
-      <ul className={isLoaded}>
-        <li style={{ animationDelay: `${delayNav}ms` }}>
-          <DarkModeToggle />
-        </li>
-        {links.map((item, i) => {
-          return (
-            <li key={i} style={{ animationDelay: `${(i + 1) * 100 + delayNav}ms` }}>
-              <NavItem
-                id={item.id}
-                text={item.text}
-                i={i}
-                scroll={() => scroll(item.id)}
-              />
-            </li>
-          );
-        })}
-        <li style={{ animationDelay: `${(links.length + 1) * 100 + delayNav}ms` }}>
-          <ResumeButton />
-        </li>
-      </ul>
-    </nav>
+    <header id="header ">
+      <nav className={`${className} ${state.scrollPosition}`}>
+        <HomeLinkSVG
+          click={homeButton_path()}
+          scrollPosition={locationPathway ? state.scrollPosition : "path"}
+          delay={`${(links.length + 2) * 100 + delayNav}ms`}
+          isLoaded={isLoaded}
+        />
+        <ul className={isLoaded}>
+          <li style={{ animationDelay: `${delayNav}ms` }}>
+            <DarkModeToggle />
+          </li>
+          {links.map((item, i) => {
+            return (
+              <li key={i} style={{ animationDelay: `${(i + 1) * 100 + delayNav}ms` }}>
+                <NavItem
+                  id={item.id}
+                  text={item.text}
+                  i={i}
+                  scroll={() => scroll(item.id)}
+                />
+              </li>
+            );
+          })}
+          <li style={{ animationDelay: `${(links.length + 1) * 100 + delayNav}ms` }}>
+            <ResumeButton />
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 

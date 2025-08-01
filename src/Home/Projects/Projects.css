@@ -1,6 +1,7 @@
 #projects {
   min-height: 90vh;
   padding: 15vh 0;
+  margin-top: 5vh;
 
   align-items: center;
 
@@ -42,6 +43,7 @@
 
       h3 {
         font-size: 1.3rem;
+        margin: 0.5rem 0;
         text-align: center;
       }
 
@@ -52,7 +54,7 @@
 
     p {
       padding-top: 10px;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     .stack-links {
@@ -65,7 +67,7 @@
         max-width: 100%;
       }
       li {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         text-wrap: nowrap;
       }
       .links {

@@ -2,6 +2,8 @@
   transform: translateY(5px); /*fadeInUp_Aside start*/
   transition: all 0.5s ease-in-out; /*fadeInUp_Aside start*/
 
+  background-color: aqua;
+
   ul {
     display: flex;
 

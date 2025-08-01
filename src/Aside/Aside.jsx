@@ -9,7 +9,7 @@ import AsideLines from "./dotsAndLines/AsideLines";
 import "./Aside.css";
 
 import { delay_aside, delay_aside_changed } from "../delays";
-import changeDelayOnMount_hook from "../changeDelayOnMount_hook";
+import changeDelayOnMount_hook from "../hooks/changeDelayOnMount_hook";
 
 function Aside({ left, isLoaded }) {
   const delayAside = changeDelayOnMount_hook(

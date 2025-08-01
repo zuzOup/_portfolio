@@ -26,7 +26,7 @@
 
   transition: transform 150ms ease, box-shadow 150ms ease, outline 50ms ease;
 
-  &:hover {
+  &:hover:not(.mobile) {
     cursor: pointer;
 
     outline: 4px solid var(--yellowPink2);

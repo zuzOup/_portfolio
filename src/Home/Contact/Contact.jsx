@@ -7,7 +7,7 @@ import "./Contact.css";
 
 import { useHistory } from "react-router-dom";
 
-import fadeInOnScroll_hook from "../../fadeInOnScroll_hook";
+import useFadeInOnScroll_hook from "../../hooks/fadeInOnScroll_hook";
 
 import FadeInDiv from "../../Components/FadeInDiv";
 
@@ -15,7 +15,7 @@ function Contact() {
   const history = useHistory();
 
   const refContact = useRef();
-  const isVisible = fadeInOnScroll_hook(refContact);
+  const isVisible = useFadeInOnScroll_hook(refContact);
 
   useEffect(() => {
     let pageUrl = window.location.href;

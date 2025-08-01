@@ -1,5 +1,8 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
+import MobileHeader from "../Nav/MobileHeader";
+import Nav from "../Nav/Nav";
+
 import Aside from "../Aside/Aside";
 import Footer from "../Footer/Footer";
 
@@ -12,23 +15,26 @@ import Accomplishments from "../Accomplishments/Accomplishments";
 
 import Project_List from "../Project_List/Project_list";
 
+
+import useIsLoaded_hook from "../hooks/isLoaded_hook";
+
 import SVGFilter from "../Components/SVGFilter";
 
 import "./Layout.css";
-
-import isLoaded_hook from "../isLoaded_hook";
-import Header from "../Nav/Header";
+import useWindowSize from "../hooks/useWindowSize";
 
 function Layout() {
-  const isLoaded = isLoaded_hook();
+  const isLoaded = useIsLoaded_hook();
+  const isMobile = useWindowSize() <= 768;
 
   return (
     <>
       <BrowserRouter>
         <SVGFilter />
-        <Header isLoaded={isLoaded} />
+        {!isMobile && <Nav isLoaded={isLoaded} />}
+        {isMobile && <MobileHeader isLoaded={isLoaded} />}
         <main id="main">
-          <Aside left={true} isLoaded={isLoaded} />
+          {!isMobile && <Aside left={true} isLoaded={isLoaded} />}
           <article>
             <Switch>
               <Route exact path="/">
@@ -46,7 +52,7 @@ function Layout() {
               <Route render={() => <Redirect to={{ pathname: "/" }} />} />
             </Switch>
           </article>
-          <Aside left={false} isLoaded={isLoaded} />
+          {!isMobile && <Aside left={false} isLoaded={isLoaded} />}
         </main>
         <Footer />
       </BrowserRouter>

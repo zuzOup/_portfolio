@@ -3,7 +3,7 @@ import { fetchDataWB } from "./helpers.jsx";
 
 import ListHeader from "./ListHeader.jsx";
 import SectionBody from "./SectionBody.jsx";
-import fadeInOnScroll_hook from "../fadeInOnScroll_hook.js";
+import useFadeInOnScroll_hook from "../hooks/fadeInOnScroll_hook.js";
 
 const cond1 = (arr) => {
   return arr.map((x) => x.name).filter((x) => !x.includes(".md"));
@@ -45,7 +45,7 @@ function WesBos() {
   const [data, setData] = useState([]);
 
   const refPL_WB = useRef();
-  const isVisible = fadeInOnScroll_hook(refPL_WB);
+  const isVisible = useFadeInOnScroll_hook(refPL_WB);
 
   useEffect(() => {
     fetchDataWB(
