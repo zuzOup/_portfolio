@@ -13,7 +13,6 @@ const cond2 = (arr) => {
   const desc = (string1, string2) => {
     const group = string1.split("-").join(" ");
     const number = parseFloat(string2.split("-")[0]);
-
     return group + " - " + number + ".";
   };
 

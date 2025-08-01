@@ -8,11 +8,15 @@ const ScrollLock = {
     document.body.style.height = "100vh";
     document.body.style.paddingRight = "9.75px";
 
-    main.style.overflow = "hidden";
+    if (main) {
+      main.style.overflow = "hidden";
+    }
 
-    header.style.boxShadow = "none";
-    header.style.transition = "none";
-    header.style.opacity = "0";
+    if (header) {
+      header.style.boxShadow = "none";
+      header.style.transition = "none";
+      header.style.opacity = "0";
+    }
 
     if (scroll > 0) {
       const modal = document.getElementById("modal");
@@ -34,13 +38,17 @@ const ScrollLock = {
     document.body.style.height = null;
     document.body.style.paddingRight = null;
 
-    main.style.overflow = null;
+    if (main) {
+      main.style.overflow = null;
+    }
 
-    header.style.transition = null;
-    header.style.boxShadow = null;
-    header.style.height = null;
-    header.style.minHeight = null;
-    header.style.opacity = null;
+    if (header) {
+      header.style.transition = null;
+      header.style.boxShadow = null;
+      header.style.height = null;
+      header.style.minHeight = null;
+      header.style.opacity = null;
+    }
   },
 };
 

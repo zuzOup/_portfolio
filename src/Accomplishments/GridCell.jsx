@@ -3,13 +3,15 @@ import PropTypes from "prop-types";
 import { createPortal } from "react-dom";
 
 import Cover from "./Cover";
-
 import Modal from "./modal/Modal";
-
+import useWindowSize from "../hooks/useWindowSize";
 
 function GridCell({ index, course, name, onImgLoad, allLoaded }) {
   const src = `/certificates/${name}.png`;
   const alt = `${course} - ${name}`;
+
+  const windowWidth = useWindowSize();
+  const isMobile = windowWidth <= 768;
 
   const [isActive, setIsActive] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -43,7 +45,7 @@ function GridCell({ index, course, name, onImgLoad, allLoaded }) {
         style={{ "--i": index }}
       >
         <img src={src} alt={alt} onLoad={onImgLoad} />
-        <Cover course={course} name={name} isActive={isActive} />
+        {!isMobile && <Cover course={course} name={name} isActive={isActive} />}
       </button>
       {showModal &&
         createPortal(<Modal index={index} onClose={handleClickModal} />, document.body)}

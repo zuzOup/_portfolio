@@ -216,8 +216,8 @@
 
 @media (max-width: 640px) {
   #dot_i_container {
-    top: -70px !important;
-    left: 7px !important;
+    top: -74.5px !important;
+    left: 7.5px !important;
   }
 
   .h1-container {
@@ -242,8 +242,8 @@
     flex-direction: column;
 
     #dot_i_container {
-      top: -24px;
-      left: -128.5px;
+      top: -27px;
+      left: -136.5px;
       animation: none;
     }
 

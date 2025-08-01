@@ -26,7 +26,7 @@ export async function fetchDataMD(url, setter, conditions) {
 export async function fetchDataWB(url, cond1, cond2, setter) {
   await fetch(url, auth)
     .then((res) => res.json())
-    .then((data) => cond1(data).map((x) => fetch(url + x, auth)))
+    .then((data) => cond1(data).map((x) => fetch(url + "/" + x, auth)))
     .then((url) => Promise.all(url))
     .then((res) => Promise.all(res.map((x) => x.json())))
     .then((data) => {

@@ -2,7 +2,7 @@
   transform: translateY(5px); /*fadeInUp_Aside start*/
   transition: all 0.5s ease-in-out; /*fadeInUp_Aside start*/
 
-  background-color: aqua;
+  padding-bottom: 20px;
 
   ul {
     display: flex;
@@ -84,13 +84,15 @@
       }
     }
 
-    &:focus, &:active {
+    &:focus,
+    &:active {
       .aside_left-icon-bck {
         animation: rotate 8s infinite linear;
       }
     }
 
-    &:nth-child(1):focus,&:nth-child(1):active {
+    &:nth-child(1):focus,
+    &:nth-child(1):active {
       .aside_left-icon-bck {
         animation: rotate 8s infinite linear;
         border: 3px dashed var(--yellowPink3);
@@ -103,7 +105,8 @@
       }
     }
 
-    &:nth-child(2):focus,&:nth-child(2):active {
+    &:nth-child(2):focus,
+    &:nth-child(2):active {
       .aside_left-icon-bck {
         animation: rotate 8s infinite linear;
         border: 3px dashed var(--yellowPink2);
@@ -116,7 +119,8 @@
       }
     }
 
-    &:nth-child(3):focus,&:nth-child(3):active {
+    &:nth-child(3):focus,
+    &:nth-child(3):active {
       .aside_left-icon-bck {
         animation: rotate 8s infinite linear;
         border: 3px dashed var(--yellowPink1);

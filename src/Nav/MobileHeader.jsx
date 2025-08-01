@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import ResumeButton from "./ResumeButton";
@@ -24,6 +25,7 @@ DotWrapper.propTypes = { children: PropTypes.node };
 
 function MobileHeader() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const history = useHistory();
 
   const shouldRenderNav = useDelayedUnmount(isMobileNavOpen, 450);
 
@@ -33,8 +35,8 @@ function MobileHeader() {
 
   const clickHandle = (id) => {
     if (location.pathname !== "/") {
-      // history.push("/");
-      // dispatch({ type: "SET_SCROLL_ID", payload: id });
+      history.push("/");
+      window.scrollTo(0, 0);
     } else {
       const el = document.getElementById(id);
       el.scrollIntoView();

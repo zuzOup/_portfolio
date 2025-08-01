@@ -4,9 +4,9 @@ export const arrow_left = () => {
       <path
         d="M4 12H20M4 12L8 8M4 12L8 16"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -17,9 +17,9 @@ export const arrow_right = () => {
       <path
         d="M4 12H20M20 12L16 8M20 12L16 16"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -31,9 +31,9 @@ export const close = () => {
       <path
         d="M6 6L18 18M18 6L6 18"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

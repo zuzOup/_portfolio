@@ -14,7 +14,7 @@ import FadeInDiv from "../Components/FadeInDiv";
 
 function FooterLinks() {
   const refFooterLinks = useRef();
-  const isVisible = useFadeInOnScroll_hook(refFooterLinks);
+  const isVisible = useFadeInOnScroll_hook(refFooterLinks, "0px 0px -50px 0px");
 
   return (
     <FadeInDiv ref={refFooterLinks} isVisible={isVisible} className="footer_links">

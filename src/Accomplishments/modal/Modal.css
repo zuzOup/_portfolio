@@ -126,6 +126,7 @@
   .gallery {
     max-width: 100%;
     width: 100%;
+    position: relative;
 
     height: calc(28.1vw / 3 * 4);
 

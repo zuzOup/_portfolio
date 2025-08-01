@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import "@theme-toggles/react/css/Within.css";
 import { Within } from "@theme-toggles/react";
@@ -10,34 +11,44 @@ const isDarkFunction = () => {
   );
 };
 
+const updateTheme = (isDark) => {
+  const root = document.documentElement;
+  root.classList.add("notransition");
+
+  if (isDark) {
+    root.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    root.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+
+  requestAnimationFrame(() => {
+    root.classList.remove("notransition");
+  });
+};
+
+const updateProfilePhoto = (isDark) => {
+  const profile_photo = document.getElementById("profile_photo");
+  if (profile_photo) {
+    profile_photo.src = isDark ? "./photo-dark.jpg" : "./photo.jpg";
+  }
+};
+
 function DarkModeToggle() {
   const [isDark, setIsDark] = useState(isDarkFunction());
+  const location = useLocation();
 
   const toggle = () => {
-    const root = document.documentElement;
-    root.classList.add("notransition");
+    setIsDark((prev) => {
+      const newIsDark = !prev;
+      updateTheme(newIsDark);
 
-    const profile_photo = document.getElementById("profile_photo");
+      if (location.pathname === "/") {
+        updateProfilePhoto(newIsDark);
+      }
 
-    requestAnimationFrame(() => {
-      setIsDark((prev) => {
-        if (!prev) {
-          root.classList.add("dark");
-          localStorage.setItem("theme", "dark");
-
-          profile_photo.src = "/photo-dark.jpg";
-        } else {
-          root.classList.remove("dark");
-          localStorage.setItem("theme", "light");
-
-          profile_photo.src = "/photo.jpg";
-        }
-        return !prev;
-      });
-
-      requestAnimationFrame(() => {
-        root.classList.remove("notransition");
-      });
+      return newIsDark;
     });
   };
 
