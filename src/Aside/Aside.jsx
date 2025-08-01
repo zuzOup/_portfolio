@@ -8,11 +8,11 @@ import AsideLines from "./dotsAndLines/AsideLines";
 
 import "./Aside.css";
 
-import { delay_aside, delay_aside_changed } from "../delays";
-import changeDelayOnMount_hook from "../hooks/changeDelayOnMount_hook";
+import { delay_aside, delay_aside_changed } from "../helpers/delays";
+import useChangeDelayOnMount_hook from "../hooks/useChangeDelayOnMount_hook";
 
 function Aside({ left, isLoaded }) {
-  const delayAside = changeDelayOnMount_hook(
+  const delayAside = useChangeDelayOnMount_hook(
     delay_aside,
     delay_aside_changed,
     delay_aside_changed

@@ -17,11 +17,6 @@ function DarkModeToggle() {
     const root = document.documentElement;
     root.classList.add("notransition");
 
-    console.log(root);
-    console.log(root.classList);
-
-    console.log(1);
-
     const profile_photo = document.getElementById("profile_photo");
 
     requestAnimationFrame(() => {
@@ -41,14 +36,9 @@ function DarkModeToggle() {
       });
 
       requestAnimationFrame(() => {
-        console.log(root)
         root.classList.remove("notransition");
       });
-
-      console.log(root.classList);
     });
-
-    console.log(2);
   };
 
   return (

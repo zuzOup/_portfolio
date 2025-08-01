@@ -10,7 +10,7 @@ import ResumeButton from "./ResumeButton";
 import NavItem from "./NavItem";
 
 import "./Nav.css";
-import { delay_nav, delay_nav_changed } from "../delays";
+import { delay_nav, delay_nav_changed } from "../helpers/delays";
 
 import DarkModeToggle from "./DarkModeToggle";
 

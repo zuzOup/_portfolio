@@ -9,7 +9,7 @@ import Carousel from "./Carousel";
 import Butt from "../../Components/Butt";
 import Butt_inside from "../../Components/Butt_inside";
 
-import { delay_bounce } from "../../delays";
+import { delay_bounce } from "../../helpers/delays";
 
 function Title({ isLoaded }) {
   const [animationStart, setAnimationStart] = useState({ dot: "", Z: "", O: "" });

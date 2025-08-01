@@ -41,8 +41,6 @@ function MobileHeader() {
     }
 
     setIsMobileNavOpen(false);
-
-    console.log(1);
   };
 
   return (
