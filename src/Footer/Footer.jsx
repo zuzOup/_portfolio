@@ -1,9 +1,14 @@
+import useHoverCapability from "../hooks/useHoverCapability";
 import useWindowSize from "../hooks/useWindowSize";
 import "./Footer.css";
 import FooterLinks from "./FooterLinks";
 
 function Footer() {
-  const isMobile = useWindowSize() <= 768;
+  const windowSize = useWindowSize();
+  const hasHover = useHoverCapability();
+
+  const isMobile = windowSize <= 1024 || !hasHover;
+
   return (
     <>
       {isMobile && <FooterLinks />}

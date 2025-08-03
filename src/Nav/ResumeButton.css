@@ -44,7 +44,7 @@
   }
 
   &:active {
-    transform: translate(3px, 3px);
+    transform: translateY(3px);
     background-color: var(--pink);
     border: var(--pink) 3px solid;
   }

@@ -1,13 +1,12 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
 import SectionHeader from "../Components/SectionHeader";
-
 import GridCell from "./GridCell";
 
 import { list } from "./list";
 
 import "./Accomplishments.css";
-import PropTypes from "prop-types";
 
 function Accomplishments({ isLoaded }) {
   const [loadedCount, setLoadedCount] = useState(0);

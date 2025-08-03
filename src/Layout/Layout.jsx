@@ -15,17 +15,22 @@ import Accomplishments from "../Accomplishments/Accomplishments";
 
 import Project_List from "../Project_List/Project_list";
 
-
 import useIsLoaded_hook from "../hooks/isLoaded_hook";
 
 import SVGFilter from "../Components/SVGFilter";
 
 import "./Layout.css";
+
 import useWindowSize from "../hooks/useWindowSize";
+import useHoverCapability from "../hooks/useHoverCapability";
 
 function Layout() {
   const isLoaded = useIsLoaded_hook();
-  const isMobile = useWindowSize() <= 768;
+
+  const windowSize = useWindowSize();
+  const hasHover = useHoverCapability();
+  
+  const isMobile = windowSize <= 1024 || !hasHover;
 
   return (
     <>

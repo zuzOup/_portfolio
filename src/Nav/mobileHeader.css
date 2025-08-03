@@ -1,334 +1,332 @@
-@media (max-width: 768px) {
-  header.mobile {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1500;
+header.mobile {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1500;
 
-    width: 46px;
-    height: 46px;
+  width: 46px;
+  height: 46px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border-radius: 100%;
+  border-radius: 100%;
 
-    background-color: var(--pink);
+  background-color: var(--pink);
 
-    transition: all 600ms ease-in-out;
+  transition: all 600ms ease-in-out;
+}
+
+header.mobile.open {
+  transform: scale(68);
+  background-color: var(--yellowPink1);
+}
+
+button.mobile-btn {
+  all: unset;
+
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1505;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  border: 3px dashed var(--beige);
+  border-radius: 100%;
+  outline: 3px solid var(--pink);
+
+  background-color: var(--pink);
+
+  transition: all 400ms ease-in-out;
+
+  span {
+    display: block;
+    width: 50%;
+    height: 3px;
+
+    border-radius: 3px;
+
+    background: var(--yellowBeige);
+
+    position: relative;
+    transition: all 0.3s;
   }
 
-  header.mobile.open {
-    transform: scale(55);
-    background-color: var(--yellowPink1);
+  span + span {
+    margin-top: 5px;
+  }
+}
+
+/*hamburger menu animation inspired by https://codepen.io/elitsa_dimitrova/pen/LJWBVo*/
+
+button.mobile-btn.open span:nth-child(1) {
+  animation: ease 0.7s top forwards;
+}
+
+button.mobile-btn.close span:nth-child(1) {
+  animation: ease 0.7s top-2 forwards;
+}
+
+button.mobile-btn.open span:nth-child(2) {
+  animation: ease 0.7s scaled forwards;
+}
+
+button.mobile-btn.close span:nth-child(2) {
+  animation: ease 0.7s scaled-2 forwards;
+}
+
+button.mobile-btn.open span:nth-child(3) {
+  animation: ease 0.7s bottom forwards;
+}
+
+button.mobile-btn.close span:nth-child(3) {
+  animation: ease 0.7s bottom-2 forwards;
+}
+
+button.mobile-btn.open {
+  background-color: var(--yellowPink1);
+  outline-color: var(--yellowPink1);
+}
+
+nav.mobile {
+  position: fixed;
+  top: 0;
+
+  width: 100vw;
+  height: 80vh;
+  padding: 10vh 0;
+
+  z-index: 1501;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: transparent;
+}
+
+ul.mobile {
+  width: 80vw;
+  height: 70vh;
+  margin-top: 30px;
+  padding: 0;
+
+  z-index: 1502;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+li.mobile {
+  width: 100%;
+  margin: 10px 0;
+
+  z-index: 1503;
+
+  display: flex;
+
+  .nav_dots {
+    height: 10px;
+    width: 10px;
+
+    background-color: var(--beige) !important;
+    transform: translateY(0);
   }
 
-  button.mobile-btn {
-    all: unset;
-
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1505;
-
-    width: 46px;
-    height: 46px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    border: 3px dashed var(--beige);
-    border-radius: 100%;
-    outline: 3px solid var(--pink);
-
-    background-color: var(--pink);
-
-    transition: all 400ms ease-in-out;
-
-    span {
-      display: block;
-      width: 50%;
-      height: 3px;
-
-      border-radius: 3px;
-
-      background: var(--yellowBeige);
-
-      position: relative;
-      transition: all 0.3s;
-    }
-
-    span + span {
-      margin-top: 5px;
-    }
+  button {
+    margin: 0 10px;
+    font-size: 2.4rem;
+    color: var(--beige);
   }
+}
 
-  /*hamburger menu animation inspired by https://codepen.io/elitsa_dimitrova/pen/LJWBVo*/
+li:not(.mobile-resume) {
+  margin-bottom: 5px;
+}
 
-  button.mobile-btn.open span:nth-child(1) {
-    animation: ease 0.7s top forwards;
-  }
+li.mobile-dark {
+  margin-top: 30px;
+}
 
-  button.mobile-btn.close span:nth-child(1) {
-    animation: ease 0.7s top-2 forwards;
-  }
+li.mobile-dark .dark-mode-btn svg {
+  height: 50px;
+  width: 50px;
+  color: var(--pink);
+}
 
-  button.mobile-btn.open span:nth-child(2) {
-    animation: ease 0.7s scaled forwards;
-  }
+#nav_resume.mobile {
+  width: 180px;
+  height: 60px;
+  margin: 50px 0 10px 0;
 
-  button.mobile-btn.close span:nth-child(2) {
-    animation: ease 0.7s scaled-2 forwards;
-  }
+  font-weight: 600;
 
-  button.mobile-btn.open span:nth-child(3) {
-    animation: ease 0.7s bottom forwards;
-  }
+  background-color: var(--beige);
+  border: 1px solid var(--pink);
+  outline: 5px solid var(--beige);
 
-  button.mobile-btn.close span:nth-child(3) {
-    animation: ease 0.7s bottom-2 forwards;
-  }
+  animation: none !important;
 
-  button.mobile-btn.open {
-    background-color: var(--yellowPink1);
-    outline-color: var(--yellowPink1);
-  }
-
-  nav.mobile {
-    position: fixed;
-    top: 0;
-
-    width: 100vw;
-    height: 80vh;
-    padding: 10vh 0;
-
-    z-index: 1501;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    background-color: transparent;
-  }
-
-  ul.mobile {
-    width: 80vw;
-    height: 70vh;
-    margin-top: 10vh;
-    padding: 0;
-
-    z-index: 1502;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  li.mobile {
-    width: 100%;
-    margin: 10px 0;
-
-    z-index: 1503;
-
-    display: flex;
-
-    .nav_dots {
-      height: 10px;
-      width: 10px;
-
-      background-color: var(--beige) !important;
-      transform: translateY(0);
-    }
-
-    button {
-      margin: 0 10px;
-      font-size: 2.4rem;
-      color: var(--beige);
-    }
-  }
-
-  li:not(.mobile-resume) {
-    margin-bottom: 5px;
-  }
-
-  li.mobile-dark {
-    margin-top: 10vh;
-  }
-
-  li.mobile-dark .dark-mode-btn svg {
-    height: 50px;
-    width: 50px;
-    color: var(--pink);
-  }
-
-  #nav_resume {
+  div {
     width: 180px;
     height: 60px;
-    margin: 50px 0 10px 0;
 
-    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    background-color: var(--beige);
-    border: 1px solid var(--pink);
-    outline: 5px solid var(--beige);
-
-    animation: none !important;
-
-    div {
-      width: 180px;
-      height: 60px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      background-color: var(--pink);
-    }
-
-    span {
-      font-size: 35px;
-      font-style: oblique;
-      color: var(--beige);
-    }
+    background-color: var(--pink);
   }
 
-  li.mobile {
+  span {
+    font-size: 35px;
+    font-style: oblique;
+    color: var(--beige);
+  }
+}
+
+li.mobile {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+li.mobile.open {
+  animation: slideInRightFade 0.5s forwards;
+}
+
+li.mobile.open:nth-child(1) {
+  animation-delay: 0.05s;
+}
+li.mobile.open:nth-child(2) {
+  animation-delay: 0.15s;
+}
+li.mobile.open:nth-child(3) {
+  animation-delay: 0.25s;
+}
+li.mobile.open:nth-child(4) {
+  animation-delay: 0.35s;
+}
+
+li.mobile.open:nth-child(5) {
+  animation-delay: 0.45s;
+}
+
+li.mobile.open:nth-child(6) {
+  animation-delay: 0.55s;
+}
+
+li.mobile:not(.open) {
+  animation: slideOutRightFade 0.4s forwards;
+}
+
+@keyframes slideInRightFade {
+  from {
     opacity: 0;
     transform: translateX(60px);
   }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-  li.mobile.open {
-    animation: slideInRightFade 0.5s forwards;
+@keyframes slideOutRightFade {
+  from {
+    opacity: 1;
+    transform: translateX(0);
   }
+  to {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+}
 
-  li.mobile.open:nth-child(1) {
-    animation-delay: 0.05s;
+@keyframes top {
+  0% {
+    top: 0;
+    transform: rotate(0);
   }
-  li.mobile.open:nth-child(2) {
-    animation-delay: 0.15s;
+  50% {
+    top: 8px;
+    transform: rotate(0);
   }
-  li.mobile.open:nth-child(3) {
-    animation-delay: 0.25s;
+  100% {
+    top: 8px;
+    transform: rotate(45deg);
   }
-  li.mobile.open:nth-child(4) {
-    animation-delay: 0.35s;
-  }
+}
 
-  li.mobile.open:nth-child(5) {
-    animation-delay: 0.45s;
+@keyframes top-2 {
+  0% {
+    top: 8px;
+    transform: rotate(45deg);
   }
-
-  li.mobile.open:nth-child(6) {
-    animation-delay: 0.55s;
+  50% {
+    top: 8px;
+    transform: rotate(0deg);
   }
-
-  li.mobile:not(.open) {
-    animation: slideOutRightFade 0.4s forwards;
+  100% {
+    top: 0;
+    transform: rotate(0deg);
   }
+}
 
-  @keyframes slideInRightFade {
-    from {
-      opacity: 0;
-      transform: translateX(60px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+@keyframes bottom {
+  0% {
+    bottom: 0;
+    transform: rotate(0);
   }
-
-  @keyframes slideOutRightFade {
-    from {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateX(60px);
-    }
+  50% {
+    bottom: 8px;
+    transform: rotate(0);
   }
-
-  @keyframes top {
-    0% {
-      top: 0;
-      transform: rotate(0);
-    }
-    50% {
-      top: 8px;
-      transform: rotate(0);
-    }
-    100% {
-      top: 8px;
-      transform: rotate(45deg);
-    }
+  100% {
+    bottom: 8px;
+    transform: rotate(135deg);
   }
+}
 
-  @keyframes top-2 {
-    0% {
-      top: 8px;
-      transform: rotate(45deg);
-    }
-    50% {
-      top: 8px;
-      transform: rotate(0deg);
-    }
-    100% {
-      top: 0;
-      transform: rotate(0deg);
-    }
+@keyframes bottom-2 {
+  0% {
+    bottom: 8px;
+    transform: rotate(135deg);
   }
-
-  @keyframes bottom {
-    0% {
-      bottom: 0;
-      transform: rotate(0);
-    }
-    50% {
-      bottom: 8px;
-      transform: rotate(0);
-    }
-    100% {
-      bottom: 8px;
-      transform: rotate(135deg);
-    }
+  50% {
+    bottom: 8px;
+    transform: rotate(0);
   }
-
-  @keyframes bottom-2 {
-    0% {
-      bottom: 8px;
-      transform: rotate(135deg);
-    }
-    50% {
-      bottom: 8px;
-      transform: rotate(0);
-    }
-    100% {
-      bottom: 0;
-      transform: rotate(0);
-    }
+  100% {
+    bottom: 0;
+    transform: rotate(0);
   }
+}
 
-  @keyframes scaled {
-    50% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(0);
-    }
+@keyframes scaled {
+  50% {
+    transform: scale(0);
   }
+  100% {
+    transform: scale(0);
+  }
+}
 
-  @keyframes scaled-2 {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
+@keyframes scaled-2 {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }

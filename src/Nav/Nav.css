@@ -57,6 +57,8 @@ nav {
   }
 
   li {
+    margin: 0 0.8vw;
+
     opacity: 0; /* fadeInUp_nav start*/
     transform: translateY(3px); /* fadeInUp_nav start*/
 

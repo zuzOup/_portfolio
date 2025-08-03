@@ -28,3 +28,9 @@ article > section {
     width: 90vw;
   }
 }
+
+@media (max-width: 1024px) {
+  article > section {
+    width: 80vw;
+  }
+}

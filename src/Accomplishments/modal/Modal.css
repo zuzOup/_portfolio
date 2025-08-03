@@ -1,6 +1,6 @@
 #acc_modal {
   position: fixed;
-  z-index: 100;
+  z-index: 2000;
   left: 7vw;
   top: 14vh;
   width: 86vw;
@@ -19,7 +19,7 @@
     opacity: 0;
     transition: opacity 0.4s ease-in;
 
-    span {
+    .swiper-container {
       width: 100vw;
       height: 100vh;
       display: grid;
@@ -123,68 +123,49 @@
     }
   }
 
-  .gallery {
+  .swiper {
+    outline: 6px double var(--pink);
+
+    border: 3px solid black;
+
+    border-radius: 25px;
+
     max-width: 100%;
     width: 100%;
-    position: relative;
-
     height: calc(28.1vw / 3 * 4);
+    object-fit: contain;
+  }
 
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(-3vw);
-    transition: all 400ms ease;
-    transition-delay: 0ms;
+  .swiper-pagination-bullet {
+    opacity: 0.5;
+    background-color: var(--yellowPink2);
+  }
 
-    &.active {
-      transition-delay: 400ms;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    * {
-      border-left: black 1px solid;
-      max-width: 100%;
-      max-height: 100%;
-    }
-
-    & > *:nth-child(2) {
-      position: relative;
-      top: calc((28.28vw / 3 * -4));
-    }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: var(--pink);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .right-to-left-enter {
-    transform: translateX(100%);
-  }
-  .right-to-left-enter-active {
-    transform: translateX(0);
-    transition: all 1s ease;
-  }
-
-  .right-to-left-exit {
-    transform: translateX(0);
-  }
-  .right-to-left-exit-active {
-    transform: translateX(-100%);
-    transition: all 1s ease;
+@media (max-width: 1024px) {
+  #acc_modal,
+  #acc_modal .modal_inner {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
   }
 
-  .left-to-right-enter {
-    transform: translateX(-100%);
-  }
-  .left-to-right-enter-active {
-    transform: translateX(0);
-    transition: all 1s ease;
-  }
+  .swiper-container {
+    grid-template-columns: 100vw !important;
 
-  .left-to-right-exit {
-    transform: translateX(0);
-  }
-  .left-to-right-exit-active {
-    transform: translateX(100%);
-    transition: all 1s ease;
+    button {
+      display: none !important;
+    }
+
+    .swiper {
+      width: 90vw !important;
+      height: 67.5vw !important;
+    }
   }
 }

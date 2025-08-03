@@ -272,6 +272,56 @@
       height: 9vw !important;
     }
   }
+}
 
-  
+@media (min-width: 769px) and (max-width: 1024px) {
+  #aboutMe {
+    min-height: 60vh;
+    height: fit-content;
+    padding: 20px 0;
+    margin-top: 5vh;
+
+    .content {
+      position: relative;
+      display: block;
+    }
+
+    .text {
+      width: 100%;
+      padding: 0;
+      max-width: 100%;
+
+      p:first-child {
+        width: 100%;
+
+        img {
+          margin: 0 0 0 5vw;
+          max-width: 15vw;
+          max-height: 15vw;
+          overflow: hidden;
+          float: inline-end;
+          border: double 7px var(--pink);
+        }
+      }
+    }
+
+    .text,
+    .photo {
+      p,
+      a,
+      button,
+      a > span {
+        font-size: 1.2rem;
+      }
+    }
+
+    .photo {
+      display: none;
+    }
+
+    .stack-item {
+      width: 9vw !important;
+      height: 9vw !important;
+    }
+  }
 }

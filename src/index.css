@@ -106,9 +106,12 @@ html {
   overflow-x: hidden;
 }
 
-html.notransition *,
-html.notransition *::before,
-html.notransition *::after {
+html.notransition
+  *:not(.theme-toggle):not(.theme-toggle *):not(.theme-toggle *::before):not(
+    .theme-toggle *::after
+  ),
+html.notransition *::before:not(.theme-toggle *::before),
+html.notransition *::after:not(.theme-toggle *::after) {
   transition: none !important;
 }
 

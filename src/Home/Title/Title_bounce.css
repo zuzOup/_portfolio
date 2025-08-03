@@ -6,7 +6,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   #dot_i_container.animate {
     animation: none;
   }

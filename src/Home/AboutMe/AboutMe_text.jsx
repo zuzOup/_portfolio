@@ -1,9 +1,23 @@
 import AboutMe_slider from "./AboutMe_slider";
+import useWindowSize from "../../hooks/useWindowSize";
+
+import { getInitialMode } from "../../helpers/themeUtils";
 
 function AboutMe_text() {
+  const width = useWindowSize();
+  const isTablet = width >= 678 && width <= 1024;
+
   return (
     <div className="text">
       <p>
+        {isTablet && (
+          <img
+            src={getInitialMode()}
+            alt="Profile picture"
+            id="profile_photo_tablet"
+            className="tablet"
+          />
+        )}
         Hi, I&apos;m Zuzana! I have a master&apos;s degree in food technology from UCT
         Prague, but recently I decided to leave the food industry and move into web
         development - a field where I can use my problem-solving skills while working on

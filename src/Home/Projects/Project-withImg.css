@@ -41,8 +41,7 @@
   }
 
   .text {
-    grid-area: 2 / 1 / 3 / 2;
-
+   
     border: double 6px var(--yellowBeige);
 
     margin: 1vw 0;

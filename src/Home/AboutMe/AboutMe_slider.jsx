@@ -1,8 +1,8 @@
 import { stack_svg } from "./stack_SVG";
 
-import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
+
 import "swiper/css";
 
 const stack = [

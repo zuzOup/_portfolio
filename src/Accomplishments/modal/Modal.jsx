@@ -1,20 +1,38 @@
 import PropTypes from "prop-types";
 import { useEffect, useState, useRef } from "react";
 
-import Gallery from "./Gallery";
 import ScrollLock from "./ScrollLock";
 
 import { list } from "../list";
 
-import "./Modal.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import { arrow_left, arrow_right, close } from "./Modal_svg";
+
+import "./Modal.css";
 
 function Modal({ index, onClose }) {
   let refScrollY = useRef(null);
 
-  const [imgPath, setImgPath] = useState(index);
-  const [arrow, setArrow] = useState(true);
   const [modalActive, setModalActive] = useState("");
+  const swiperRef = useRef(null);
+
+  const goNext = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
+  const goPrev = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
 
   useEffect(() => {
     function handleKeyDown(e) {
@@ -24,10 +42,10 @@ function Modal({ index, onClose }) {
           onClose();
           break;
         case 37: // Left Arrow
-          leftButton();
+          goPrev();
           break;
         case 39: // Right Arrow
-          rightButton();
+          goNext();
           break;
         default:
           break;
@@ -47,21 +65,6 @@ function Modal({ index, onClose }) {
     };
   }, [onClose]);
 
-  function leftButton() {
-    setImgPath((currentImgPath) => {
-      return currentImgPath === 0 ? list.length - 1 : currentImgPath - 1;
-    });
-    setArrow(true);
-  }
-
-  function rightButton() {
-    setImgPath((currentImgPath) => {
-      return currentImgPath === list.length - 1 ? 0 : currentImgPath + 1;
-    });
-
-    setArrow(false);
-  }
-
   function buttonOnClose() {
     setModalActive("");
     onClose();
@@ -70,15 +73,37 @@ function Modal({ index, onClose }) {
   return (
     <div id="acc_modal">
       <div className={`modal_inner ${modalActive}`}>
-        <span>
-          <button className={`arrow ${modalActive} left`} onClick={leftButton}>
+        <div className="swiper-container">
+          <button className={`arrow ${modalActive} left`} onClick={goPrev}>
             {arrow_left()}
           </button>
-          <Gallery index={imgPath} arrow={arrow} modalActive={modalActive} />
-          <button className={`arrow ${modalActive} right`} onClick={rightButton}>
+
+          <Swiper
+            ref={swiperRef}
+            modules={[Pagination]}
+            slidesPerView={1}
+            spaceBetween={0}
+            loop={true}
+            initialSlide={index}
+            pagination={{ clickable: true }}
+            grabCursor={true}
+            allowTouchMove={true}
+          >
+            {list.map((item, i) => (
+              <SwiperSlide key={i}>
+                <img
+                  src={`/certificates/${item.name}.png`}
+                  alt={`${item.course} - ${item.name}`}
+                  style={{ maxWidth: "100%", height: "auto" }}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <button className={`arrow ${modalActive} right`} onClick={goNext}>
             {arrow_right()}
           </button>
-        </span>
+        </div>
         <button className={`close ${modalActive}`} onClick={buttonOnClose}>
           {close()}
         </button>

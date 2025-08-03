@@ -5,13 +5,15 @@ import { createPortal } from "react-dom";
 import Cover from "./Cover";
 import Modal from "./modal/Modal";
 import useWindowSize from "../hooks/useWindowSize";
+import useHoverCapability from "../hooks/useHoverCapability";
 
 function GridCell({ index, course, name, onImgLoad, allLoaded }) {
   const src = `/certificates/${name}.png`;
   const alt = `${course} - ${name}`;
 
   const windowWidth = useWindowSize();
-  const isMobile = windowWidth <= 768;
+  const isHover = useHoverCapability();
+  const isMobile = windowWidth <= 1024 || !isHover;
 
   const [isActive, setIsActive] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -26,7 +28,9 @@ function GridCell({ index, course, name, onImgLoad, allLoaded }) {
   };
 
   const handleClickButton = (e) => {
+    e.preventDefault();
     e.stopPropagation();
+    console.log("Button clicked, setting showModal to true");
     setShowModal(true);
   };
 
@@ -38,6 +42,7 @@ function GridCell({ index, course, name, onImgLoad, allLoaded }) {
   return (
     <>
       <button
+        type="button"
         onMouseEnter={hover}
         onMouseLeave={hoverClear}
         onClick={handleClickButton}
