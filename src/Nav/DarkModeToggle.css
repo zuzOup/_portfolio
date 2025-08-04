@@ -28,3 +28,21 @@
     transition: none !important;
   }
 }
+
+.theme-toggle:hover {
+  * {
+    color: var(--yellowPink2);
+  }
+}
+
+.theme-toggle:not(.theme-toggle--toggled):hover {
+  .rays {
+    transform: rotate(360deg);
+  }
+}
+
+/* .theme-toggle--toggled:hover {
+  .theme-toggle__within__inner {
+    color: blue;
+  }
+} */

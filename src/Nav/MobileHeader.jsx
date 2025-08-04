@@ -50,6 +50,7 @@ function MobileHeader() {
       <button
         onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
         className={`mobile-btn ${isOpen()}`}
+        id="mobile-btn"
       >
         <span></span>
         <span></span>

@@ -54,9 +54,9 @@
     justify-content: center;
     align-items: center;
 
-    border: 0.3vw dashed var(--beige);
+    border: 2.5px dashed var(--beige);
 
-    outline: 0.3vw solid var(--yellowPink2);
+    outline: 3.5px solid var(--yellowPink2);
 
     &:hover {
       transform: scale(1.2);
@@ -78,15 +78,15 @@
   button.close {
     position: relative;
     top: -100vh;
-    margin: 0.5vw 0.5vw 0 0;
-    width: 30px;
-    height: 30px;
+    margin: 10px 10px 0 0;
+    width: 35px;
+    height: 35px;
     border-radius: 100%;
     float: right;
 
-    border: 0.2vw dotted var(--darkGreen);
+    border: 3px dotted var(--darkGreen);
 
-    outline: 0.2vw solid var(--yellowPink3);
+    outline: 3px solid var(--yellowPink3);
 
     display: flex;
     justify-content: center;

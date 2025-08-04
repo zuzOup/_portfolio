@@ -5,7 +5,7 @@ import { getInitialMode } from "../../helpers/themeUtils";
 
 function AboutMe_text() {
   const width = useWindowSize();
-  const isTablet = width >= 678 && width <= 1024;
+  const isTablet = width > 768 && width <= 1024;
 
   return (
     <div className="text">

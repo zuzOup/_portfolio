@@ -313,6 +313,14 @@
       a > span {
         font-size: 1.2rem;
       }
+
+      a {
+        color: var(--pink);
+      }
+
+      a.here {
+        color: var(--yellow);
+      }
     }
 
     .photo {

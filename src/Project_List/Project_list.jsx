@@ -1,12 +1,13 @@
+import PropTypes from "prop-types";
+
 import SectionHeader from "../Components/SectionHeader";
 
-import Personal from "./Personal";
-import Odin from "./Odin";
-import WesBos from "./WesBos";
-import Codecademy from "./Codecademy";
+import Personal from "./projects/Personal";
+import Odin from "./projects/Odin";
+import WesBos from "./projects/WesBos";
+import Codecademy from "./projects/Codecademy";
 
 import "./Project_list.css";
-import PropTypes from "prop-types";
 
 function Project_List({ isLoaded }) {
   return (

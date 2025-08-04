@@ -106,14 +106,15 @@ html {
   overflow-x: hidden;
 }
 
-html.notransition
-  *:not(.theme-toggle):not(.theme-toggle *):not(.theme-toggle *::before):not(
-    .theme-toggle *::after
-  ),
-html.notransition *::before:not(.theme-toggle *::before),
-html.notransition *::after:not(.theme-toggle *::after) {
+/* html.notransition *:not(.theme-toggle),
+html.notransition *:not(.theme-toggle) svg,
+html.notransition *:not(.theme-toggle) clip-path,
+html.notransition *:not(.theme-toggle) g,
+html.notransition *:not(.theme-toggle) path,
+html.notransition *::before,
+html.notransition *::after {
   transition: none !important;
-}
+} */
 
 body {
   min-height: 100vh;
@@ -190,4 +191,17 @@ section.loaded .sectionHeader,
 .loaded .sectionHeader {
   opacity: 1;
   transform: none;
+}
+
+main.notransition,
+main.notransition *,
+main.notransition *::before,
+main.notransition *::after,
+footer.notransition,
+footer.notransition *,
+header.notransition *:not(.toggle),
+nav.notransition *:not(.toggle),
+#mobile-btn.notransition,
+#mobile-btn.notransition * {
+  transition: none !important;
 }
