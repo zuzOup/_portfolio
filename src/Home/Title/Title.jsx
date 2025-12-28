@@ -33,9 +33,11 @@ function Title({ isLoaded }) {
     <section id="title" className={isLoaded}>
       <h3>Hi, my name is</h3>
       <div className="h1-container">
-        <h1 className={animationStart.Z}>Zuzana</h1>
-        <h1>&nbsp;</h1>
-        <h1 className={animationStart.O}>Oupická</h1>
+        <h1>
+          <span className={animationStart.Z}>Zuzana</span>{" "}
+          <span className={animationStart.O}>Oupická</span>
+        </h1>
+
         <div id="dot_i_container" className={animationStart.dot}>
           <div id="dot_i"></div>
         </div>
