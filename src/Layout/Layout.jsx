@@ -15,7 +15,7 @@ import Accomplishments from "../Accomplishments/Accomplishments";
 
 import Project_List from "../Project_List/Project_list";
 
-import useIsLoaded_hook from "../hooks/isLoaded_hook";
+import useLoadingDelay from "../hooks/useLoadingDelay.hook";
 
 import SVGFilter from "../Components/SVGFilter";
 
@@ -25,7 +25,7 @@ import useWindowSize from "../hooks/useWindowSize";
 import useHoverCapability from "../hooks/useHoverCapability";
 
 function Layout() {
-  const isLoaded = useIsLoaded_hook();
+  const isLoaded = useLoadingDelay();
 
   const windowSize = useWindowSize();
   const hasHover = useHoverCapability();

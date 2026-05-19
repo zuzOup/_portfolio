@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useIsLoded(delay = 300) {
+function useLoadingDelay(delay = 300) {
   const [isLoaded, setIsLoaded] = useState("");
 
   useEffect(() => {
@@ -14,4 +14,4 @@ function useIsLoded(delay = 300) {
   return isLoaded;
 }
 
-export default useIsLoded;
+export default useLoadingDelay;
