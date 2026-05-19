@@ -39,7 +39,7 @@
     font-weight: 500;
     color: var(--yellow);
 
-    &.animate {
+    span.animate {
       color: var(--pink);
       animation: h1_bounce 200ms ease-in-out forwards;
     }
