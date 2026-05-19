@@ -17,7 +17,7 @@ export const delay_aside = 1400;
 
 export const delay_carousel = 1600;
 
-export const delay_bounce = 1600;
+export const DELAY_BOUNCE = 1600;
 
 /*-----------------------*/
 
