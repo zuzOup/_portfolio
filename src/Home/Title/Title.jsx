@@ -26,9 +26,8 @@ function Title({ isLoaded }) {
         </div>
       </div>
       <p>
-        I&apos;m a <b>front-end developer</b> located in Canada, exploring the initial
-        phases of my career path. I&apos;m making progress on a daily basis as I&apos;m
-        highly motivated to constantly develop my skills and grow professionally.
+        I&apos;m a <b>front-end developer</b> based in Canada, exploring the initial
+        phases of my career path. I spend most of my time working on UI development and growing my skills through hands-on work.
       </p>
       <div id="carousel">
         <p className="p-carousel">I specialise in</p>
